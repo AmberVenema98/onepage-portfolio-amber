@@ -48,17 +48,17 @@ var typed = new Typed('#typed', {
   backSpeed: 40,
   typeSpeed: 60,
 });
-/*
+
 document
   .getElementById('toggle-menu-button')
   .addEventListener('click', function () {
-    var menu = document.getElementById('menu')
+    var menu = document.getElementById('menu');
     if (menu.style.top === '0px') {
-      menu.style.top = '-100%'
+      menu.style.top = '-100%';
     } else {
-      menu.style.top = '0px'
+      menu.style.top = '0px';
     }
-  })*/
+  });
 const toggleMenuButton = document.getElementById('toggle-menu-button');
 const menu = document.getElementById('menu');
 
