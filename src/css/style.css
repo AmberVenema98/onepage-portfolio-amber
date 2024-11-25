@@ -12,8 +12,16 @@
     scale: 1;
   }
 }
+
+:root {
+  --primary-color: 100, 100, 100;
+  --text-color: 100, 100, 100;
+
+  --main-font: 'DM Sans', sans-serif;
+}
+
 .font-container {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -35,24 +43,16 @@
   }
 }
 
-:root {
-  /* violet */
-  --primary-color: 100, 100, 100;
-
-  /* white */
-  --text-color: 100, 100, 100;
-}
-
 .btn {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-size: 18px;
   padding: 12px 32px;
   cursor: pointer;
   border-radius: 4px;
-  transition: all 0.3s ease;
   border-radius: 10px;
 }
 
+.btn,
 .btn:hover {
   transition: all 0.3s ease;
 }
@@ -67,20 +67,21 @@
   box-shadow: rgba(var(--primary-color), 0.5) 0px 15px 20px 0px;
 }
 .pyramid-loader {
-  position: relative;
   width: 300px;
   height: 300px;
   display: block;
-  transform-style: preserve-3d;
   transform: rotateX(-20deg);
 }
 
 .wrapper {
-  position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
   animation: spin 4s linear infinite;
+}
+
+.pyramid-loader,
+.wrapper {
+  transform-style: preserve-3d;
 }
 
 @keyframes spin {
@@ -94,7 +95,6 @@
   height: 200px;
   /* you can choose any gradient or color you want */
   /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -104,31 +104,19 @@
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.pyramid-loader .wrapper .side1 {
-  transform: rotateZ(-30deg) rotateY(90deg);
-  background: white;
-}
-
+.pyramid-loader .wrapper .side1,
 .pyramid-loader .wrapper .side2 {
-  transform: rotateZ(30deg) rotateY(90deg);
-  background: white;
+  transform: rotateZ(-30deg) rotateY(90deg);
 }
 
-.pyramid-loader .wrapper .side3 {
-  transform: rotateX(30deg);
-  background: white;
-}
-
+.pyramid-loader .wrapper .side3,
 .pyramid-loader .wrapper .side4 {
-  transform: rotateX(-30deg);
-  background: white;
+  transform: rotateX(30deg);
 }
 
 .pyramid-loader .wrapper .shadow {
   width: 60px;
   height: 60px;
-  background: white;
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -136,6 +124,14 @@
   margin: auto;
   transform: rotateX(90deg) translateZ(-40px);
   filter: blur(12px);
+}
+
+.pyramid-loader .wrapper .side1,
+.pyramid-loader .wrapper .side2,
+.pyramid-loader .wrapper .side3,
+.pyramid-loader .wrapper .side4,
+.pyramid-loader .wrapper .shadow {
+  background: white;
 }
 
 #typed {
@@ -148,7 +144,8 @@
 }
 
 /* === removing default button style ===*/
-.button1 {
+.button1,
+.button2 {
   margin: 0;
   height: auto;
   background: transparent;
@@ -158,7 +155,8 @@
 }
 
 /* button styling */
-.button1 {
+.button1,
+.button2 {
   --border-right: 4px;
   --text-stroke-color: rgba(255, 255, 255, 0.6);
   --animation-color: #fff;
@@ -167,69 +165,19 @@
   letter-spacing: 3px;
   text-decoration: none;
   font-size: var(--fs-size);
-  font-family: 'Arial';
-  position: relative;
+  font-family: var(--main-font);
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
-/* this is the text, when you hover on button */
-.hover-text1 {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-/* hover */
-.button1:hover .hover-text1 {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color));
-}
 
-.button1 {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
-/* === removing default button style ===*/
 .button2 {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
-/* button styling */
-.button2 {
-  --border-right: 4px;
   --text-stroke-color: rgba(0, 0, 0, 0.6);
-  --animation-color: #000000;
-  --fs-size: 2rem;
-  line-height: 2rem;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: 'Arial';
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
 }
+
 /* this is the text, when you hover on button */
+.hover-text1,
 .hover-text2 {
-  position: absolute;
   box-sizing: border-box;
   content: attr(data-text);
   color: var(--animation-color);
@@ -241,16 +189,23 @@
   -webkit-text-stroke: 1px var(--animation-color);
 }
 /* hover */
+.button1:hover .hover-text1,
 .button2:hover .hover-text2 {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
-.button2 {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+/* positions */
+.button1,
+.button2,
+.pyramid-loader,
+.wrapper {
+  position: relative;
+}
+
+.pyramid-loader .wrapper .side,
+.pyramid-loader .wrapper .shadow,
+.hover-text1,
+.hover-text2 {
+  position: absolute;
 }
