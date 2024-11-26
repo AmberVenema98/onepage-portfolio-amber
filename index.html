@@ -43,12 +43,12 @@
   >
     <div id="app"></div>
 
-    <div id="body" class="font-container px-4 sm:px-10 lg:px-20 bg-scroll">
+    <div id="body" class="font-container bg-scroll">
       <main>
-        <header>
-          <nav class="text-white flex justify-between items-center py-6 px-0">
+        <header class="border-b-2 border-white">
+          <nav class="text-white flex justify-between items-center px-0">
             <!-- LOGO -->
-            <div class="flex gap-6">
+            <div class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
               <button data-text="Awesome" class="button1 dark:block hidden">
                 <span class="actual-text">&nbsp;Amber&nbsp;</span>
                 <span class="hover-text1" aria-hidden="true"
@@ -65,35 +65,35 @@
             <!-- MENU -->
             <div
               id="menu"
-              class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center py-6 md:px-4 md:py-3 rounded-bl-md rounded-br-md md:rounded-lg border-solid border-2 border-zinc-400 dark:border-zinc-600 bg-zinc-100 dark:bg-zinc-900"
+              class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center md:px-4 md:py-3 border-l-2 border-r-2 border-white"
             >
               <ul
                 class="flex flex-col md:flex-row gap-6 font-mono md:items-center text-3xl align-middle justify-center md:bg-transparent px-6 rounded-full font-medium max-w-max"
               >
                 <a
                   href="/"
-                  class="text-2xl font-sans align-middle font-bold leading-6 p-3 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-md cursor-pointer text-gray-800 dark:text-gray-200"
+                  class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
                   >Home</a
                 >
                 <a
                   href="#Projects"
-                  class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-md cursor-pointer text-gray-800 dark:text-gray-200"
+                  class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
                   >Projects</a
                 >
                 <a
                   href="#Skills"
-                  class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-md cursor-pointer text-gray-800 dark:text-gray-200"
+                  class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
                   >Skills</a
                 >
                 <a
                   href="#Contact"
-                  class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 rounded-md cursor-pointer text-gray-800 dark:text-gray-200"
+                  class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
                   >Contact</a
                 >
               </ul>
             </div>
             <!-- DARK MODE -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-6 pr-4 sm:pr-10 lg:pr-20">
               <button
                 name="light-dark-mode-toggle"
                 id="theme-toggle"
@@ -135,7 +135,10 @@
         </header>
 
         <!-- INTRODUCTION -->
-        <div id="hero" class="mt-20 mb-20">
+        <div
+          id="hero"
+          class="my-28 pl-4 sm:pl-10 lg:pl-20 border-b-2 border-white"
+        >
           <div>
             <!-- commented text-center for having the text at left instead of center-->
             <h1
@@ -147,7 +150,7 @@
               <p
                 class="text-gray-600 dark:text-gray-400 text-1xl md:text-2xl max-w-screen-md mx-auto font-normal tracking-tight mb-4"
               >
-                BSc CMD HvA • Web Designer • Web Developer • Tech Enthusiast •
+                BSc CMD HvA • Web Designer • Web Developer • Tech Enthusiast
               </p>
             </div>
             <span id="typed" class="dark:text-gray-400"></span>
@@ -171,7 +174,7 @@
             >
               Connect with me here! ⬇️
             </p>
-            <div class="mt-8 flex flex-wrap gap-5 mb-16">
+            <div class="mt-8 flex flex-wrap gap-5 mb-32">
               <!-- commented justify-center for having the text at left instead of center-->
               <!-- Github -->
               <a
@@ -216,11 +219,11 @@
         </div>
 
         <!-- PROJECTS -->
-        <section id="Projects" class="mt-20 mb-20 pt-8">
+        <section id="Projects">
           <!-- added  py-10 for having the having section look better-->
           <div id="projects">
             <h1
-              class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight mb-10"
+              class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight p-2 ml-4 sm:ml-10 lg:ml-20"
             >
               Projects
             </h1>
@@ -231,20 +234,16 @@
             >
               <div
                 id="block"
-                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 rounded-xl border-2 border-solid border-zinc-400 dark:border-zinc-700 hover:border-zinc-600 dark:hover:border-white transform hover:scale-103 transition-transform"
+                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 border-2 border-solid border-zinc-400 hover:border-zinc-600 dark:border-white transform hover:scale-105 transition-transform"
               >
-                <img
-                  class="p-4 rounded-3xl"
-                  src="/recipe.png"
-                  alt="Recipe Finder"
-                />
+                <img class="p-4" src="/recipe.png" alt="Recipe Finder" />
                 <h1
-                  class="dark:text-gray-100 text-4xl font-bold tracking-tight mx-5"
+                  class="dark:text-gray-100 text-4xl font-bold tracking-tight pl-5 pt-4 border-t-2 border-white"
                 >
                   Recipe Finder
                 </h1>
                 <p
-                  class="dark:text-gray-100 font-semibold text-md tracking-tight p-2 mx-5"
+                  class="dark:text-gray-100 font-semibold text-md tracking-tight pl-5 p-4 border-b-2 border-white"
                 >
                   Quickly generate tasty recipes based on available ingredients.
                 </p>
@@ -291,24 +290,24 @@
 
               <div
                 id="block"
-                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 rounded-xl border-2 border-solid border-zinc-400 dark:border-zinc-700 hover:border-zinc-600 dark:hover:border-white transform hover:scale-103 transition-transform"
+                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 border-2 border-solid border-zinc-400 hover:border-zinc-600 dark:border-white transform hover:scale-105 transition-transform"
               >
                 <img
-                  class="p-4 rounded-3xl"
+                  class="p-4"
                   src="/encrypt.png"
                   alt="File Encryption Tool"
                 />
                 <h1
-                  class="dark:text-gray-100 text-4xl font-bold tracking-tight mx-5"
+                  class="dark:text-gray-100 text-4xl font-bold tracking-tight pl-5 p-4 border-t-2 border-white"
                 >
                   File Encryption Tool
                 </h1>
                 <p
-                  class="dark:text-gray-100 font-semibold text-md tracking-tight p-2 mx-5"
+                  class="dark:text-gray-100 font-semibold text-md tracking-tight pl-5 pb-4 border-b-2 border-white"
                 >
                   Allows Encryption/Decryption of multiple file formats.
                 </p>
-                <div class="flex mt-4 mx-5 mb-5">
+                <div class="flex mt-4 mx-5">
                   <a
                     href="https://github.com/Shivaraj-Kolekar/File-Encryption-App-Project.git"
                     class="bg-gray-900 dark:bg-gray-100 items-center text-white hover:scale-110 transition-transform transform dark:text-black flex gap-2 p-3 rounded-md font-medium"
@@ -332,16 +331,16 @@
 
               <div
                 id="block"
-                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 rounded-xl border-2 border-solid border-zinc-400 dark:border-zinc-700 hover:border-zinc-600 dark:hover:border-white transform hover:scale-103 transition-transform"
+                class="mt-8 shadow-md dark:bg-zinc-900 bg-zinc-100 border-2 border-solid border-zinc-400 hover:border-zinc-600 dark:border-white transform hover:scale-105 transition-transform"
               >
-                <img class="p-4 rounded-3xl" src="/npm.png" alt="NPM Package" />
+                <img class="p-4" src="/npm.png" alt="NPM Package" />
                 <h1
-                  class="dark:text-gray-100 text-4xl font-bold tracking-tight mx-5"
+                  class="dark:text-gray-100 text-4xl font-bold tracking-tight pl-5 p-4 border-t-2 border-white"
                 >
                   NPM Package
                 </h1>
                 <p
-                  class="dark:text-gray-100 font-semibold text-md tracking-tight p-2 mx-5"
+                  class="dark:text-gray-100 font-semibold text-md tracking-tight pl-5 pb-4 border-b-2 border-white"
                 >
                   The currency converter package supports 32 currencies with
                   real-time exchange rates.
@@ -419,11 +418,11 @@
         </section>
 
         <!-- SKILLS -->
-        <div id="Skills" class="mb-20 mt-20 pt-8">
+        <div id="Skills" class="my-28 border-t-2 border-white">
           <h1
-            class="flex flex-col text-5xl font-bold tracking-tight text-gray-950 dark:text-gray-100 mb-8"
+            class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight mt-28 ml-4 sm:ml-10 lg:ml-20"
           >
-            Skill
+            Skills
           </h1>
           <!-- commented text-center for having the text at left instead of center-->
 
@@ -432,14 +431,14 @@
               <!-- FIRST SKILL BLOCK -->
               <div
                 id="block"
-                class="mt-8 p-4 grid col-span-1 shadow-md w-full dark:bg-zinc-900 bg-zinc-100 rounded-xl border-2 border-solid border-zinc-400 dark:border-zinc-700 hover:border-zinc-600 dark:hover:border-white transform hover:scale-105 transition-transform"
+                class="mt-8 grid col-span-1 shadow-md w-full border-2 border-solid border-zinc hover:border-zinc dark:border-zinc dark:hover:border-white"
               >
                 <h1
-                  class="dark:text-gray-100 m-3 text-2xl sm:text-4xl font-bold tracking-tight mb-4"
+                  class="dark:text-gray-100 text-2xl sm:text-4xl font-bold tracking-tight pl-6 pb-4 mt-4 border-b-2"
                 >
                   Languages and Frameworks
                 </h1>
-                <div class="flex flex-wrap gap-3 px-2 sm:px-5 pt-3 sm:pt-6">
+                <div class="flex flex-wrap gap-3 px-2 sm:px-5 sm:pt-6">
                   <img
                     class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
                     src="https://skillicons.dev/icons?i=html"
@@ -465,19 +464,39 @@
               <!-- SECOND SKILL BLOCK -->
               <div
                 id="block"
-                class="mt-8 p-4 grid col-span-1 shadow-md w-full dark:bg-zinc-900 bg-zinc-100 rounded-xl border-2 border-solid border-zinc-400 dark:border-zinc-700 hover:border-zinc-600 dark:hover:border-white transform hover:scale-105 transition-transform"
+                class="mt-8 grid col-span-1 shadow-md w-full border-2 border-solid border-zinc hover:border-zinc dark:border-zinc dark:hover:border-white"
               >
                 <h1
-                  class="dark:text-gray-100 text-2xl m-3 sm:text-4xl font-bold tracking-tight mb-4"
+                  class="dark:text-gray-100 text-2xl sm:text-4xl font-bold tracking-tight pl-6 pb-4 mt-4 border-b-2"
                 >
                   Tools
                 </h1>
 
-                <div class="flex flex-wrap gap-3 px-2 sm:px-5 pt-3 sm:pt-6">
+                <div class="flex flex-wrap gap-3 px-2 sm:px-5 sm:pt-6">
                   <img
                     class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
                     src="https://skillicons.dev/icons?i=figma"
                     alt="Figma"
+                  />
+                  <img
+                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                    src="https://skillicons.dev/icons?i=github"
+                    alt="GitHub"
+                  />
+                  <img
+                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                    src="https://skillicons.dev/icons?i=vscode"
+                    alt="VSCode"
+                  />
+                  <img
+                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                    src="https://skillicons.dev/icons?i=blender"
+                    alt="Blender"
+                  />
+                  <img
+                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                    src="https://skillicons.dev/icons?i=unity"
+                    alt="Unity"
                   />
                   <img
                     class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
@@ -494,31 +513,6 @@
                     src="https://skillicons.dev/icons?i=ai"
                     alt="Illustrator"
                   />
-                  <img
-                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                    src="https://skillicons.dev/icons?i=blender"
-                    alt="Blender"
-                  />
-                  <img
-                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                    src="https://skillicons.dev/icons?i=unity"
-                    alt="Unity"
-                  />
-                  <img
-                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                    src="https://skillicons.dev/icons?i=github"
-                    alt="GitHub"
-                  />
-                  <img
-                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                    src="https://skillicons.dev/icons?i=vscode"
-                    alt="VSCode"
-                  />
-                  <img
-                    class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                    src="https://skillicons.dev/icons?i=arduino"
-                    alt="Arduino"
-                  />
                 </div>
               </div>
             </div>
@@ -526,9 +520,9 @@
         </div>
 
         <!-- CONTACT -->
-        <div id="Contact" class="mt-20 mb-20 pt-8">
+        <div id="Contact" class="mt-20 mb-20 pt-8 border-y-2 border-white">
           <h1
-            class="dark:text-gray-100 mb-16 text-5xl font-bold tracking-tight"
+            class="dark:text-gray-100 mb-16 text-5xl font-bold tracking-tight pl-4 sm:pl-10 lg:pl-20"
           >
             Contact
           </h1>
@@ -706,12 +700,12 @@
       <!-- PORTFOLIO DEVELOPMENT -->
       <div>
         <p
-          class="dark:text-gray-100 font-semibold p-6 text-2xl flex justify-center tracking-tight"
+          class="dark:text-gray-100 font-semibold p-6 text-base flex justify-center tracking-tight"
         >
           Portfolio Developed by Shivaraj
         </p>
         <p
-          class="dark:text-gray-100 font-semibold pb-20 text-2xl items-center flex justify-center tracking-tight"
+          class="dark:text-gray-100 font-semibold pb-20 text-base items-center flex justify-center tracking-tight"
         >
           <a
             href="https://github.com/Shivaraj-Kolekar/portfolio.git"

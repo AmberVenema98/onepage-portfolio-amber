@@ -34,6 +34,12 @@
   perspective: 1000px;
 }
 
+#block:hover,
+#block:hover h1,
+#block:hover p {
+  border-color: purple;
+}
+
 @media (max-width: 768px) {
   #menu {
     top: 0;
