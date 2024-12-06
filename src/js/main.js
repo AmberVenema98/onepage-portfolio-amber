@@ -65,3 +65,13 @@ const menu = document.getElementById('menu');
 toggleMenuButton.addEventListener('click', () => {
   menu.classList.toggle('hidden');
 });
+
+// Carousel
+let currentSlide = 0;
+const carouselInner = document.getElementById('carouselInner');
+const totalSlides = carouselInner.children.length;
+
+function moveCarousel(direction) {
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
