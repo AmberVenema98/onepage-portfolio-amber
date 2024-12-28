@@ -215,3 +215,14 @@
 .hover-text2 {
   position: absolute;
 }
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  top: 270px;
+  left: 40px;
+}
