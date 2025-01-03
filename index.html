@@ -111,11 +111,9 @@
   <body
     class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
-    <div id="app"></div>
-
     <div id="body" class="font-container bg-scroll">
       <main>
-        <header class="border-b-2 dark:border-zinc-700">
+        <header class="border-b-2 dark:border-zinc-700 sticky top-0 z-10 bg-black backdrop-filter backdrop-blur-lg bg-opacity-30">
           <nav class="text-white flex justify-between items-center px-0">
             <!-- LOGO -->
             <div class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
@@ -168,7 +166,7 @@
                 name="light-dark-mode-toggle"
                 id="theme-toggle"
                 type="button"
-                class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:hover:bg-zinc-600 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
               >
                 <svg
                   id="theme-toggle-dark-icon"
@@ -342,7 +340,7 @@
                             <h2 class="mx-4 pt-2 border-t-2 dark:border-zinc-700 carousel-slide-title dark:text-gray-100 text-gray-900">Portfolio Website</h2>
                             <p class="mx-4 carousel-slide-description dark:text-gray-100 text-gray-700">A site showcasing my projects and skills to pursue internships or jobs.</p>
                             <div class="mx-4 mb-4 carousel-slide-buttons">
-                              <a href="#" class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100">
+                              <a href="project1.html" class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100">
                                 Read
                                 <svg width="25" height="25" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
@@ -655,7 +653,7 @@
             <!-- FIRST BOX -->
             <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
               <div
-                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-black border-8 rounded-full px-4 py-1"
+                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
               >
                 2024
               </div>
@@ -702,7 +700,7 @@
             <!-- THIRD BOX -->
             <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
               <div
-                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-black border-8 rounded-full px-4 py-1"
+                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
               >
                 2023
               </div>
@@ -726,7 +724,7 @@
             <!-- FOURTH BOX -->
             <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
               <div
-                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-black border-8 rounded-full px-4 py-1"
+                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
               >
                 2022
               </div>
@@ -750,7 +748,7 @@
             <!-- FIFTH BOX -->
             <div class="relative mb-28 md:w-3/3 lg:w-4/5 bg-transparent">
               <div
-                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-black border-8 rounded-full px-4 py-1"
+                class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
               >
                 2019
               </div>
@@ -848,7 +846,7 @@
               />
 
               <div
-                class="bg-transparent border-zinc-300 dark:border-zinc-700 border-solid border-2 p-4 rounded-xl shadow-lg"
+                class="bg-transparent border-zinc-300 dark:border-zinc-700 border-solid border-2 p-4 shadow-lg"
               >
                 <div class="flex flex-col md:flex-row">
                   <!-- FROM -->
@@ -866,14 +864,14 @@
                         placeholder="John"
                         name="first-name"
                         required
-                        class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                       <input
                         type="text"
                         autocomplete="given-name"
                         placeholder="Doe"
                         name="last-name"
-                        class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     <div class="form-group mt-4">
@@ -883,7 +881,7 @@
                         name="email"
                         required
                         placeholder="lucas@mail.com"
-                        class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="border border-gray-300 px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
                     <div class="form-group mt-4">
@@ -891,7 +889,7 @@
                         id="message"
                         name="message"
                         placeholder="Your Message"
-                        class="border border-gray-300 rounded-md px-4 py-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="border border-gray-300 px-4 py-2 w-full h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       ></textarea>
                     </div>
 
@@ -905,7 +903,7 @@
                   </div>
                   <!-- CONTACT INFORMATION -->
                   <div
-                    class="md:w-1/2 bg-zinc-200 dark:bg-zinc-800 text-gray-900 dark:text-gray-100 p-8 rounded-lg"
+                    class="md:w-1/2 bg-zinc-200 dark:bg-zinc-800 text-gray-900 dark:text-gray-100 p-8"
                   >
                     <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
                     <p class="mb-6">
