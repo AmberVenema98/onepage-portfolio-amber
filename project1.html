@@ -42,256 +42,276 @@
   </head>
 
   <body
-  class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
->
-  <div id="body" class="font-container bg-scroll">
-    <header class="border-b-2 dark:border-zinc-700 sticky top-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-30 bg-opacity-30">
-      <nav class="text-white flex justify-between items-center px-0">
-        <!-- LOGO -->
-        <a href="index.html" class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
-          <button data-text="Awesome" class="button1 dark:block hidden">
-            <span class="actual-text">&nbsp;Amber&nbsp;</span>
-            <span class="hover-text1" aria-hidden="true"
-              >&nbsp;Amber&nbsp;</span
-            >
-          </button>
-          <button data-text="Awesome" class="button2 dark:hidden block">
-            <span class="actual-text">&nbsp;Amber&nbsp;</span>
-            <span class="hover-text2" aria-hidden="true"
-              >&nbsp;Amber&nbsp;</span
-            >
-          </button>
-        </a>
-        <!-- MENU -->
-        <div
-          id="menu"
-          class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center md:px-4 md:py-3 border-l-2 border-r-2 dark:border-zinc-700"
-        >
-          <ul
-            class="flex flex-col md:flex-row gap-6 font-mono md:items-center text-3xl align-middle justify-center md:bg-transparent px-6 rounded-full font-medium max-w-max"
-          >
-            <a
-              href="/"
-              class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-              >Home</a
-            >
-            <a
-              href="#Projects"
-              class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-              >Projects</a
-            >
-            <a
-              href="#Skills"
-              class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-              >Skills</a
-            >
-            <a
-              href="#Contact"
-              class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-              >Contact</a
-            >
-          </ul>
-        </div>
-        <!-- DARK MODE -->
-        <div class="flex items-center gap-6 pr-4 sm:pr-10 lg:pr-20">
-          <button
-            name="light-dark-mode-toggle"
-            id="theme-toggle"
-            type="button"
-            class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
-          >
-            <svg
-              id="theme-toggle-dark-icon"
-              class="hidden w-7 h-7"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-              ></path>
-            </svg>
-            <svg
-              id="theme-toggle-light-icon"
-              class="hidden w-7 h-7"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-          <ion-icon
-            id="toggle-menu-button"
-            name="menu"
-            class="w-7 h-7 dark:bg-zinc-800 p-2.5 rounded-lg cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-300 dark:hover:bg-zinc-600"
-          ></ion-icon>
-        </div>
-      </nav>
-    </header>
-
-    <div class="flex min-h-screen">
-      <!-- Fixed Sidebar -->
-      <aside
-        class="fixed w-64 h-screen border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
+    class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
+  >
+    <div id="body" class="font-container bg-scroll">
+      <header
+        class="border-b-2 dark:border-zinc-700 sticky top-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-30 bg-opacity-30"
       >
-        <!-- Current Project Info -->
-        <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">Portfolio Website</h1>
-
-        <!-- Client -->
-        <div class="flex items-center text-gray-600 mb-4">
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
-            />
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M14 2v6h6"
-            />
-          </svg>
-          Amber Venema
-        </div>
-
-        <!-- Date -->
-        <div class="flex items-center text-gray-600 mb-4">
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          February 2025
-        </div>
-
-        <!-- Technologies -->
-        <div class="flex items-center text-gray-600 mb-8">
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          React, TypeScript
-        </div>
-
-        <!-- Navigation -->
-        <nav class="mb-8 space-y-4">
-          <a
-            href="#overview"
-            class="block text-blue-600 font-medium hover:text-blue-700"
-          >
-            Overview →
+        <nav class="text-white flex justify-between items-center px-0">
+          <!-- LOGO -->
+          <a href="index.html" class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
+            <button data-text="Awesome" class="button1 dark:block hidden">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text1" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
+            <button data-text="Awesome" class="button2 dark:hidden block">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text2" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
           </a>
-          <a href="#progress" class="block text-gray-600 hover:text-gray-900"
-            >Progress</a
+          <!-- MENU -->
+          <div
+            id="menu"
+            class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center md:px-4 md:py-3 border-l-2 border-r-2 dark:border-zinc-700"
           >
-          <a href="#results" class="block text-gray-600 hover:text-gray-900"
-            >Results</a
-          >
-          <a href="#reflections" class="block text-gray-600 hover:text-gray-900"
-            >Reflections</a
-          >
-        </nav>
-
-        <!-- Project Navigation -->
-        <div>
-          <h2
-            class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4"
-          >
-            Other Projects
-          </h2>
-          <div class="space-y-3">
-            <a href="project2.html" class="block group">
-              <div class="text-gray-600 group-hover:text-gray-900">
-                <span class="font-medium">BandBuddy</span>
-              </div>
-            </a>
-            <a href="#" class="block group">
-              <div class="text-gray-600 group-hover:text-gray-900">
-                <span class="font-medium">Project B</span>
-              </div>
-            </a>
-            <a href="#" class="block group">
-              <div class="text-gray-600 group-hover:text-gray-900">
-                <span class="font-medium">Project C</span>
-              </div>
-            </a>
+            <ul
+              class="flex flex-col md:flex-row gap-6 font-mono md:items-center text-3xl align-middle justify-center md:bg-transparent px-6 rounded-full font-medium max-w-max"
+            >
+              <a
+                href="/"
+                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Home</a
+              >
+              <a
+                href="#Projects"
+                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Projects</a
+              >
+              <a
+                href="#Skills"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Skills</a
+              >
+              <a
+                href="#Contact"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Contact</a
+              >
+            </ul>
           </div>
-        </div>
-      </aside>
+          <!-- DARK MODE -->
+          <div class="flex items-center gap-6 pr-4 sm:pr-10 lg:pr-20">
+            <button
+              name="light-dark-mode-toggle"
+              id="theme-toggle"
+              type="button"
+              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ion-icon
+              id="toggle-menu-button"
+              name="menu"
+              class="w-7 h-7 dark:bg-zinc-800 p-2.5 rounded-lg cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-300 dark:hover:bg-zinc-600"
+            ></ion-icon>
+          </div>
+        </nav>
+      </header>
 
-      <!-- Rest of the content remains the same -->
-      <main class="ml-64 flex-1">
-        <!-- Hero Image -->
-        <div class="w-full h-96 bg-gray-200"></div>
+      <div class="flex min-h-screen">
+        <!-- Fixed Sidebar -->
+        <aside
+          class="fixed w-64 h-screen border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
+        >
+          <!-- Current Project Info -->
+          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
+            Portfolio Website
+          </h1>
 
-        <!-- Content -->
-        <div class="max-w-4xl mx-auto px-8 py-12">
-          <p class="text-gray-600 mb-16">
-            Project introduction and overview text goes here, explaining the
-            context, goals, and main challenges of the project.
-          </p>
+          <!-- Client -->
+          <div class="flex items-center text-gray-600 mb-4">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 2v6h6"
+              />
+            </svg>
+            Amber Venema
+          </div>
 
-          <!-- Development Progress -->
-          <section id="progress" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">Development Progress</h2>
-            <div class="w-full h-96 bg-gray-200 mb-8"></div>
-            <h3 class="text-xl font-bold mb-4 dark:text-gray-100">Initial Design</h3>
-            <p class="text-gray-600">Description of the first phase.</p>
-          </section>
+          <!-- Date -->
+          <div class="flex items-center text-gray-600 mb-4">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            February 2025
+          </div>
 
-          <!-- Development -->
-          <section class="mb-16">
-            <h2 class="text-xl font-bold mb-4 dark:text-gray-100">Development</h2>
-            <p class="text-gray-600">Details about the development process.</p>
-          </section>
+          <!-- Technologies -->
+          <div class="flex items-center text-gray-600 mb-8">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            React, TypeScript
+          </div>
 
-          <!-- Results -->
-          <section id="results" class="mb-16 bg-zinc-900 p-8 rounded-lg">
-            <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">Results</h2>
-            <p class="text-gray-600 dark:text-gray-100">
-              Key outcomes and achievements from the project.
+          <!-- Navigation -->
+          <nav class="mb-8 space-y-4">
+            <a
+              href="#overview"
+              class="block text-blue-600 font-medium hover:text-blue-700"
+            >
+              Overview →
+            </a>
+            <a href="#progress" class="block text-gray-600 hover:text-gray-900"
+              >Progress</a
+            >
+            <a href="#results" class="block text-gray-600 hover:text-gray-900"
+              >Results</a
+            >
+            <a
+              href="#reflections"
+              class="block text-gray-600 hover:text-gray-900"
+              >Reflections</a
+            >
+          </nav>
+
+          <!-- Project Navigation -->
+          <div>
+            <h2
+              class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4"
+            >
+              Other Projects
+            </h2>
+            <div class="space-y-3">
+              <a href="project2.html" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">BandBuddy</span>
+                </div>
+              </a>
+              <a href="#" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">Project B</span>
+                </div>
+              </a>
+              <a href="#" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">Project C</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Rest of the content remains the same -->
+        <main class="ml-64 flex-1">
+          <!-- Hero Image -->
+          <div class="w-full h-96 bg-gray-200"></div>
+
+          <!-- Content -->
+          <div class="max-w-4xl mx-auto px-8 py-12">
+            <p class="text-gray-600 mb-16">
+              Project introduction and overview text goes here, explaining the
+              context, goals, and main challenges of the project.
             </p>
-          </section>
 
-          <!-- Reflections -->
-          <section id="reflections" class="mb-16 bg-zinc-900 p-8 rounded-lg">
-            <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">Reflections</h2>
-            <p class="text-gray-600 dark:text-gray-100">Personal insights and lessons learned.</p>
-          </section>
-        </div>
-      </main>
+            <!-- Development Progress -->
+            <section id="progress" class="mb-16">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Development Progress
+              </h2>
+              <div class="w-full h-96 bg-gray-200 mb-8"></div>
+              <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+                Initial Design
+              </h3>
+              <p class="text-gray-600">Description of the first phase.</p>
+            </section>
+
+            <!-- Development -->
+            <section class="mb-16">
+              <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
+                Development
+              </h2>
+              <p class="text-gray-600">
+                Details about the development process.
+              </p>
+            </section>
+
+            <!-- Results -->
+            <section id="results" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+                Results
+              </h2>
+              <p class="text-gray-600 dark:text-gray-100">
+                Key outcomes and achievements from the project.
+              </p>
+            </section>
+
+            <!-- Reflections -->
+            <section id="reflections" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+                Reflections
+              </h2>
+              <p class="text-gray-600 dark:text-gray-100">
+                Personal insights and lessons learned.
+              </p>
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
 
-    <!-- JavaScript blijft hetzelfde -->
     <script>
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
