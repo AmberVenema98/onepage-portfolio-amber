@@ -20,6 +20,10 @@
   --main-font: 'DM Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .font-container {
   font-family: var(--main-font);
   font-optical-sizing: auto;
