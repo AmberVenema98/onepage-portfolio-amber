@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Amber's Portfolio</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script type="module" src="src/js/main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+
+  <body
+    class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
+  >
+    <div id="body" class="font-container bg-scroll">
+      <header
+        class="border-b-2 dark:border-zinc-700 sticky top-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-30 bg-opacity-30"
+      >
+        <nav class="text-white flex justify-between items-center px-0">
+          <!-- LOGO -->
+          <a href="index.html" class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
+            <button data-text="Awesome" class="button1 dark:block hidden">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text1" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
+            <button data-text="Awesome" class="button2 dark:hidden block">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text2" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
+          </a>
+          <!-- MENU -->
+          <div
+            id="menu"
+            class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center md:px-4 md:py-3 border-l-2 border-r-2 dark:border-zinc-700"
+          >
+            <ul
+              class="flex flex-col md:flex-row gap-6 font-mono md:items-center text-3xl align-middle justify-center md:bg-transparent px-6 rounded-full font-medium max-w-max"
+            >
+              <a
+                href="/"
+                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Home</a
+              >
+              <a
+                href="/#Projects"
+                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Projects</a
+              >
+              <a
+                href="/#Skills"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Skills</a
+              >
+              <a
+                href="/#Work"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Work</a
+              >
+              <a
+                href="/#Education"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Education</a
+              >
+              <a
+                href="/#Contact"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Contact</a
+              >
+            </ul>
+          </div>
+          <!-- DARK MODE -->
+          <div class="flex items-center gap-6 pr-4 sm:pr-10 lg:pr-20">
+            <button
+              name="light-dark-mode-toggle"
+              id="theme-toggle"
+              type="button"
+              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ion-icon
+              id="toggle-menu-button"
+              name="menu"
+              class="w-7 h-7 dark:bg-zinc-800 p-2.5 rounded-lg cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-300 dark:hover:bg-zinc-600"
+            ></ion-icon>
+          </div>
+        </nav>
+      </header>
+
+      <div class="flex min-h-screen">
+        <!-- Fixed Sidebar -->
+        <aside
+          class="fixed w-64 h-screen border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
+        >
+          <!-- Current Project Info -->
+          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">BandBuddy</h1>
+
+          <!-- Client -->
+          <div class="flex items-center text-gray-600 mb-4">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 2v6h6"
+              />
+            </svg>
+            Project Tech, HvA
+          </div>
+
+          <!-- Date -->
+          <div class="flex items-center text-gray-600 mb-4">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            July 2024
+          </div>
+
+          <!-- Technologies -->
+          <div class="flex items-center text-gray-600 mb-4">
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            HTML, JavaScript
+          </div>
+
+          <!-- View Live Link -->
+          <a
+            href="#"
+            class="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            View Live
+          </a>
+
+          <!-- Navigation -->
+          <nav class="mb-8 space-y-4">
+            <a
+              href="#overview"
+              class="block text-blue-600 font-medium hover:text-blue-700"
+            >
+              Overview →
+            </a>
+            <a href="#progress" class="block text-gray-600 hover:text-gray-900"
+              >Progress</a
+            >
+            <a href="#results" class="block text-gray-600 hover:text-gray-900"
+              >Results</a
+            >
+            <a
+              href="#reflections"
+              class="block text-gray-600 hover:text-gray-900"
+              >Reflections</a
+            >
+          </nav>
+
+          <!-- Project Navigation -->
+          <div>
+            <h2
+              class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4"
+            >
+              Other Projects
+            </h2>
+            <div class="space-y-3">
+              <a href="PortfolioWebsite.html" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">Portfolio Website</span>
+                </div>
+              </a>
+              <a href="ShortInternship.html" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">Short Internship</span>
+                </div>
+              </a>
+              <a href="ReplicatingWebsite.html" class="block group">
+                <div class="text-gray-600 group-hover:text-gray-900">
+                  <span class="font-medium">Replicating Website</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Rest of the content remains the same -->
+        <main class="ml-64 flex-1">
+          <!-- Hero Image -->
+          <div class="relative w-full h-96 bg-gray-200">
+            <img
+              class="image1 w-full h-96 object-cover"
+              src="public/Mock-up_BandBuddy.jpg"
+            />
+            <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
+              <div class="flex gap-2 justify-center">
+                <img
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  src="https://skillicons.dev/icons?i=html"
+                  alt="HTML"
+                />
+                <img
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  src="https://skillicons.dev/icons?i=css"
+                  alt="CSS"
+                />
+                <img
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  src="https://skillicons.dev/icons?i=javascript"
+                  alt="JavaScript"
+                />
+                <img
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  src="https://skillicons.dev/icons?i=figma"
+                  alt="Figma"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="max-w-4xl mx-auto px-8 py-12">
+            <p class="dark:text-gray-100 text-gray-700 mb-16">
+              For this project, I worked with three team members to design and
+              develop a fully functional web application in 10 weeks. The
+              assignment was to create a matching website where users could
+              create a profile, set their preferences, and get matched with
+              others. Our team chose a unique approach: BandBuddy, an app that
+              connects musicians.
+              <br /><br />
+              BandBuddy solves a common problem in the music industry: finding
+              the right musical partners nearby. Whether you're looking for a
+              drummer for your band, a guitarist to form a duo, or just someone
+              to jam with, BandBuddy makes it happen.
+            </p>
+
+            <!-- Development Progress -->
+            <section id="progress" class="mb-16">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Development Progress
+              </h2>
+              <div class="w-full h-96 bg-gray-200 mb-8"></div>
+              <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+                Initial Design
+              </h3>
+              <p class="dark:text-gray-100 text-gray-700">
+                In the initial phase, I worked closely with another front-end
+                developer to research various matching apps. We analyzed their
+                strengths and weaknesses, identifying key bad, good, and best
+                practices to apply to our design.
+                <br /><br />
+                Based on our findings, we created moodboards and a styleboard to
+                define BandBuddy’s visual identity. We also developed a user
+                persona representing our target audience, which guided our
+                design choices.
+                <br /><br />
+                To plan the app's structure, we created a wireflow mapping out
+                the necessary pages and user flows. With these insights, we
+                created initial sketches, experimenting with layouts, color
+                combinations, and interactive elements, while ensuring the app
+                supported dark mode and multiple languages.
+              </p>
+            </section>
+
+            <!-- Development -->
+            <section class="mb-16">
+              <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
+                Development
+              </h2>
+              <p class="dark:text-gray-100 text-gray-700">
+                In the development phase, I was responsible for coding the last
+                five registration pages, as well as the profile, settings and
+                chat pages. In the root of the project, we set up reusable
+                components for colors and text.
+                <br /><br />
+                Additionally, I worked with the other front-end developer to
+                design various states, where I was responsible for the 404 and
+                completed states.
+                <br /><br />
+                I was also in charge of setting up and maintaining the
+                styleboard, ensuring visual consistency across the app.
+                Additionally, I kept the wireflow updated to visualize the app's
+                structure and user flow.
+              </p>
+            </section>
+
+            <!-- Results -->
+            <section id="results" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+                Results
+              </h2>
+              <p class="dark:text-gray-100 text-gray-700">
+                Due to time constraints, we were unable to implement certain
+                features, such as the chat functionality and some states like
+                404 and completed. Additionally, we couldn't fully code dark
+                mode, but we did create a sketch to visualize how it would look.
+                Despite these limitations, we focused on delivering a working
+                app with the essential features.
+                <br /><br />
+                BandBuddy now allows musicians to create profiles, set
+                preferences, and find other musicians nearby. The "For You" page
+                lets users swipe through profiles and connect with others. You
+                can also update your profile, including adding photos and
+                videos, and these changes are directly saved to the database.
+                Users have the option to delete their profiles as well. The
+                design is clean, simple, and consistent, providing a smooth user
+                experience.
+              </p>
+            </section>
+
+            <!-- Reflections -->
+            <section id="reflections" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+                Reflections
+              </h2>
+              <p class="dark:text-gray-100 text-gray-700">
+                This project taught me a lot about working within time
+                constraints and prioritizing features. Despite some features
+                being left out, the app is still functional and meets its main
+                goals. It was a valuable experience in full-stack development,
+                from front-end design to back-end functionality. In the process,
+                I also gained a solid understanding of how to create and
+                manipulate a database, improving my coding skills overall.
+                <br /><br />
+                We worked with the assumption that we already knew front-end
+                development, so there was no direct guidance in the design
+                process. However, I quickly found strategies that worked, like
+                conducting competitor research, creating a persona,
+                moodboard/styleboard and wireflow. These steps helped streamline
+                the design and made the project smoother. In future projects,
+                I’ll focus more on time management to ensure all features are
+                fully implemented and polished.
+              </p>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

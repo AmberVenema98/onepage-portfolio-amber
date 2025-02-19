@@ -53,7 +53,7 @@
         transform: scale(1);
       }
       .carousel-slide-content {
-        padding: 1rem;
+        padding: 1.5rem;
       }
       .carousel-slide-title {
         font-size: 2.25rem;
@@ -145,6 +145,16 @@
                 >Skills</a
               >
               <a
+                href="#Work"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Work</a
+              >
+              <a
+                href="#Education"
+                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
+                >Education</a
+              >
+              <a
                 href="#Contact"
                 class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
                 >Contact</a
@@ -203,11 +213,11 @@
             Amber Venema
           </h1>
           <div id="typed-strings">
-            <p
+            <h2
               class="text-gray-600 dark:text-gray-400 text-1xl md:text-2xl max-w-screen-md font-normal tracking-tight mb-4"
             >
               BSc CMD HvA • Web Designer • Web Developer • Tech Enthusiast
-            </p>
+            </h2>
           </div>
           <span id="typed" class="dark:text-gray-400"></span>
           <div class="max-w-screen-md mt-2">
@@ -215,11 +225,11 @@
             <p
               class="text-gray-800 dark:text-gray-200 text-xl md:text-3xl tracking-tight"
             >
-              I'm a passionate Web Designer and Developer, crafting my digital
-              world step by step. I'm pursuing a minor in Designing for Emerging
-              Technologies and will soon head to Stuttgart, Germany, to focus on
-              App Design and Development. In my free time I love video editting
-              and gaming.
+              I'm a passionate Web Designer and Developer, building my digital
+              world step by step. I recently completed a minor in Designing for
+              Emerging Technologies and will soon head to Stuttgart, Germany, to
+              focus on Experimental Film and Virtual Reality. In my free time I
+              love video editting and gaming.
             </p>
           </div>
         </div>
@@ -253,7 +263,7 @@
             </a>
             <!-- LinkedIn -->
             <a
-              href="https://www.linkedin.com/in/amber-venema-ba954b182/"
+              href="https://www.linkedin.com/in/amber-venema"
               aria-label="LinkedIn"
               class="dark:fill-white transition-transform hover:scale-150 fill-black"
             >
@@ -275,14 +285,14 @@
       </div>
 
       <!-- PROJECTS -->
-      <section id="Projects" class="my-28 border-y-2 dark:border-zinc-700">
+      <section id="Projects" class="mt-28 border-t-2 dark:border-zinc-700">
         <h2
           class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
         >
           Projects
         </h2>
         <div class="mt-10 grid place-items-center relative sm:px-10 lg:px-20">
-          <div class="carousel-container">
+          <div class="carousel-container px-20">
             <div class="carousel-track" id="carouselTrack">
               <!-- Card 1 -->
               <div
@@ -292,157 +302,52 @@
                   <div class="relative mb-8">
                     <!-- Achtergrond afbeelding -->
                     <img
-                      class="image1 p-4 rounded-3xl w-full"
-                      src="/public/home-mockup.png"
+                      class="image1 w-full h-56 object-cover"
+                      src="/home-mockup.png"
                       alt="Project 1"
                     />
-                    <!-- Container voor de kleinere afbeeldingen -->
-                    <div class="absolute -bottom-9 left-8 flex gap-2">
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=html"
-                        alt="HTML"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=css"
-                        alt="CSS"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=tailwind"
-                        alt="Tailwind"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=github"
-                        alt="GitHub"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=vscode"
-                        alt="VSCode"
-                      />
+                    <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
+                    <div
+                      class="absolute -bottom-6 left-0 right-0 flex justify-center"
+                    >
+                      <div class="flex gap-2 justify-center">
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=html"
+                          alt="HTML"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=css"
+                          alt="CSS"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=tailwind"
+                          alt="Tailwind"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=javascript"
+                          alt="JavaScript"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <h2
-                    class="mx-4 pt-2 border-t-2 dark:border-zinc-700 carousel-slide-title dark:text-gray-100 text-gray-900"
+                  <h3
+                    class="text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
                   >
                     Portfolio Website
-                  </h2>
+                  </h3>
                   <p
-                    class="mx-4 carousel-slide-description dark:text-gray-100 text-gray-700"
+                    class="carousel-slide-description dark:text-gray-100 text-gray-700"
                   >
                     A site showcasing my projects and skills to pursue
                     internships or jobs.
                   </p>
-                  <div class="mx-4 mb-4 carousel-slide-buttons">
+                  <div class="carousel-slide-buttons">
                     <a
-                      href="project1.html"
-                      class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100"
-                    >
-                      Read
-                      <svg
-                        width="25"
-                        height="25"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="https://github.com/dutchcalcifer/CMD-Block-Tech-Group-3"
-                      class="carousel-slide-button dark:fill-white fill-black bg-zinc-900 text-gray-100 border-2 dark:border-zinc-100"
-                    >
-                      Github
-                      <svg
-                        width="22"
-                        height="22"
-                        viewBox="0 0 15 15"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2 -->
-              <div
-                class="carousel-slide bg-transparent dark:border-zinc-700 rounded-none"
-              >
-                <div class="carousel-slide-content">
-                  <div class="relative mb-8">
-                    <!-- Achtergrond afbeelding -->
-                    <img
-                      class="image1 p-4 rounded-3xl w-full"
-                      src="/public/home-mockup.png"
-                      alt="Project 2"
-                    />
-                    <!-- Container voor de kleinere afbeeldingen -->
-                    <div class="absolute -bottom-9 left-8 flex gap-2">
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=html"
-                        alt="HTML"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=css"
-                        alt="CSS"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=figma"
-                        alt="Figma"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=github"
-                        alt="GitHub"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=vscode"
-                        alt="VSCode"
-                      />
-                    </div>
-                  </div>
-                  <h2
-                    class="mx-4 pt-2 border-t-2 dark:border-zinc-700 carousel-slide-title dark:text-gray-100 text-gray-900"
-                  >
-                    Band Buddy App
-                  </h2>
-                  <p
-                    class="mx-4 carousel-slide-description dark:text-gray-100 text-gray-700"
-                  >
-                    Built the front-end for "Band Buddy" in a team school
-                    project.
-                  </p>
-                  <div class="mx-4 mb-4 carousel-slide-buttons">
-                    <a
-                      href="#"
+                      href="PortfolioWebsite.html"
                       class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100"
                     >
                       Read
@@ -482,56 +387,150 @@
                   </div>
                 </div>
               </div>
+              <!-- Card 2 -->
+              <div
+                class="carousel-slide bg-transparent dark:border-zinc-700 rounded-none"
+              >
+                <div class="carousel-slide-content">
+                  <div class="relative mb-8">
+                    <img
+                      class="image1 w-full h-56 object-cover"
+                      src="public/Mock-up_BandBuddy.jpg"
+                      alt="Project 2"
+                    />
+                    <div
+                      class="absolute -bottom-6 left-0 right-0 flex justify-center"
+                    >
+                      <div class="flex gap-2 justify-center">
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=html"
+                          alt="HTML"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=css"
+                          alt="CSS"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=javascript"
+                          alt="JavaScript"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=figma"
+                          alt="Figma"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <h3
+                    class="text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
+                  >
+                    Band Buddy App
+                  </h3>
+                  <p
+                    class="carousel-slide-description dark:text-gray-100 text-gray-700"
+                  >
+                    Built the front-end for "Band Buddy" in a team school
+                    project.
+                  </p>
+                  <div class="carousel-slide-buttons">
+                    <a
+                      href="BandBuddy"
+                      class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100"
+                    >
+                      Read
+                      <svg
+                        width="25"
+                        height="25"
+                        viewBox="0 0 15 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://github.com/AmberVenema98/CMD-Block-Tech-Group-3"
+                      class="carousel-slide-button dark:fill-white fill-black bg-zinc-900 text-gray-100 border-2 dark:border-zinc-100"
+                    >
+                      Github
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 15 15"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               <!-- Card 3 -->
               <div
                 class="carousel-slide bg-transparent dark:border-zinc-700 rounded-none"
               >
                 <div class="carousel-slide-content">
                   <div class="relative mb-8">
-                    <!-- Achtergrond afbeelding -->
                     <img
-                      class="image1 p-4 rounded-3xl w-full"
-                      src="/public/home-mockup.png"
+                      class="image1 w-full h-56 object-cover"
+                      src="public/Mock-up_SP.jpg"
                       alt="Project 3"
                     />
-                    <!-- Container voor de kleinere afbeeldingen -->
-                    <div class="absolute -bottom-9 left-20 flex gap-2">
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=bootstrap"
-                        alt="Bootstrap"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=html"
-                        alt="HTML"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=css"
-                        alt="CSS"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=photoshop"
-                        alt="Photoshop"
-                      />
+                    <div
+                      class="absolute -bottom-6 left-0 right-0 flex justify-center"
+                    >
+                      <div class="flex gap-2 justify-center">
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=bootstrap"
+                          alt="Bootstrap"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=html"
+                          alt="HTML"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=css"
+                          alt="CSS"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=photoshop"
+                          alt="Photoshop"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <h2
-                    class="mx-4 pt-2 border-t-2 dark:border-zinc-700 carousel-slide-title dark:text-gray-100 text-gray-900"
+                  <h3
+                    class="text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
                   >
-                    S.P. Abbonneeservice
-                  </h2>
+                    Short Internship
+                  </h3>
                   <p
-                    class="mx-4 carousel-slide-description dark:text-gray-100 text-gray-700"
+                    class="carousel-slide-description dark:text-gray-100 text-gray-700"
                   >
                     Designed and built a new subscription page for two
                     magazines.
                   </p>
-                  <div class="mx-4 mb-4 carousel-slide-buttons">
+                  <div class="carousel-slide-buttons">
                     <a
-                      href="#"
+                      href="ShortInternship.html"
                       class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100"
                     >
                       Read
@@ -553,61 +552,54 @@
                   </div>
                 </div>
               </div>
+
               <!-- Card 4 -->
               <div
                 class="carousel-slide bg-transparent dark:border-zinc-700 rounded-none"
               >
                 <div class="carousel-slide-content">
                   <div class="relative mb-8">
-                    <!-- Achtergrond afbeelding -->
                     <img
-                      class="image1 p-4 rounded-3xl w-full"
-                      src="/public/home-mockup.png"
+                      class="image1 w-full h-56 object-cover"
+                      src="public/Mockup_WOW.jpg"
                       alt="Project 4"
                     />
-                    <!-- Container voor de kleinere afbeeldingen -->
-                    <div class="absolute -bottom-9 left-16 flex gap-2">
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=html"
-                        alt="HTML"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=css"
-                        alt="CSS"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=github"
-                        alt="GitHub"
-                      />
-                      <img
-                        class="sm:w-12 sm:h-12 mb-5 p-2 bg-zinc-900 rounded-full"
-                        src="https://skillicons.dev/icons?i=vscode"
-                        alt="VSCode"
-                      />
+                    <div
+                      class="absolute -bottom-6 left-0 right-0 flex justify-center"
+                    >
+                      <div class="flex gap-2 justify-center">
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=html"
+                          alt="HTML"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=css"
+                          alt="CSS"
+                        />
+                        <img
+                          class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                          src="https://skillicons.dev/icons?i=javascript"
+                          alt="JavaScript"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <h2
-                    class="mx-4 pt-2 border-t-2 dark:border-zinc-700 carousel-slide-title dark:text-gray-100 text-gray-900"
+                  <h3
+                    class="text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
                   >
                     Replicating website
-                  </h2>
+                  </h3>
                   <p
-                    class="mx-4 carousel-slide-description dark:text-gray-100 text-gray-700"
+                    class="carousel-slide-description dark:text-gray-100 text-gray-700"
                   >
                     Recreated a website using grid, flexbox, and inclusive
                     design.
                   </p>
-                  <div class="mx-4 mb-4 carousel-slide-buttons">
+                  <div class="carousel-slide-buttons">
                     <a
-                      href="https://ambervenema98.github.io/WebsiteNa-apen/"
+                      href="ReplicatingWebsite.html"
                       class="carousel-slide-button dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100"
                     >
                       Read
@@ -669,49 +661,49 @@
       </section>
 
       <!-- SKILLS -->
-      <section id="Skills" class="mt-28">
+      <section id="Skills" class="border-t-2 dark:border-zinc-700">
         <h2
-          class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
+          class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
         >
           Skills
         </h2>
         <!-- commented text-center for having the text at left instead of center-->
 
         <div class="sm:px-10 lg:px-20">
-          <div class="mb-28 grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div class="mb-28 px-20 grid grid-cols-1 xl:grid-cols-2 gap-6">
             <!-- FIRST SKILL BLOCK -->
             <div
               id="block"
               class="mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc hover:border-zinc dark:border-zinc-700 dark:hover:border-white"
             >
               <h3
-                class="dark:text-gray-100 text-2xl sm:text-4xl font-bold tracking-tight pl-6 pb-4 mt-4 border-b-2 dark:border-zinc-700"
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 dark:border-zinc-700"
               >
                 Languages and Frameworks
               </h3>
               <div class="flex flex-wrap gap-3 px-2 sm:px-5 sm:pt-6">
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-16 sm:h-16 mb-5"
                   src="https://skillicons.dev/icons?i=html"
                   alt="HTML"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-16 sm:h-16 mb-5"
                   src="https://skillicons.dev/icons?i=css"
                   alt="CSS"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-16 sm:h-16 mb-5"
                   src="https://skillicons.dev/icons?i=tailwind"
                   alt="Tailwind"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-16 sm:h-16 mb-5"
                   src="https://skillicons.dev/icons?i=javascript"
                   alt="JavaScript"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-16 sm:h-16 mb-5"
                   src="https://skillicons.dev/icons?i=bootstrap"
                   alt="Bootstrap"
                 />
@@ -723,49 +715,44 @@
               class="mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-700 hover:border-zinc dark:border-zinc-700 dark:hover:border-white"
             >
               <h3
-                class="dark:text-gray-100 text-2xl sm:text-4xl font-bold tracking-tight pl-6 pb-4 mt-4 border-b-2 dark:border-zinc-700"
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 dark:border-zinc-700"
               >
                 Tools
               </h3>
 
               <div class="flex flex-wrap gap-3 px-2 sm:px-5 sm:pt-6">
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=figma"
                   alt="Figma"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=github"
                   alt="GitHub"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=vscode"
                   alt="VSCode"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
-                  src="https://skillicons.dev/icons?i=blender"
-                  alt="Blender"
-                />
-                <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=unity"
                   alt="Unity"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=ps"
                   alt="Photoshop"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=xd"
                   alt="Adobe XD"
                 />
                 <img
-                  class="w-8 h-8 sm:w-16 sm:h-16 mb-5"
+                  class="lg:w-14 lg:h-14 sm:w-14 sm:h-14 mb-5"
                   src="https://skillicons.dev/icons?i=ai"
                   alt="Illustrator"
                 />
@@ -776,140 +763,136 @@
       </section>
 
       <!-- WORK EXPERIENCE -->
-      <section id="Work" class="relative border-y-2 dark:border-zinc-700">
+      <section id="Work" class="border-t-2 dark:border-zinc-700">
         <h2
-          class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight pt-28 sm:ml-10 lg:ml-20"
+          class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
         >
           Work Experience
         </h2>
         <div class="mt-10 grid place-items-center relative sm:px-10 lg:px-20">
           <!-- FIRST BOX -->
-          <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
-            <div
-              class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+          <div
+            class="experience-item relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent"
+          >
+            <p
+              class="font-bold absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2024
-            </div>
+            </p>
+
             <div>
               <div
                 class="p-6 shadow-lg sm:ml-0 md:mr-14 lg:mr-32 dark:border-zinc-700 border-2"
               >
-                <h3 class="text-xl font-bold text-white">Tzorg</h3>
-                <p class="text-white">Housekeeping</p>
-                <p class="text-sm text-gray-500">2024 - Today</p>
-                <p class="mt-2 text-white">Cleaning houses of ederly people</p>
+                <h3 class="text-3xl font-bold text-white">Tzorg</h3>
+                <h4 class="text-xl text-purple-700">Housekeeping</h4>
+                <h5 class="text-gray-500">2024 - Today</h5>
+                <p class="font-[600] mt-2 text-white">
+                  Cleaning houses of elderly people
+                </p>
               </div>
-              <div
-                class="w-4 h-4 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"
-              ></div>
             </div>
           </div>
 
           <!-- SECOND BOX -->
-          <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
+          <div
+            class="experience-item relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent"
+          >
             <div>
               <div
                 class="p-6 shadow-lg sm:ml-0 md:ml-20 lg:ml-32 dark:border-zinc-700 border-2"
               >
-                <h3 class="text-xl font-bold text-white">
+                <h3 class="text-3xl font-bold text-white">
                   S.P. Abbonneeservice
                 </h3>
-                <p class="text-white">Internship</p>
-                <p class="text-sm text-gray-500">Feb 2024 - Apr 2024</p>
+                <h4 class="text-xl text-purple-700">Internship</h4>
+                <h5 class="text-gray-500">Feb 2024 - Apr 2024</h5>
                 <p class="mt-2 text-white">
                   I redesigned client forms for their website using an online
                   design environment, coding them with Bootstrap, and presented
                   the new designs to gather feedback
                 </p>
               </div>
-              <div
-                class="w-4 h-4 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"
-              ></div>
             </div>
           </div>
 
           <!-- THIRD BOX -->
-          <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
-            <div
-              class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+          <div
+            class="experience-item relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent"
+          >
+            <p
+              class="font-bold absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2023
-            </div>
+            </p>
             <div>
               <div
                 class="p-6 shadow-lg sm:ml-0 md:mr-14 lg:mr-32 dark:border-zinc-700 border-2"
               >
-                <h3 class="text-xl font-bold text-white">Hulpstudent</h3>
-                <p class="text-white">Housekeeping</p>
-                <p class="text-sm text-gray-500">2022 - 2023</p>
+                <h3 class="text-3xl font-bold text-white">Hulpstudent</h3>
+                <h4 class="text-xl text-purple-700">Housekeeping</h4>
+                <h5 class="text-gray-500">2022 - 2023</h5>
                 <p class="mt-2 text-white">Cleaning houses of ederly people</p>
               </div>
-              <div
-                class="w-4 h-4 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"
-              ></div>
             </div>
           </div>
 
           <!-- FOURTH BOX -->
-          <div class="relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent">
-            <div
-              class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+          <div
+            class="experience-item relative mb-8 md:w-3/3 lg:w-4/5 bg-transparent"
+          >
+            <p
+              class="font-bold absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2022
-            </div>
+            </p>
             <div>
               <div
                 class="p-6 shadow-lg sm:ml-0 md:ml-20 lg:ml-32 dark:border-zinc-700 border-2"
               >
-                <h3 class="text-xl font-bold text-white">Vivazorggroep</h3>
-                <p class="text-white">Housekeeping</p>
-                <p class="text-sm text-gray-500">2020 - 2022</p>
+                <h3 class="text-3xl font-bold text-white">Vivazorggroep</h3>
+                <h4 class="text-xl text-purple-700">Housekeeping</h4>
+                <h5 class="text-gray-500">2020 - 2022</h5>
                 <p class="mt-2 text-white">Cleaning houses of ederly people</p>
               </div>
-              <div
-                class="w-4 h-4 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"
-              ></div>
             </div>
           </div>
 
           <!-- FIFTH BOX -->
-          <div class="relative mb-28 md:w-3/3 lg:w-4/5 bg-transparent">
-            <div
-              class="absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+          <div
+            class="experience-item relative mb-28 md:w-3/3 lg:w-4/5 bg-transparent"
+          >
+            <p
+              class="font-bold absolute top-0 left-4 md:left-1/2 transform -translate-y-1/2 md:-translate-x-8 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2019
-            </div>
+            </p>
             <div>
               <div
                 class="p-6 shadow-lg sm:mr-0 md:mr-14 lg:mr-32 dark:border-zinc-700 border-2"
               >
-                <h3 class="text-xl font-bold text-white">Pepperminds</h3>
-                <p class="text-white">Internship</p>
-                <p class="text-sm text-gray-500">Feb 2019 - Juli 2019</p>
+                <h3 class="text-3xl font-bold text-white">Pepperminds</h3>
+                <h4 class="text-xl text-purple-700">Internship</h4>
+                <h5 class="text-gray-500">Feb 2019 - July 2019</h5>
                 <p class="mt-2 text-white">
                   I designed posters for the company and their locations in
                   Belgium and Germany, communicated via email for assignments,
                   and created Instagram and Snapchat stories
                 </p>
               </div>
-              <div
-                class="w-4 h-4 bg-primary rounded-full absolute left-1/2 transform -translate-x-1/2"
-              ></div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Education -->
-      <section id="Work" class="relative border-y-2 dark:border-zinc-700">
+      <section id="Education" class="border-t-2 dark:border-zinc-700">
         <!-- Header Section -->
-        <div class="mb-8">
-          <h2
-            class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight pt-28 sm:ml-10 lg:ml-28"
-          >
-            Education
-          </h2>
-        </div>
+        <h2
+          class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-28"
+        >
+          Education
+        </h2>
 
         <!-- Education Cards -->
         <div
@@ -925,27 +908,23 @@
               >
                 <div class="p-6 flex-1">
                   <h3
-                    class="text-2xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
+                    class="text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
                   >
                     Amsterdam University of Applied Sciences (HvA)
                   </h3>
-                  <p class="text-lg text-blue-600">
+                  <h4 class="text-xl text-purple-700">
                     Communication and Multimedia Design
-                  </p>
-                  <p class="mb-2 text-gray-950 dark:text-gray-100">
+                  </h4>
+                  <h5 class="text-gray-500">2022-2024 | Persuing</h5>
+                  <p class="mt-2 text-white dark:text-gray-100">
                     Focusing on creating user-centered digital experiences
                     through multimedia design and strategic communication.
                   </p>
-                  <h4
-                    class="text-xl font-semibold text-gray-950 dark:text-gray-100"
-                  >
-                    2022-2024 | Persuing
-                  </h4>
                 </div>
                 <div>
                   <img
                     class="image1 w-96"
-                    src="/public/theo-thijssenhuis-hva-amsterdam.jpeg"
+                    src="/theo-thijssenhuis-hva-amsterdam.jpeg"
                     alt="Project 3"
                   />
                 </div>
@@ -961,25 +940,21 @@
               >
                 <div class="p-6 flex-1">
                   <h3
-                    class="text-2xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
+                    class="text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
                   >
                     Media College
                   </h3>
-                  <p class="text-lg text-blue-600">Graphic Design</p>
-                  <p class="mb-2 text-gray-950 dark:text-gray-100">
+                  <h4 class="text-xl text-purple-700">Graphic Design</h4>
+                  <h5 class="text-gray-500">2016-2020 | Completed</h5>
+                  <p class="mt-2 text-white dark:text-gray-100">
                     Developed strong foundation in visual design principles,
                     typography, and digital media creation.
                   </p>
-                  <h4
-                    class="text-xl font-semibold text-gray-950 dark:text-gray-100"
-                  >
-                    2016-2020 | Completed
-                  </h4>
                 </div>
                 <div>
                   <img
                     class="image1 w-96"
-                    src="/public/mediacollege-amsterdam.jpg"
+                    src="/mediacollege-amsterdam.jpg"
                     alt="Project 3"
                   />
                 </div>
@@ -990,9 +965,9 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="Contact" class="my-28 pt-8">
+      <section id="Contact" class="mb-10 border-t-2 dark:border-zinc-700">
         <h2
-          class="text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
+          class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight sm:ml-10 lg:ml-20"
         >
           Contact
         </h2>
@@ -1012,7 +987,9 @@
               <div class="flex flex-col md:flex-row">
                 <!-- FROM -->
                 <div class="md:w-1/2 mb-8 md:mb-0 p-4">
-                  <h3 class="text-3xl dark:text-gray-100 font-bold mb-4">
+                  <h3
+                    class="text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
+                  >
                     Contact Me
                   </h3>
                   <p class="dark:text-gray-100 mb-6">
@@ -1150,14 +1127,6 @@
                     >
                       Resume
                     </a>
-                    <div
-                      class="absolute opacity-0 -bottom-full rounded-md py-2 px-2 bg-black bg-opacity-70 left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity shadow-lg"
-                    >
-                      <a
-                        href="https://drive.google.com/file/d/1qB9Dv6gPTrGZ7ZQS7Pa7CqN66lsaS6FH/view?usp=drive_link"
-                        >Resume</a
-                      >
-                    </div>
                   </button>
                 </div>
               </div>
