@@ -40,7 +40,7 @@ html {
 }
 
 .project-box:hover {
-  transform: scale(1);
+  transform: scale(0.98);
 }
 
 .project-button-box {
@@ -59,18 +59,23 @@ html {
   transform: scale(1.1);
 }
 
-#block {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-  backface-visibility: hidden;
-  perspective: 1000px;
+.skill-box,
+.work-box,
+.education-box,
+.contact-box {
+  transform: scale(1);
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: transform, border-color;
+  transition-duration: 0.3s;
 }
 
-#block:hover,
-#block:hover h1,
-#block:hover p {
-  border-color: purple;
+.skill-box:hover,
+.work-box:hover,
+.education-box:hover,
+.contact-box:hover {
+  transform: scale(1.03);
 }
 
 .btn {
