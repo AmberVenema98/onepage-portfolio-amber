@@ -4,6 +4,10 @@ import Typed from 'typed.js';
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
+document.querySelector('.button1').addEventListener('click', function () {
+  window.location.href = '/';
+});
+
 // Change the icons inside the button based on previous settings
 if (
   localStorage.getItem('color-theme') === 'dark' ||
