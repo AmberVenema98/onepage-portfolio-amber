@@ -13,15 +13,15 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-color: 100, 100, 100;
   --text-color: 100, 100, 100;
 
   --main-font: 'DM Sans', sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .font-container {
@@ -30,27 +30,52 @@ html {
   font-style: normal;
 }
 
-#block {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-  backface-visibility: hidden;
-  perspective: 1000px;
+.project-box {
+  transform: scale(0.95);
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: transform, border-color;
+  transition-duration: 0.3s;
 }
 
-#block:hover,
-#block:hover h1,
-#block:hover p {
-  border-color: purple;
+.project-box:hover {
+  transform: scale(0.98);
 }
 
-@media (max-width: 768px) {
-  #menu {
-    top: 0;
-  }
-  body {
-    padding: 6px;
-  }
+.project-button-box {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-buttons {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.project-buttons:hover {
+  transform: scale(1.1);
+}
+
+.skill-box,
+.work-box,
+.education-box,
+.contact-box {
+  transform: scale(1);
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: transform, border-color;
+  transition-duration: 0.3s;
+}
+
+.skill-box:hover,
+.work-box:hover,
+.education-box:hover,
+.contact-box:hover {
+  transform: scale(1.03);
 }
 
 .btn {
@@ -218,15 +243,4 @@ html {
 .hover-text1,
 .hover-text2 {
   position: absolute;
-}
-
-.image1 {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.image2 {
-  position: absolute;
-  top: 270px;
-  left: 40px;
 }

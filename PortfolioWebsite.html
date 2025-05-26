@@ -38,6 +38,36 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
+
+      // JavaScript for toggle menu
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('toggle-menu-button');
+        const menu = document.getElementById('navbar-menu');
+
+        menuButton.addEventListener('click', function () {
+          menu.classList.toggle('hidden');
+        });
+
+        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
+        const menuLinks = document.querySelectorAll('#navbar-menu a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            if (window.innerWidth < 1024) {
+              // Sluit alleen op mobiel en iPad
+              menu.classList.add('hidden');
+            }
+          });
+        });
+
+        // Voeg window resize handler toe voor betere iPad ondersteuning
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1024) {
+            menu.classList.remove('hidden');
+          } else {
+            menu.classList.add('hidden');
+          }
+        });
+      });
     </script>
   </head>
 
@@ -46,11 +76,13 @@
   >
     <div id="body" class="font-container bg-scroll">
       <header
-        class="border-b-2 dark:border-zinc-700 sticky top-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-30 bg-opacity-30"
+        class="border-b-2 dark:border-zinc-700 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-90 bg-opacity-90 w-full"
       >
-        <nav class="text-white flex justify-between items-center px-0">
+        <nav
+          class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
+        >
           <!-- LOGO -->
-          <a href="index.html" class="flex gap-6 pl-4 sm:pl-10 lg:pl-20">
+          <div class="flex gap-6 py-4">
             <button data-text="Awesome" class="button1 dark:block hidden">
               <span class="actual-text">&nbsp;Amber&nbsp;</span>
               <span class="hover-text1" aria-hidden="true"
@@ -63,49 +95,84 @@
                 >&nbsp;Amber&nbsp;</span
               >
             </button>
-          </a>
+          </div>
+
+          <!-- HAMBURGER MENU BUTTON -->
+          <div class="flex items-center lg:hidden order-3">
+            <button
+              id="toggle-menu-button"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+
           <!-- MENU -->
           <div
-            id="menu"
-            class="hidden md:flex duration-300 md:static md:min-h-fit lg:-ml-36 absolute min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex-col md:flex-row md:items-center md:px-4 md:py-3 border-l-2 border-r-2 dark:border-zinc-700"
+            id="navbar-menu"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
-              class="flex flex-col md:flex-row gap-6 font-mono md:items-center text-3xl align-middle justify-center md:bg-transparent px-6 rounded-full font-medium max-w-max"
+              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
             >
-              <a
-                href="/"
-                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Home</a
-              >
-              <a
-                href="/#Projects"
-                class="text-2xl font-sans p-3 align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Projects</a
-              >
-              <a
-                href="/#Skills"
-                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Skills</a
-              >
-              <a
-                href="/#Work"
-                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Work</a
-              >
-              <a
-                href="/#Education"
-                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Education</a
-              >
-              <a
-                href="/#Contact"
-                class="text-2xl p-3 font-sans align-middle font-bold leading-6 hover:white hover:bg-zinc-300 dark:hover:bg-zinc-800 cursor-pointer text-gray-800 dark:text-gray-200"
-                >Contact</a
-              >
+              <li>
+                <a
+                  href="/Projects"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Skills"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Work"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  >Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Education"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Contact"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </div>
+
           <!-- DARK MODE -->
-          <div class="flex items-center gap-6 pr-4 sm:pr-10 lg:pr-20">
+          <div class="flex items-center gap-6 lg:order-3">
             <button
               name="light-dark-mode-toggle"
               id="theme-toggle"
@@ -137,11 +204,6 @@
                 ></path>
               </svg>
             </button>
-            <ion-icon
-              id="toggle-menu-button"
-              name="menu"
-              class="w-7 h-7 dark:bg-zinc-800 p-2.5 rounded-lg cursor-pointer md:hidden text-gray-500 dark:text-gray-400 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-300 dark:hover:bg-zinc-600"
-            ></ion-icon>
           </div>
         </nav>
       </header>
@@ -149,13 +211,12 @@
       <div class="flex min-h-screen">
         <!-- Fixed Sidebar -->
         <aside
-          class="fixed w-64 h-screen border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
+          class="fixed w-64 h-screen pt-24 border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
         >
           <!-- Current Project Info -->
           <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
             Portfolio Website
           </h1>
-
           <!-- Client -->
           <div class="flex items-center text-gray-600 mb-4">
             <svg
@@ -179,7 +240,6 @@
             </svg>
             Amber Venema
           </div>
-
           <!-- Date -->
           <div class="flex items-center text-gray-600 mb-4">
             <svg
@@ -197,7 +257,6 @@
             </svg>
             February 2025
           </div>
-
           <!-- Technologies -->
           <div class="flex items-center text-gray-600 mb-8">
             <svg
@@ -215,7 +274,6 @@
             </svg>
             Tailwind, JavaScript
           </div>
-
           <!-- Navigation -->
           <nav class="mb-8 space-y-4">
             <a
@@ -236,7 +294,6 @@
               >Reflections</a
             >
           </nav>
-
           <!-- Project Navigation -->
           <div>
             <h2
@@ -267,32 +324,33 @@
         <!-- Rest of the content remains the same -->
         <main class="ml-64 flex-1">
           <!-- Hero Image -->
-          <div class="relative w-full h-96 bg-gray-200">
+          <div class="relative w-full h-auto bg-gray-200">
             <img
-              class="image1 w-full h-96 object-cover"
-              src="public/home-mockup.png"
+              class="image1 w-full h-auto object-cover"
+              src="/public/Overlay_Portfolio.jpg"
+              alt="Log in screen and Account of the Musician matching app BandBuddy"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
               <div class="flex gap-2 justify-center">
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=html"
-                  alt="HTML"
+                  alt="HTML icon"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=css"
-                  alt="CSS"
+                  alt="CSS icon"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=tailwind"
-                  alt="Tailwind"
+                  alt="Tailwind icon"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=javascript"
-                  alt="JavaScript"
+                  alt="JavaScript icon"
                 />
               </div>
             </div>
@@ -301,8 +359,12 @@
           <!-- Content -->
           <div class="max-w-4xl mx-auto px-8 py-12">
             <p class="dark:text-gray-100 text-gray-700 mb-16">
-              Project introduction and overview text goes here, explaining the
-              context, goals, and main challenges of the project.
+              This project is a personal portfolio website, created to showcase
+              my design and development skills. I started by forking an existing
+              open-source template and completely reshaped it into my own
+              minimal, editorial-style portfolio. The goal was to practice
+              Tailwind CSS, improve code structure, and present my work in a
+              professional way.
             </p>
 
             <!-- Development Progress -->
@@ -310,12 +372,28 @@
               <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Development Progress
               </h2>
-              <div class="w-full h-96 bg-gray-200 mb-8"></div>
+              <div class="w-full h-96 bg-gray-200 mb-8">
+                <img
+                  class="image1 w-full h-auto object-cover"
+                  src="/public/Portfolio-InitialDesign.jpg"
+                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                />
+              </div>
               <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
                 Initial Design
               </h3>
               <p class="dark:text-gray-100 text-gray-700">
-                Description of the first phase.
+                I used a template from GitHub as a base
+                <a
+                  href="https://github.com/Shivaraj-Kolekar/portfolio"
+                  class="text-purple-700"
+                  >(GitHub project by Shivaraj-Kolekar)</a
+                >, but I wanted to make the website truly my own. The initial
+                idea was to create a portfolio that felt structured, clean and
+                visually balanced. I was especially drawn to layouts with clear
+                lines and a block-based structure. Something that feels both
+                sharp and artistic. I fell in love with the style so i wanted to
+                create my own.
               </p>
             </section>
 
@@ -325,7 +403,12 @@
                 Development
               </h2>
               <p class="dark:text-gray-100 text-gray-700">
-                Details about the development process.
+                During development, I reorganized the code structure into clear,
+                separate folders for components, assets, and pages. I also
+                rewrote the styling using Tailwind CSS, which I learned
+                specifically for this project. Thanks to my knowledge of HTML
+                and CSS, I picked it up quickly and was able to build responsive
+                layouts efficiently.
               </p>
             </section>
 
@@ -334,8 +417,20 @@
               <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
                 Results
               </h2>
+              <div class="w-full h-80 bg-gray-200 mb-14">
+                <img
+                  class="image1 w-full h-auto object-cover"
+                  src="/public/Portfolio-Results.jpg"
+                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                />
+              </div>
               <p class="dark:text-gray-100 text-gray-700">
-                Key outcomes and achievements from the project.
+                The final website is clean and structured. Its block-based
+                layout gives it an editorial and artistic feel that matches my
+                personal style. The design focuses on strong visual lines and
+                clear typography. This project not only showcases my technical
+                skills but also reflects my eye for design and ability to turn a
+                template into something personal and professional.
               </p>
             </section>
 
@@ -345,7 +440,12 @@
                 Reflections
               </h2>
               <p class="dark:text-gray-100 text-gray-700">
-                Personal insights and lessons learned.
+                This project helped me improve both my frontend development and
+                design thinking. I learned to work more efficiently with
+                Tailwind, organize a project properly and develop a consistent
+                visual style. In future updates I plan to make the website
+                responsive and add more interactive elements to make the site
+                even more engaging.
               </p>
             </section>
           </div>
