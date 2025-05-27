@@ -3,30 +3,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-
-    <title>Amber's Portfolio</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="src/js/main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <title>Amber's Portfolio</title>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -38,36 +30,6 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
-
-      // JavaScript for toggle menu
-      document.addEventListener('DOMContentLoaded', function () {
-        const menuButton = document.getElementById('toggle-menu-button');
-        const menu = document.getElementById('navbar-menu');
-
-        menuButton.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
-
-        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
-        const menuLinks = document.querySelectorAll('#navbar-menu a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            if (window.innerWidth < 1024) {
-              // Sluit alleen op mobiel en iPad
-              menu.classList.add('hidden');
-            }
-          });
-        });
-
-        // Voeg window resize handler toe voor betere iPad ondersteuning
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 1024) {
-            menu.classList.remove('hidden');
-          } else {
-            menu.classList.add('hidden');
-          }
-        });
-      });
     </script>
   </head>
 
@@ -429,23 +391,35 @@
                 Results
               </h2>
               <div class="w-full h-96 bg-gray-200 mb-8"></div>
-              <p class="dark:text-gray-100 text-gray-700">
-                Due to time constraints, we were unable to implement certain
-                features, such as the chat functionality and some states like
-                404 and completed. Additionally, we couldn't fully code dark
-                mode, but we did create a sketch to visualize how it would look.
-                Despite these limitations, we focused on delivering a working
-                app with the essential features.
-                <br /><br />
-                BandBuddy now allows musicians to create profiles, set
-                preferences, and find other musicians nearby. The "For You" page
-                lets users swipe through profiles and connect with others. You
-                can also update your profile, including adding photos and
-                videos, and these changes are directly saved to the database.
-                Users have the option to delete their profiles as well. The
-                design is clean, simple, and consistent, providing a smooth user
-                experience.
+              <p class="dark:text-gray-100 text-gray-700 mb-4">
+                Due to time constraints, we couldn’t implement some features
+                like chat, 404/completed states, and a fully working dark mode
+                (though we created a sketch for it). The core features are live:
               </p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li class="dark:text-gray-100 text-gray-700">
+                  Musicians can create a profile, set preferences, and find
+                  others nearby
+                </li>
+                <li class="dark:text-gray-100 text-gray-700">
+                  “For You” page enables swiping through profiles and connecting
+                  with others
+                </li>
+                <li class="dark:text-gray-100 text-gray-700">
+                  Users can upload photos/videos and edit their profile — all
+                  saved directly to the database
+                </li>
+                <li class="dark:text-gray-100 text-gray-700">
+                  Option to delete the profile is included
+                </li>
+                <li class="dark:text-gray-100 text-gray-700">
+                  Simple, clean, and consistent UI for a smooth user experience
+                </li>
+                <li class="dark:text-gray-100 text-gray-700">
+                  Features not implemented due to time: chat functionality,
+                  404/completed states, full dark mode (only sketched)
+                </li>
+              </ul>
             </section>
 
             <!-- Reflections -->
@@ -454,22 +428,15 @@
                 Reflections
               </h2>
               <p class="dark:text-gray-100 text-gray-700">
-                This project taught me a lot about working within time
-                constraints and prioritizing features. Despite some features
-                being left out, the app is still functional and meets its main
-                goals. It was a valuable experience in full-stack development,
-                from front-end design to back-end functionality. In the process,
-                I also gained a solid understanding of how to create and
-                manipulate a database, improving my coding skills overall.
-                <br /><br />
-                We worked with the assumption that we already knew front-end
-                development, so there was no direct guidance in the design
-                process. However, I quickly found strategies that worked, like
-                conducting competitor research, creating a persona,
-                moodboard/styleboard and wireflow. These steps helped streamline
-                the design and made the project smoother. In future projects,
-                I’ll focus more on time management to ensure all features are
-                fully implemented and polished.
+                This project taught me to prioritize features under tight
+                deadlines. While some functions were left out, the app still
+                achieves its main goal and is fully usable. I gained hands-on
+                experience with full-stack development, especially in database
+                integration. Design decisions were mostly self-directed. I
+                applied strategies like competitor research, building a persona,
+                and creating a moodboard, styleboard, and wireflow. These steps
+                helped speed up the process. In future projects, I aim to
+                improve time management to deliver a more complete product.
               </p>
             </section>
           </div>

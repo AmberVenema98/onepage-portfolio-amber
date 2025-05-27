@@ -2,19 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Amber's Portfolio</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script>
+      // Force Tailwind to scan for dark mode classes
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          darkMode: 'class',
+        };
+      }
+    </script>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -305,7 +318,7 @@
                   <!-- Achtergrond afbeelding -->
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Overlay_Portfolio.jpg"
+                    src="/public/Overlay_Portfolio.jpg"
                     alt="Portfolio website full of projects and information about me"
                   />
                   <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
@@ -397,7 +410,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mock-up_BandBuddy.jpg"
+                    src="/public/Mock-up_BandBuddy.jpg"
                     alt="Log in screen and Account of the Musician matching app BandBuddy"
                   />
                   <div
@@ -488,7 +501,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mock-up_SP.jpg"
+                    src="/public/Mock-up_SP.jpg"
                     alt="Subscription and form page of the OOR website displayed on a computer, tablet and mobile"
                   />
                   <div
@@ -561,7 +574,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mockup_WOW.jpg"
+                    src="/public/Mockup_WOW.jpg"
                     alt="Home screen of the World of Warcraft replica website displayed on a computer and mobile"
                   />
                   <div

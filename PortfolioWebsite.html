@@ -3,30 +3,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-
-    <title>Amber's Portfolio</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="src/js/main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <title>Amber's Portfolio</title>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -38,36 +30,6 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
-
-      // JavaScript for toggle menu
-      document.addEventListener('DOMContentLoaded', function () {
-        const menuButton = document.getElementById('toggle-menu-button');
-        const menu = document.getElementById('navbar-menu');
-
-        menuButton.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
-
-        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
-        const menuLinks = document.querySelectorAll('#navbar-menu a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            if (window.innerWidth < 1024) {
-              // Sluit alleen op mobiel en iPad
-              menu.classList.add('hidden');
-            }
-          });
-        });
-
-        // Voeg window resize handler toe voor betere iPad ondersteuning
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 1024) {
-            menu.classList.remove('hidden');
-          } else {
-            menu.classList.add('hidden');
-          }
-        });
-      });
     </script>
   </head>
 
