@@ -18,7 +18,17 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Amber's Portfolio</title>
+
+    <script>
+      // Force Tailwind to scan for dark mode classes
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          darkMode: 'class',
+        };
+      }
+    </script>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -288,7 +298,7 @@
             <img
               class="image1 w-full h-auto object-cover"
               src="/public/Overlay_Portfolio.jpg"
-              alt="Log in screen and Account of the Musician matching app BandBuddy"
+              alt="Homescreen mockup of my portfolio website"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
               <div class="flex gap-2 justify-center">
@@ -340,7 +350,7 @@
                 <img
                   class="image1 w-full h-auto object-cover"
                   src="/public/Portfolio-InitialDesign.jpg"
-                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                  alt="Template website with my own code"
                 />
               </div>
               <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
@@ -385,7 +395,7 @@
                 <img
                   class="image1 w-full h-auto object-cover"
                   src="/public/Portfolio-Results.jpg"
-                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                  alt="Result of my portfolio website"
                 />
               </div>
               <p class="dark:text-gray-100 text-gray-700">
