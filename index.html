@@ -20,14 +20,18 @@
 
     <title>Amber's Portfolio</title>
 
-    <script>
-      // Force Tailwind to scan for dark mode classes
-      if (typeof tailwind !== 'undefined') {
-        tailwind.config = {
-          darkMode: 'class',
-        };
-      }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script type="module" src="/src/js/main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -39,6 +43,36 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
+
+      // JavaScript for toggle menu
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('toggle-menu-button');
+        const menu = document.getElementById('navbar-menu');
+
+        menuButton.addEventListener('click', function () {
+          menu.classList.toggle('hidden');
+        });
+
+        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
+        const menuLinks = document.querySelectorAll('#navbar-menu a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            if (window.innerWidth < 1024) {
+              // Sluit alleen op mobiel en iPad
+              menu.classList.add('hidden');
+            }
+          });
+        });
+
+        // Voeg window resize handler toe voor betere iPad ondersteuning
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1024) {
+            menu.classList.remove('hidden');
+          } else {
+            menu.classList.add('hidden');
+          }
+        });
+      });
     </script>
   </head>
 
