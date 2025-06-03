@@ -16,7 +16,7 @@
     <title>Amber's Portfolio</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="src/js/main.js" defer></script>
+    <script type="module" src="/src/js/main.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script
@@ -128,42 +128,42 @@
           <!-- MENU -->
           <div
             id="navbar-menu"
-            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
               class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
             >
               <li>
                 <a
-                  href="/Projects"
+                  href="/#Projects"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
-                  href="/Skills"
+                  href="/#Skills"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
-                  href="/Work"
+                  href="/#Work"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Work</a
                 >
               </li>
               <li>
                 <a
-                  href="/Education"
+                  href="/#Education"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Education</a
                 >
               </li>
               <li>
                 <a
-                  href="/Contact"
+                  href="/#Contact"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Contact</a
                 >
@@ -281,7 +281,7 @@
           <!-- View Live Link -->
           <a
             href="https://ambervenema98.github.io/WebsiteNa-apen/"
-            class="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
+            class="inline-flex items-center text-purple-600 hover:text-purple-800 mb-8"
           >
             <svg
               class="w-5 h-5 mr-2"
@@ -301,47 +301,45 @@
 
           <!-- Navigation -->
           <nav class="mb-8 space-y-4">
+            <p class="block text-white font-medium">Overview</p>
             <a
-              href="#overview"
-              class="block text-blue-600 font-medium hover:text-blue-700"
+              href="#progress"
+              class="block text-gray-600 hover:text-purple-700"
+              >Development Progress</a
             >
-              Overview →
-            </a>
-            <a href="#progress" class="block text-gray-600 hover:text-gray-900"
-              >Progress</a
-            >
-            <a href="#results" class="block text-gray-600 hover:text-gray-900"
+            <a href="#results" class="block text-gray-600 hover:text-purple-700"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block text-gray-600 hover:text-gray-900"
+              class="block text-gray-600 hover:text-purple-700"
               >Reflections</a
             >
           </nav>
 
           <!-- Project Navigation -->
           <div>
-            <h2
-              class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4"
-            >
+            <h2 class="font-medium text-white tracking-wide mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
-              <a href="PortfolioWebsite.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">Portfolio Website</span>
-                </div>
+              <a
+                href="PortfolioWebsite.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                Portfolio Website
               </a>
-              <a href="BandBuddy.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">BandBuddy</span>
-                </div>
+              <a
+                href="BandBuddy.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                BandBuddy
               </a>
-              <a href="ShortInternship.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">Short Internship</span>
-                </div>
+              <a
+                href="ShortInternship.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                Short Internship
               </a>
             </div>
           </div>
@@ -381,11 +379,14 @@
           <div class="max-w-4xl mx-auto px-8 py-12">
             <p class="dark:text-gray-100 text-gray-700 mb-16">
               For a school assignment, I was challenged to recreate two pages in
-              10 weeks of an existing website using only vanilla HTML, CSS, and
-              JavaScript. I chose to recreate the World of Warcraft website,
-              specifically the Dragonflight page and the homepage, as they are
-              visually appealing and offer a good mix of content. The goal of
-              this project was to improve my skills in responsive web design,
+              <strong class="text-purple-700">10 weeks</strong> of an existing
+              website using only vanilla HTML, CSS, and JavaScript. I chose to
+              <strong class="text-purple-700">recreate</strong> the World of
+              Warcraft website, specifically the Dragonflight page and the
+              homepage, as they are visually appealing and offer a good mix of
+              content. The <strong class="text-purple-700">goal</strong> of this
+              project was to improve my skills in
+              <strong class="text-purple-700">responsive</strong> web design,
               accessibility, and JavaScript.
             </p>
 
@@ -394,23 +395,37 @@
               <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Development Progress
               </h2>
-              <div class="w-full h-96 bg-gray-200 mb-8"></div>
-              <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+              <div class="w-full h-80 bg-gray-200 mb-8">
+                <img
+                  class="image1 w-full h-auto object-cover"
+                  src="/public/WoW-InitialDesign.jpg"
+                  alt="Analysis of the code of the replica website"
+                />
+              </div>
+              <h3 class="text-xl font-bold mt-16 dark:text-gray-100">
                 Initial Design
               </h3>
               <p class="dark:text-gray-100 text-gray-700">
                 I started by analyzing the original website to understand its
                 structure and visual style. Based on this, I created a
-                semantically correct HTML structure. For the visual styling, I
-                used CSS and applied custom properties to maintain consistent
-                colors and styling throughout the project. This approach ensured
-                the website looked professional and aligned with the original
-                design.
+                semantically correct HTML structure.
+                <br /><br />
+                For the visual styling, I used CSS and applied custom properties
+                to maintain consistent colors and styling throughout the
+                project. This approach ensured the website looked professional
+                and aligned with the original design.
               </p>
             </section>
 
             <!-- Development -->
             <section class="mb-16">
+              <div class="w-full h-80 bg-gray-200 mb-14">
+                <img
+                  class="image1 w-full h-auto object-cover"
+                  src="/public/WoW-Development.jpg"
+                  alt="First design of the replica website with code"
+                />
+              </div>
               <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
                 Development
               </h2>
@@ -418,14 +433,18 @@
                 The development phase focused heavily on responsiveness and
                 accessibility. I used a mobile-first approach to ensure the
                 website worked well on various devices, from an iPhone SE to
-                larger desktop screens. For the structure of the pages, I used a
-                combination of Flexbox and Grid. These techniques allowed me to
-                create a clear and flexible layout. By adapting the rows in the
-                code for smaller screens, I ensured that the content was neatly
-                rearranged on smaller devices. Additionally, I implemented a
-                micro-interaction on the Dragonflight page using JavaScript.
-                This gave me the opportunity to practice working with
-                interactive elements and further improve my JavaScript skills.
+                larger desktop screens.
+                <br /><br />
+                For the structure of the pages, I used a combination of Flexbox
+                and Grid. These techniques allowed me to create a clear and
+                flexible layout. By adapting the rows in the code for smaller
+                screens, I ensured that the content was neatly rearranged on
+                smaller devices.
+                <br /><br />
+                Additionally, I implemented a micro-interaction on the
+                Dragonflight page using JavaScript. This gave me the opportunity
+                to practice working with interactive elements and further
+                improve my JavaScript skills.
               </p>
             </section>
 
@@ -434,13 +453,28 @@
               <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
                 Results
               </h2>
+              <div class="w-full h-80 bg-gray-200 mb-8">
+                <img
+                  class="image1 w-full h-auto object-cover"
+                  src="/public/Wow-Results.jpg"
+                  alt="Results of homepage and dlc page of the replica website"
+                />
+              </div>
               <p class="dark:text-gray-100 text-gray-700">
-                The final result is a responsive and accessible website that
-                replicates the look and feel of the original. I created two
-                pages: a homepage and a DLC page (Dragonflight). Both pages are
-                designed to be visually appealing, user-friendly, and
-                well-structured.
+                This contains the website:
               </p>
+              <ul class="list-disc pl-5 dark:text-gray-100 text-gray-700">
+                <li>Responsive and accessible</li>
+                <li>
+                  Includes two pages:
+                  <ul class="list-disc pl-5">
+                    <li>Homepage</li>
+                    <li>DLC page (Dragonflight)</li>
+                  </ul>
+                </li>
+                <li>Visually appealing and user-friendly</li>
+                <li>Well-structured layout</li>
+              </ul>
             </section>
 
             <!-- Reflections -->
@@ -453,12 +487,13 @@
                 responsive design and my ability to implement JavaScript for
                 interactive elements. This project taught me a lot, including
                 the importance of semantic HTML, design consistency, and
-                focusing on accessibility. While I am happy with the result, I
-                see areas for improvement, such as refining my CSS layouts for
-                larger screens and experimenting with more complex JavaScript
-                interactions. Nevertheless, this project has laid a strong
-                foundation for my continued development in front-end web
-                development.
+                focusing on accessibility.
+                <br /><br />
+                While I am happy with the result, I see areas for improvement,
+                such as refining my CSS layouts for larger screens and
+                experimenting with more complex JavaScript interactions.
+                Nevertheless, this project has laid a strong foundation for my
+                continued development in front-end web development.
               </p>
             </section>
           </div>

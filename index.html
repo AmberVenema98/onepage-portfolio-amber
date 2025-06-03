@@ -2,19 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Amber's Portfolio</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script type="module" src="/src/js/main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
@@ -26,6 +43,36 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
+
+      // JavaScript for toggle menu
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('toggle-menu-button');
+        const menu = document.getElementById('navbar-menu');
+
+        menuButton.addEventListener('click', function () {
+          menu.classList.toggle('hidden');
+        });
+
+        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
+        const menuLinks = document.querySelectorAll('#navbar-menu a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            if (window.innerWidth < 1024) {
+              // Sluit alleen op mobiel en iPad
+              menu.classList.add('hidden');
+            }
+          });
+        });
+
+        // Voeg window resize handler toe voor betere iPad ondersteuning
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1024) {
+            menu.classList.remove('hidden');
+          } else {
+            menu.classList.add('hidden');
+          }
+        });
+      });
     </script>
   </head>
 
@@ -86,7 +133,7 @@
           <!-- MENU -->
           <div
             id="navbar-menu"
-            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
               class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
@@ -305,7 +352,7 @@
                   <!-- Achtergrond afbeelding -->
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Overlay_Portfolio.jpg"
+                    src="/public/Overlay_Portfolio.jpg"
                     alt="Portfolio website full of projects and information about me"
                   />
                   <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
@@ -397,7 +444,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mock-up_BandBuddy.jpg"
+                    src="/public/Mock-up_BandBuddy.jpg"
                     alt="Log in screen and Account of the Musician matching app BandBuddy"
                   />
                   <div
@@ -488,7 +535,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mock-up_SP.jpg"
+                    src="/public/Mock-up_SP.jpg"
                     alt="Subscription and form page of the OOR website displayed on a computer, tablet and mobile"
                   />
                   <div
@@ -561,7 +608,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/Mockup_WOW.jpg"
+                    src="/public/Mockup_WOW.jpg"
                     alt="Home screen of the World of Warcraft replica website displayed on a computer and mobile"
                   />
                   <div

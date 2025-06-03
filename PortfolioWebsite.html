@@ -3,20 +3,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Amber's Portfolio</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="src/js/main.js" defer></script>
+    <script type="module" src="/src/js/main.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script
@@ -128,42 +134,42 @@
           <!-- MENU -->
           <div
             id="navbar-menu"
-            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
               class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
             >
               <li>
                 <a
-                  href="/Projects"
+                  href="/#Projects"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
-                  href="/Skills"
+                  href="/#Skills"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
-                  href="/Work"
+                  href="/#Work"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Work</a
                 >
               </li>
               <li>
                 <a
-                  href="/Education"
+                  href="/#Education"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Education</a
                 >
               </li>
               <li>
                 <a
-                  href="/Contact"
+                  href="/#Contact"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Contact</a
                 >
@@ -214,7 +220,7 @@
           class="fixed w-64 h-screen pt-24 border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
         >
           <!-- Current Project Info -->
-          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
+          <h1 class="text-2xl font-bold mb-6 dark:text-white">
             Portfolio Website
           </h1>
           <!-- Client -->
@@ -276,46 +282,44 @@
           </div>
           <!-- Navigation -->
           <nav class="mb-8 space-y-4">
+            <p class="block text-white font-medium">Overview</p>
             <a
-              href="#overview"
-              class="block text-blue-600 font-medium hover:text-blue-700"
+              href="#progress"
+              class="block text-gray-600 hover:text-purple-700"
+              >Development Progress</a
             >
-              Overview →
-            </a>
-            <a href="#progress" class="block text-gray-600 hover:text-gray-900"
-              >Progress</a
-            >
-            <a href="#results" class="block text-gray-600 hover:text-gray-900"
+            <a href="#results" class="block text-gray-600 hover:text-purple-700"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block text-gray-600 hover:text-gray-900"
+              class="block text-gray-600 hover:text-purple-700"
               >Reflections</a
             >
           </nav>
           <!-- Project Navigation -->
           <div>
-            <h2
-              class="text-sm font-medium text-gray-400 uppercase tracking-wide mb-4"
-            >
+            <h2 class="font-medium text-white tracking-wide mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
-              <a href="BandBuddy.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">BandBuddy</span>
-                </div>
+              <a
+                href="BandBuddy.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                BandBuddy
               </a>
-              <a href="ShortInternship.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">Short Internship</span>
-                </div>
+              <a
+                href="ShortInternship.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                Short Internship
               </a>
-              <a href="ReplicatingWebsite.html" class="block group">
-                <div class="text-gray-600 group-hover:text-gray-900">
-                  <span class="font-medium">Replicating Website</span>
-                </div>
+              <a
+                href="ReplicatingWebsite.html"
+                class="block text-gray-600 hover:text-purple-700"
+              >
+                Replicating Website
               </a>
             </div>
           </div>
@@ -328,7 +332,7 @@
             <img
               class="image1 w-full h-auto object-cover"
               src="/public/Overlay_Portfolio.jpg"
-              alt="Log in screen and Account of the Musician matching app BandBuddy"
+              alt="Homescreen mockup of my portfolio website"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
               <div class="flex gap-2 justify-center">
@@ -359,16 +363,20 @@
           <!-- Content -->
           <div class="max-w-4xl mx-auto px-8 py-12">
             <p class="dark:text-gray-100 text-gray-700 mb-16">
-              This project is a personal portfolio website, created to showcase
-              my design and development skills. I started by forking an existing
+              This project is a
+              <strong class="text-purple-700">personal</strong> portfolio
+              website, created to showcase my
+              <strong class="text-purple-700">design and development</strong>
+              skills. I started by
+              <strong class="text-purple-700">forking</strong> an existing
               open-source template and completely reshaped it into my own
               minimal, editorial-style portfolio. The goal was to practice
-              Tailwind CSS, improve code structure, and present my work in a
-              professional way.
+              <strong class="text-purple-700">Tailwind CSS</strong>, improve
+              code structure, and present my work in a professional way.
             </p>
 
             <!-- Development Progress -->
-            <section id="progress" class="mb-16">
+            <section id="progress" class="mb-8">
               <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Development Progress
               </h2>
@@ -376,7 +384,7 @@
                 <img
                   class="image1 w-full h-auto object-cover"
                   src="/public/Portfolio-InitialDesign.jpg"
-                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                  alt="Template website with my own code"
                 />
               </div>
               <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
@@ -421,7 +429,7 @@
                 <img
                   class="image1 w-full h-auto object-cover"
                   src="/public/Portfolio-Results.jpg"
-                  alt="Log in screen and Account of the Musician matching app BandBuddy"
+                  alt="Result of my portfolio website"
                 />
               </div>
               <p class="dark:text-gray-100 text-gray-700">
