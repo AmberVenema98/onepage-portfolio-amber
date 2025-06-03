@@ -4,26 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- path to CSS -->
     <link rel="stylesheet" href="./src/css/style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Amber's Portfolio</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="/src/js/main.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind if needed (e.g., for dark mode variant) -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // This is crucial for Tailwind dark mode
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+
+    <!-- Typed.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- Web3Forms (if you use it) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- Ionicons (load ONCE) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -32,8 +44,14 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- Your main.js - relative path, loaded with defer -->
+    <!-- Make sure this path is correct relative to index.html -->
+    <script type="module" src="./src/js/main.js" defer></script>
+
     <script>
       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      // This part initializes the theme BEFORE the page fully loads.
       if (
         localStorage.getItem('color-theme') === 'dark' ||
         (!('color-theme' in localStorage) &&
@@ -45,33 +63,45 @@
       }
 
       // JavaScript for toggle menu
+      // It's good to wrap this in DOMContentLoaded as it manipulates elements that need to exist
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
         const menu = document.getElementById('navbar-menu');
 
-        menuButton.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
+        if (menuButton && menu) {
+          // Check if elements exist
+          menuButton.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+          });
 
-        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
-        const menuLinks = document.querySelectorAll('#navbar-menu a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            if (window.innerWidth < 1024) {
-              // Sluit alleen op mobiel en iPad
-              menu.classList.add('hidden');
+          const menuLinks = document.querySelectorAll('#navbar-menu a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+              if (window.innerWidth < 1024) {
+                menu.classList.add('hidden');
+              }
+            });
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1024) {
+              menu.classList.remove('hidden');
+            } else {
+              // Only add hidden if it's not already part of the toggled state
+              // Or, more simply, if the menu button isn't what hid it.
+              // For simplicity, we'll assume if it's small, it should be hidden unless explicitly opened.
+              // This might need refinement based on exact desired behavior on resize.
+              if (
+                !menu.classList.contains('hidden') &&
+                !menuButton.getAttribute('aria-expanded')
+              ) {
+                // menu.classList.add('hidden'); // This line might conflict with manual toggle
+              }
             }
           });
-        });
-
-        // Voeg window resize handler toe voor betere iPad ondersteuning
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 1024) {
-            menu.classList.remove('hidden');
-          } else {
-            menu.classList.add('hidden');
-          }
-        });
+        } else {
+          console.error('Menu button or navbar menu not found!');
+        }
       });
     </script>
   </head>
@@ -218,38 +248,6 @@
         <!-- Your page content here -->
       </main>
 
-      <script>
-        // JavaScript for toggle menu
-        document.addEventListener('DOMContentLoaded', function () {
-          const menuButton = document.getElementById('toggle-menu-button');
-          const menu = document.getElementById('navbar-menu');
-
-          menuButton.addEventListener('click', function () {
-            menu.classList.toggle('hidden');
-          });
-
-          // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
-          const menuLinks = document.querySelectorAll('#navbar-menu a');
-          menuLinks.forEach(link => {
-            link.addEventListener('click', function () {
-              if (window.innerWidth < 1024) {
-                // Sluit alleen op mobiel en iPad
-                menu.classList.add('hidden');
-              }
-            });
-          });
-
-          // Voeg window resize handler toe voor betere iPad ondersteuning
-          window.addEventListener('resize', function () {
-            if (window.innerWidth >= 1024) {
-              menu.classList.remove('hidden');
-            } else {
-              menu.classList.add('hidden');
-            }
-          });
-        });
-      </script>
-
       <!-- INTRODUCTION -->
       <div id="hero" class="my-16 md:my-28 px-4 md:px-10 lg:px-20">
         <div>
@@ -352,7 +350,7 @@
                   <!-- Achtergrond afbeelding -->
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/public/Overlay_Portfolio.jpg"
+                    src="./public/Overlay_Portfolio.jpg"
                     alt="Portfolio website full of projects and information about me"
                   />
                   <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
@@ -444,7 +442,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/public/Mock-up_BandBuddy.jpg"
+                    src="./public/Mock-up_BandBuddy.jpg"
                     alt="Log in screen and Account of the Musician matching app BandBuddy"
                   />
                   <div
@@ -486,7 +484,7 @@
                 </p>
                 <div class="project-button-box">
                   <a
-                    href="BandBuddy"
+                    href="BandBuddy.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
                   >
                     Read
@@ -535,7 +533,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/public/Mock-up_SP.jpg"
+                    src="./public/Mock-up_SP.jpg"
                     alt="Subscription and form page of the OOR website displayed on a computer, tablet and mobile"
                   />
                   <div
@@ -608,7 +606,7 @@
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
-                    src="/public/Mockup_WOW.jpg"
+                    src="./public/Mockup_WOW.jpg"
                     alt="Home screen of the World of Warcraft replica website displayed on a computer and mobile"
                   />
                   <div
@@ -961,7 +959,7 @@
                 <div class="w-96 h-70 md:h-80 lg:h-52">
                   <img
                     class="w-full h-full object-cover"
-                    src="/theo-thijssenhuis-hva-amsterdam.jpeg"
+                    src="./public/theo-thijssenhuis-hva-amsterdam.jpeg"
                     alt="HvA Theo Thijssenhuis"
                   />
                 </div>
@@ -991,7 +989,7 @@
                 <div class="w-96 h-70 md:h-80 lg:h-52">
                   <img
                     class="w-full h-full object-cover"
-                    src="/mediacollege-amsterdam.jpg"
+                    src="./public/mediacollege-amsterdam.jpg"
                     alt="Mediacollege Amsterdam"
                   />
                 </div>
@@ -1206,17 +1204,5 @@
         </p>
       </div>
     </div>
-
-    <script type="module" src="/src/js/main.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
   </body>
 </html>

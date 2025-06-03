@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./src/css/style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <title>Project: Portfolio Website - Amber's Portfolio</title>
+
+    <!-- Tailwind CSS  -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Amber's Portfolio</title>
+    <!-- Tailwind CSS Configuration  -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <script type="module" src="/src/js/main.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <!-- Ionicons -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -33,8 +38,11 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script type="module" src="./src/js/main.js" defer></script>
+
+    <!-- Inline script for immediate theme application -->
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
       if (
         localStorage.getItem('color-theme') === 'dark' ||
         (!('color-theme' in localStorage) &&
@@ -44,35 +52,59 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
+    </script>
 
-      // JavaScript for toggle menu
+    <!-- Inline script for Menu Toggle  -->
+    <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
         const menu = document.getElementById('navbar-menu');
 
-        menuButton.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
+        if (menuButton && menu) {
+          menuButton.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+            // Update aria-expanded for accessibility
+            const isExpanded =
+              menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+          });
 
-        // Extra code voor iPad ondersteuning - sluit menu bij klikken op links
-        const menuLinks = document.querySelectorAll('#navbar-menu a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            if (window.innerWidth < 1024) {
-              // Sluit alleen op mobiel en iPad
-              menu.classList.add('hidden');
+          const menuLinks = document.querySelectorAll('#navbar-menu a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+              if (window.innerWidth < 1024) {
+                menu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+              }
+            });
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1024) {
+              menu.classList.remove('hidden');
+              menuButton.setAttribute('aria-expanded', 'true');
+            } else {
+              // Only hide if it wasn't explicitly opened by the button
+              if (
+                !menu.classList.contains('hidden') &&
+                menuButton.getAttribute('aria-expanded') !== 'true'
+              ) {
+                menu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+              } else if (menu.classList.contains('hidden')) {
+                menuButton.setAttribute('aria-expanded', 'false');
+              }
             }
           });
-        });
-
-        // Voeg window resize handler toe voor betere iPad ondersteuning
-        window.addEventListener('resize', function () {
-          if (window.innerWidth >= 1024) {
-            menu.classList.remove('hidden');
+          // Initial state for aria-expanded on hamburger
+          if (menu.classList.contains('hidden')) {
+            menuButton.setAttribute('aria-expanded', 'false');
           } else {
-            menu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'true');
           }
-        });
+        } else {
+          console.error('Menu button or navbar menu not found on this page!');
+        }
       });
     </script>
   </head>
@@ -141,35 +173,35 @@
             >
               <li>
                 <a
-                  href="/#Projects"
+                  href="./index.html#Projects"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
-                  href="/#Skills"
+                  href="./index.html#Skills"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
-                  href="/#Work"
+                  href="./index.html#Work"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Work</a
                 >
               </li>
               <li>
                 <a
-                  href="/#Education"
+                  href="./index.html#Education"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Education</a
                 >
               </li>
               <li>
                 <a
-                  href="/#Contact"
+                  href="./index.html#Contact"
                   class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
                   >Contact</a
                 >
@@ -331,7 +363,7 @@
           <div class="relative w-full h-auto bg-gray-200">
             <img
               class="image1 w-full h-auto object-cover"
-              src="/public/Overlay_Portfolio.jpg"
+              src="./public/Overlay_Portfolio.jpg"
               alt="Homescreen mockup of my portfolio website"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
@@ -383,7 +415,7 @@
               <div class="w-full h-96 bg-gray-200 mb-8">
                 <img
                   class="image1 w-full h-auto object-cover"
-                  src="/public/Portfolio-InitialDesign.jpg"
+                  src="./public/Portfolio-InitialDesign.jpg"
                   alt="Template website with my own code"
                 />
               </div>
@@ -428,7 +460,7 @@
               <div class="w-full h-80 bg-gray-200 mb-14">
                 <img
                   class="image1 w-full h-auto object-cover"
-                  src="/public/Portfolio-Results.jpg"
+                  src="./public/Portfolio-Results.jpg"
                   alt="Result of my portfolio website"
                 />
               </div>
