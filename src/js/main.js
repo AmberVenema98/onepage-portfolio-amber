@@ -1,71 +1,84 @@
-import '../css/style.css';
 import Typed from 'typed.js';
 
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+document.addEventListener('DOMContentLoaded', () => {
+  // Wrap in DOMContentLoaded
+  var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+  var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+  var themeToggleBtn = document.getElementById('theme-toggle');
 
-document.querySelector('.button1').addEventListener('click', function () {
-  window.location.href = '/';
-});
+  // Your logo button redirect (if this is desired behavior)
+  const logoButton1 = document.querySelector('.button1');
+  if (logoButton1) {
+    logoButton1.addEventListener('click', function () {
+      window.location.href = 'index.html';
+    });
+  }
+  const logoButton2 = document.querySelector('.button2');
+  if (logoButton2) {
+    logoButton2.addEventListener('click', function () {
+      window.location.href = 'index.html';
+    });
+  }
 
-// Change the icons inside the button based on previous settings
-if (
-  localStorage.getItem('color-theme') === 'dark' ||
-  (!('color-theme' in localStorage) &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches)
-) {
-  themeToggleLightIcon.classList.remove('hidden');
-} else {
-  themeToggleDarkIcon.classList.remove('hidden');
-}
+  // Initial icon state based on theme
 
-var themeToggleBtn = document.getElementById('theme-toggle');
-
-themeToggleBtn.addEventListener('click', function () {
-  // toggle icons inside button
-  themeToggleDarkIcon.classList.toggle('hidden');
-  themeToggleLightIcon.classList.toggle('hidden');
-
-  // if set via local storage previously
-  if (localStorage.getItem('color-theme')) {
-    if (localStorage.getItem('color-theme') === 'light') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
-    }
-
-    // if NOT set via local storage previously
-  } else {
+  if (themeToggleDarkIcon && themeToggleLightIcon) {
     if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
+      themeToggleLightIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.add('hidden');
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+      themeToggleLightIcon.classList.add('hidden');
+    }
+  } else {
+    console.error('Theme toggle icons not found!');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      // toggle icons inside button
+      if (themeToggleDarkIcon && themeToggleLightIcon) {
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+      }
+
+      // if set via local storage previously
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        // if NOT set via local storage previously
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  } else {
+    console.error('Theme toggle button not found!');
+  }
+
+  // Typed.js initialization
+  const typedElement = document.getElementById('typed');
+  const typedStringsElement = document.getElementById('typed-strings');
+  if (typedElement && typedStringsElement) {
+    try {
+      var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        backSpeed: 40,
+        typeSpeed: 60,
+        loop: true, // Optional: if you want it to loop
+      });
+    } catch (e) {
+      console.error('Typed.js initialization failed:', e);
     }
   }
-});
-var typed = new Typed('#typed', {
-  stringsElement: '#typed-strings',
-  backSpeed: 40,
-  typeSpeed: 60,
-});
-
-document
-  .getElementById('toggle-menu-button')
-  .addEventListener('click', function () {
-    var menu = document.getElementById('menu');
-    if (menu.style.top === '0px') {
-      menu.style.top = '-100%';
-    } else {
-      menu.style.top = '0px';
-    }
-  });
-const toggleMenuButton = document.getElementById('toggle-menu-button');
-const menu = document.getElementById('menu');
-
-toggleMenuButton.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
 });
