@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- path to CSS -->
     <link rel="stylesheet" href="./src/css/style.css" />
 
+    <!-- 2. Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,25 +18,36 @@
 
     <title>Amber's Portfolio</title>
 
+    <!-- 4. Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configure Tailwind if needed (e.g., for dark mode variant) -->
+    <!-- 5. Tailwind CSS Configuration -->
     <script>
       tailwind.config = {
-        darkMode: 'class', // This is crucial for Tailwind dark mode
+        darkMode: 'class',
         theme: {
           extend: {},
         },
       };
     </script>
 
-    <!-- Typed.js JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <!-- 6. Typed.js CSS (Only if Typed.js is used on THIS page - typically only for index.html) -->
+    <!-- For index.html, include this: -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+    <!-- For other pages (PortfolioWebsite.html, etc.), you can OMIT this if Typed.js isn't used there. -->
 
-    <!-- Web3Forms (if you use it) -->
+    <!-- 7. Typed.js SCRIPT (Only if Typed.js is used on THIS page - typically only for index.html) -->
+    <!-- For index.html, include this: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <!-- For other pages (PortfolioWebsite.html, etc.), you can OMIT this. -->
+
+    <!-- 8. Web3Forms (If your contact form is on this page, otherwise optional) -->
+    <!-- Usually only on index.html or a dedicated contact page -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 
-    <!-- Ionicons (load ONCE) -->
+    <!-- 9. Ionicons (If your header with icons is on this page) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -44,14 +56,20 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  -->
 
-    <!-- Your main.js - relative path, loaded with defer -->
-    <!-- Make sure this path is correct relative to index.html -->
+    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
+    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
     <script type="module" src="./src/js/main.js" defer></script>
+    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
+  <script type="module" src="../src/js/main.js" defer></script>
+  -->
 
+    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
     <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      // This part initializes the theme BEFORE the page fully loads.
       if (
         localStorage.getItem('color-theme') === 'dark' ||
         (!('color-theme' in localStorage) &&
@@ -61,17 +79,20 @@
       } else {
         document.documentElement.classList.remove('dark');
       }
+    </script>
 
-      // JavaScript for toggle menu
-      // It's good to wrap this in DOMContentLoaded as it manipulates elements that need to exist
+    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
+    <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
         const menu = document.getElementById('navbar-menu');
 
         if (menuButton && menu) {
-          // Check if elements exist
           menuButton.addEventListener('click', function () {
             menu.classList.toggle('hidden');
+            const isExpanded =
+              menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
           });
 
           const menuLinks = document.querySelectorAll('#navbar-menu a');
@@ -79,6 +100,8 @@
             link.addEventListener('click', function () {
               if (window.innerWidth < 1024) {
                 menu.classList.add('hidden');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
               }
             });
           });
@@ -86,21 +109,30 @@
           window.addEventListener('resize', function () {
             if (window.innerWidth >= 1024) {
               menu.classList.remove('hidden');
+              if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
             } else {
-              // Only add hidden if it's not already part of the toggled state
-              // Or, more simply, if the menu button isn't what hid it.
-              // For simplicity, we'll assume if it's small, it should be hidden unless explicitly opened.
-              // This might need refinement based on exact desired behavior on resize.
+              // Only hide if it wasn't explicitly opened by the button or is currently visible
               if (
                 !menu.classList.contains('hidden') &&
-                !menuButton.getAttribute('aria-expanded')
+                menuButton.getAttribute('aria-expanded') !== 'true'
               ) {
-                // menu.classList.add('hidden'); // This line might conflict with manual toggle
+                menu.classList.add('hidden');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
+              } else if (menu.classList.contains('hidden')) {
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
               }
             }
           });
+          // Initial state for aria-expanded on hamburger
+          if (menu.classList.contains('hidden')) {
+            if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
+          } else {
+            if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
+          }
         } else {
-          console.error('Menu button or navbar menu not found!');
+          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
         }
       });
     </script>
