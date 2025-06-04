@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <!-- Make sure vite.svg is in the root or adjust path -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- 1. Main Stylesheet (ensure path is correct for EACH page) -->
     <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
+  <link rel="stylesheet" href="../src/css/style.css" />
+  -->
 
+    <!-- 2. Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,22 +20,21 @@
       rel="stylesheet"
     />
 
-    <title>Project: Portfolio Website - Amber's Portfolio</title>
+    <title>Project: Short Internship</title>
 
-    <!-- Tailwind CSS  -->
+    <!-- 4. Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind CSS Configuration  -->
+    <!-- 5. Tailwind CSS Configuration (MUST be after loading Tailwind) -->
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
-          extend: {},
+          extend: {}, // Your Tailwind customizations
         },
       };
     </script>
 
-    <!-- Ionicons -->
+    <!-- 9. Ionicons (If your header with icons is on this page) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -38,10 +43,19 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  -->
 
+    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
+    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
     <script type="module" src="./src/js/main.js" defer></script>
+    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
+  <script type="module" src="../src/js/main.js" defer></script>
+  -->
 
-    <!-- Inline script for immediate theme application -->
+    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -54,7 +68,7 @@
       }
     </script>
 
-    <!-- Inline script for Menu Toggle  -->
+    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -63,7 +77,6 @@
         if (menuButton && menu) {
           menuButton.addEventListener('click', function () {
             menu.classList.toggle('hidden');
-            // Update aria-expanded for accessibility
             const isExpanded =
               menuButton.getAttribute('aria-expanded') === 'true' || false;
             menuButton.setAttribute('aria-expanded', !isExpanded);
@@ -74,7 +87,8 @@
             link.addEventListener('click', function () {
               if (window.innerWidth < 1024) {
                 menu.classList.add('hidden');
-                menuButton.setAttribute('aria-expanded', 'false');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
               }
             });
           });
@@ -82,28 +96,30 @@
           window.addEventListener('resize', function () {
             if (window.innerWidth >= 1024) {
               menu.classList.remove('hidden');
-              menuButton.setAttribute('aria-expanded', 'true');
+              if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
             } else {
-              // Only hide if it wasn't explicitly opened by the button
+              // Only hide if it wasn't explicitly opened by the button or is currently visible
               if (
                 !menu.classList.contains('hidden') &&
                 menuButton.getAttribute('aria-expanded') !== 'true'
               ) {
                 menu.classList.add('hidden');
-                menuButton.setAttribute('aria-expanded', 'false');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
               } else if (menu.classList.contains('hidden')) {
-                menuButton.setAttribute('aria-expanded', 'false');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
               }
             }
           });
           // Initial state for aria-expanded on hamburger
           if (menu.classList.contains('hidden')) {
-            menuButton.setAttribute('aria-expanded', 'false');
+            if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
           } else {
-            menuButton.setAttribute('aria-expanded', 'true');
+            if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
           }
         } else {
-          console.error('Menu button or navbar menu not found on this page!');
+          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
         }
       });
     </script>
