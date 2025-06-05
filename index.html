@@ -30,24 +30,15 @@
       };
     </script>
 
-    <!-- 6. Typed.js CSS (Only if Typed.js is used on THIS page - typically only for index.html) -->
-    <!-- For index.html, include this: -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
     />
-    <!-- For other pages (PortfolioWebsite.html, etc.), you can OMIT this if Typed.js isn't used there. -->
 
-    <!-- 7. Typed.js SCRIPT (Only if Typed.js is used on THIS page - typically only for index.html) -->
-    <!-- For index.html, include this: -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <!-- For other pages (PortfolioWebsite.html, etc.), you can OMIT this. -->
 
-    <!-- 8. Web3Forms (If your contact form is on this page, otherwise optional) -->
-    <!-- Usually only on index.html or a dedicated contact page -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 
-    <!-- 9. Ionicons (If your header with icons is on this page) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -56,19 +47,19 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
-  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  -->
 
-    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
-    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
     <script type="module" src="./src/js/main.js" defer></script>
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <script type="module" src="../src/js/main.js" defer></script>
-  -->
 
-    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
+    <!-- 11. Inline FOUC Prevention Script -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -81,7 +72,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
+    <!-- 12. Inline Menu Toggle Script  -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -132,7 +123,7 @@
             if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
           }
         } else {
-          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
+          // console.error('Menu button or navbar menu not found on this page!');
         }
       });
     </script>
@@ -384,6 +375,7 @@
                     class="image1 w-full h-56 object-cover"
                     src="./public/Overlay_Portfolio.jpg"
                     alt="Portfolio website full of projects and information about me"
+                    loading="lazy"
                   />
                   <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
                   <div
@@ -394,21 +386,25 @@
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=tailwind"
                         alt="Tailwind icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -476,6 +472,7 @@
                     class="image1 w-full h-56 object-cover"
                     src="./public/Mock-up_BandBuddy.jpg"
                     alt="Log in screen and Account of the Musician matching app BandBuddy"
+                    loading="lazy"
                   />
                   <div
                     class="absolute -bottom-6 left-0 right-0 flex justify-center"
@@ -485,21 +482,25 @@
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=figma"
                         alt="Figma icon"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -567,6 +568,7 @@
                     class="image1 w-full h-56 object-cover"
                     src="./public/Mock-up_SP.jpg"
                     alt="Subscription and form page of the OOR website displayed on a computer, tablet and mobile"
+                    loading="lazy"
                   />
                   <div
                     class="absolute -bottom-6 left-0 right-0 flex justify-center"
@@ -576,21 +578,25 @@
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=bootstrap"
                         alt="Bootstrap icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=photoshop"
                         alt="Photoshop icon"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -640,6 +646,7 @@
                     class="image1 w-full h-56 object-cover"
                     src="./public/Mockup_WOW.jpg"
                     alt="Home screen of the World of Warcraft replica website displayed on a computer and mobile"
+                    loading="lazy"
                   />
                   <div
                     class="absolute -bottom-6 left-0 right-0 flex justify-center"
@@ -649,16 +656,19 @@
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
+                        loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -748,26 +758,31 @@
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=html"
                   alt="HTML icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=css"
                   alt="CSS icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=tailwind"
                   alt="Tailwind icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=javascript"
                   alt="JavaScript icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=bootstrap"
                   alt="Bootstrap icon"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -787,36 +802,43 @@
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=figma"
                   alt="Figma icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=github"
                   alt="GitHub icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=vscode"
                   alt="VSCode icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=unity"
                   alt="Unity icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=ps"
                   alt="Photoshop icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=xd"
                   alt="Adobe XD icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-12 h-12"
                   src="https://skillicons.dev/icons?i=ai"
                   alt="Illustrator icon"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -993,6 +1015,7 @@
                     class="w-full h-full object-cover"
                     src="./public/theo-thijssenhuis-hva-amsterdam.jpeg"
                     alt="HvA Theo Thijssenhuis"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1023,6 +1046,7 @@
                     class="w-full h-full object-cover"
                     src="./public/mediacollege-amsterdam.jpg"
                     alt="Mediacollege Amsterdam"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1043,14 +1067,7 @@
         </h2>
         <!-- commented text-center for having the text at left instead of center-->
         <div id="block" class="mt-10 mb-28 grid relative">
-          <!--<form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-2xl lg:max-w-4xl"> this form is commented for removing captcha and to improve/change reponsivenes if needed switch back to it or it classes-->
-          <form action="https://formspree.io/f/mvoejjvq" method="POST">
-            <input
-              type="hidden"
-              name="access_key"
-              value="ad73a3b2-ca2f-45bc-918a-5c642ff8ebf7"
-            />
-
+          <form action="https://formspree.io/f/mvgrgldy" method="POST">
             <div
               class="contact-box bg-transparent border-zinc-300 dark:border-zinc-700 dark:hover:border-purple-700 border-solid border-2 p-4 shadow-lg"
             >
@@ -1088,7 +1105,7 @@
                       autocomplete="given-email"
                       name="email"
                       required
-                      placeholder="lucas@mail.com"
+                      placeholder="johndoe@mail.com"
                       class="border border-gray-300 px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -1120,7 +1137,7 @@
                   </p>
                   <div class="flex items-center mb-4">
                     <i class="fas fa-envelope mr-4"></i>
-                    <span>shivkolekar01@gmail.com</span>
+                    <span>hello.ambervenema@gmail.com</span>
                   </div>
                   <div class="mt-6 flex flex-row gap-5 ml-4">
                     <!-- Github -->

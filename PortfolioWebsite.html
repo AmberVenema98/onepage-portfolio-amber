@@ -6,11 +6,8 @@
     <!-- Make sure vite.svg is in the root or adjust path -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 1. Main Stylesheet (ensure path is correct for EACH page) -->
+    <!-- 1. Main Stylesheet  -->
     <link rel="stylesheet" href="./src/css/style.css" />
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <link rel="stylesheet" href="../src/css/style.css" />
-  -->
 
     <!-- 2. Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +21,7 @@
 
     <!-- 4. Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 5. Tailwind CSS Configuration (MUST be after loading Tailwind) -->
+    <!-- 5. Tailwind CSS Configuration  -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -34,7 +31,7 @@
       };
     </script>
 
-    <!-- 9. Ionicons (If your header with icons is on this page) -->
+    <!-- 9. Ionicons  -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -43,19 +40,19 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
-  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  -->
 
-    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
-    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
     <script type="module" src="./src/js/main.js" defer></script>
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <script type="module" src="../src/js/main.js" defer></script>
-  -->
 
-    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
+    <!-- 11. Inline FOUC Prevention Script -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -68,7 +65,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
+    <!-- 12. Inline Menu Toggle Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -119,7 +116,7 @@
             if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
           }
         } else {
-          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
+          // console.error('Menu button or navbar menu not found on this page!');
         }
       });
     </script>
@@ -381,6 +378,7 @@
               class="image1 w-full h-auto object-cover"
               src="./public/Overlay_Portfolio.jpg"
               alt="Homescreen mockup of my portfolio website"
+              loading="lazy"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
               <div class="flex gap-2 justify-center">
@@ -388,21 +386,25 @@
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=html"
                   alt="HTML icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=css"
                   alt="CSS icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=tailwind"
                   alt="Tailwind icon"
+                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
                   src="https://skillicons.dev/icons?i=javascript"
                   alt="JavaScript icon"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -433,6 +435,7 @@
                   class="image1 w-full h-auto object-cover"
                   src="./public/Portfolio-InitialDesign.jpg"
                   alt="Template website with my own code"
+                  loading="lazy"
                 />
               </div>
               <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
@@ -478,6 +481,7 @@
                   class="image1 w-full h-auto object-cover"
                   src="./public/Portfolio-Results.jpg"
                   alt="Result of my portfolio website"
+                  loading="lazy"
                 />
               </div>
               <p class="dark:text-gray-100 text-gray-700">
