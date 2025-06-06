@@ -134,7 +134,7 @@
   >
     <div id="body" class="font-container bg-scroll">
       <header
-        class="border-b-2 dark:border-zinc-700 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-90 bg-opacity-90 w-full"
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-100 w-full"
       >
         <nav
           class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
@@ -186,7 +186,7 @@
           <!-- MENU -->
           <div
             id="navbar-menu"
-            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent border-b-2 border-t-2 border-zinc-600 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
               class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
@@ -194,35 +194,35 @@
               <li>
                 <a
                   href="#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
                   href="#Skills"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
                   href="#Work"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Work</a
                 >
               </li>
               <li>
                 <a
                   href="#Education"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Education</a
                 >
               </li>
               <li>
                 <a
                   href="#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Contact</a
                 >
               </li>
@@ -235,7 +235,7 @@
               name="light-dark-mode-toggle"
               id="theme-toggle"
               type="button"
-              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-200 dark:bg-zinc-800 focus:outline-none dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
             >
               <svg
                 id="theme-toggle-dark-icon"
@@ -355,7 +355,7 @@
       <!-- PROJECTS -->
       <section
         id="Projects"
-        class="mt-16 md:mt-28 px-2 md:px-8 lg:px-28 border-t-2 dark:border-zinc-700"
+        class="mt-16 md:mt-28 px-2 md:px-8 lg:px-28 border-t-2 border-zinc-600"
       >
         <h2
           class="mt-16 md:mt-28 ml-2 lg:ml-0 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
@@ -366,9 +366,10 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
             <!-- Card 1 -->
             <div
-              class="project-box bg-transparent dark:border-zinc-700 dark:hover:border-purple-700 border-2 rounded-none"
+              class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <div class="project-content p-5">
+              <!-- TOEGEVOEGD: flex flex-col h-full -->
+              <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <!-- Achtergrond afbeelding -->
                   <img
@@ -383,25 +384,25 @@
                   >
                     <div class="flex gap-2 justify-center">
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=tailwind"
                         alt="Tailwind icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
                         loading="lazy"
@@ -410,17 +411,18 @@
                   </div>
                 </div>
                 <h3
-                  class="project-title text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
+                  class="project-title text-3xl font-semibold text-gray-950 dark:text-gray-100"
                 >
                   Portfolio Website
                 </h3>
                 <p
-                  class="project-description mb-1 font-semibold dark:text-gray-100 text-gray-700"
+                  class="project-description mt-2 mb-2 font-semibold dark:text-gray-100 text-gray-900"
                 >
                   A site showcasing my projects and skills to pursue internships
                   or jobs.
                 </p>
-                <div class="project-button-box">
+                <!-- TOEGEVOEGD: mt-auto -->
+                <div class="project-button-box mt-auto">
                   <a
                     href="PortfolioWebsite.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
@@ -443,7 +445,7 @@
                   </a>
                   <a
                     href="https://github.com/AmberVenema98/onepage-portfolio-amber"
-                    class="project-buttons dark:fill-white fill-black bg-zinc-900 text-gray-100 border-2 dark:border-zinc-100 font-semibold p-3 gap-1 rounded-md"
+                    class="project-buttons dark:fill-white fill-black dark:bg-zinc-900 dark:text-gray-100 border-2 dark:border-zinc-100 border-zinc-900 font-semibold p-3 gap-1 rounded-md"
                   >
                     Github
                     <svg
@@ -464,9 +466,10 @@
             </div>
             <!-- Card 2 -->
             <div
-              class="project-box bg-transparent dark:border-zinc-700 dark:hover:border-purple-700 border-2 rounded-none"
+              class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <div class="project-content p-5">
+              <!-- TOEGEVOEGD: flex flex-col h-full -->
+              <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
@@ -479,25 +482,25 @@
                   >
                     <div class="flex gap-2 justify-center">
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=figma"
                         alt="Figma icon"
                         loading="lazy"
@@ -506,16 +509,17 @@
                   </div>
                 </div>
                 <h3
-                  class="project-title text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
+                  class="project-title text-3xl font-semibold text-gray-950 dark:text-gray-100"
                 >
                   Band Buddy App
                 </h3>
                 <p
-                  class="project-description mb-1 font-semibold dark:text-gray-100 text-gray-700"
+                  class="project-description mt-2 mb-2 font-semibold dark:text-gray-100 text-gray-900"
                 >
                   Built the front-end for "Band Buddy" in a team school project.
                 </p>
-                <div class="project-button-box">
+                <!-- TOEGEVOEGD: mt-auto -->
+                <div class="project-button-box mt-auto">
                   <a
                     href="BandBuddy.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
@@ -538,7 +542,7 @@
                   </a>
                   <a
                     href="https://github.com/AmberVenema98/CMD-Block-Tech-Group-3"
-                    class="project-buttons dark:fill-white fill-black bg-zinc-900 text-gray-100 border-2 dark:border-zinc-100 font-semibold p-3 gap-1 rounded-md"
+                    class="project-buttons dark:fill-white fill-black dark:bg-zinc-900 dark:text-gray-100 border-2 dark:border-zinc-100 border-zinc-900 font-semibold p-3 gap-1 rounded-md"
                   >
                     Github
                     <svg
@@ -560,9 +564,10 @@
 
             <!-- Card 3 -->
             <div
-              class="project-box bg-transparent dark:border-zinc-700 dark:hover:border-purple-700 border-2 rounded-none"
+              class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <div class="project-content p-5">
+              <!-- TOEGEVOEGD: flex flex-col h-full -->
+              <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
@@ -575,25 +580,25 @@
                   >
                     <div class="flex gap-2 justify-center">
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=bootstrap"
                         alt="Bootstrap icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=photoshop"
                         alt="Photoshop icon"
                         loading="lazy"
@@ -602,16 +607,17 @@
                   </div>
                 </div>
                 <h3
-                  class="project-title text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
+                  class="project-title text-3xl font-semibold text-gray-950 dark:text-gray-100"
                 >
                   Short Internship
                 </h3>
                 <p
-                  class="project-description mb-1 font-semibold dark:text-gray-100 text-gray-700"
+                  class="project-description mt-2 mb-2 font-semibold dark:text-gray-100 text-gray-900"
                 >
                   Redesigned and built a subscription page for two magazines.
                 </p>
-                <div class="project-button-box">
+                <!-- TOEGEVOEGD: mt-auto -->
+                <div class="project-button-box mt-auto">
                   <a
                     href="ShortInternship.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
@@ -638,9 +644,10 @@
 
             <!-- Card 4 -->
             <div
-              class="project-box bg-transparent dark:border-zinc-700 dark:hover:border-purple-700 border-2 rounded-none"
+              class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <div class="project-content p-5">
+              <!-- TOEGEVOEGD: flex flex-col h-full -->
+              <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
                     class="image1 w-full h-56 object-cover"
@@ -653,19 +660,19 @@
                   >
                     <div class="flex gap-2 justify-center">
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
                         alt="HTML icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
                         alt="CSS icon"
                         loading="lazy"
                       />
                       <img
-                        class="w-11 h-11 p-2 bg-zinc-900 rounded-full"
+                        class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
                         alt="JavaScript icon"
                         loading="lazy"
@@ -674,16 +681,17 @@
                   </div>
                 </div>
                 <h3
-                  class="project-title text-3xl font-semibold mb-2 text-gray-950 dark:text-gray-100"
+                  class="project-title text-3xl font-semibold text-gray-950 dark:text-gray-100"
                 >
                   Replicating website
                 </h3>
                 <p
-                  class="project-description mb-1 font-semibold dark:text-gray-100 text-gray-700"
+                  class="project-description mt-2 mb-2 font-semibold dark:text-gray-100 text-gray-900"
                 >
                   Recreated a website using grid, flexbox, and inclusive design.
                 </p>
-                <div class="project-button-box">
+                <!-- TOEGEVOEGD: mt-auto -->
+                <div class="project-button-box mt-auto">
                   <a
                     href="ReplicatingWebsite.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
@@ -706,7 +714,7 @@
                   </a>
                   <a
                     href="https://github.com/AmberVenema98/WebsiteNa-apen"
-                    class="project-buttons dark:fill-white fill-black bg-zinc-900 text-gray-100 border-2 dark:border-zinc-100 font-semibold p-3 gap-1 rounded-md"
+                    class="project-buttons dark:fill-white fill-black dark:bg-zinc-900 dark:text-gray-100 border-2 dark:border-zinc-100 border-zinc-900 font-semibold p-3 gap-1 rounded-md"
                   >
                     Github
                     <svg
@@ -732,7 +740,7 @@
       <!-- SKILLS -->
       <section
         id="Skills"
-        class="px-4 md:px-10 lg:px-28 border-t-2 dark:border-zinc-700"
+        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-600"
       >
         <h2
           class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
@@ -746,40 +754,40 @@
             <!-- FIRST SKILL BLOCK -->
             <div
               id="block"
-              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc hover:border-zinc dark:border-zinc-700 dark:hover:border-purple-700"
+              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
             >
               <h3
-                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 dark:border-zinc-700"
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
               >
                 Languages and Frameworks
               </h3>
               <div class="flex flex-wrap gap-3 p-5">
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=html"
                   alt="HTML icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=css"
                   alt="CSS icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=tailwind"
                   alt="Tailwind icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=javascript"
                   alt="JavaScript icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=bootstrap"
                   alt="Bootstrap icon"
                   loading="lazy"
@@ -789,53 +797,53 @@
             <!-- SECOND SKILL BLOCK -->
             <div
               id="block"
-              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-700 hover:border-zinc dark:border-zinc-700 dark:hover:border-purple-700"
+              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
             >
               <h3
-                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 dark:border-zinc-700"
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
               >
                 Tools
               </h3>
 
               <div class="flex flex-wrap gap-3 p-5">
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=figma"
                   alt="Figma icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=github"
                   alt="GitHub icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=vscode"
                   alt="VSCode icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=unity"
                   alt="Unity icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=ps"
                   alt="Photoshop icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=xd"
                   alt="Adobe XD icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-12 h-12"
+                  class="skill w-12 h-12"
                   src="https://skillicons.dev/icons?i=ai"
                   alt="Illustrator icon"
                   loading="lazy"
@@ -849,7 +857,7 @@
       <!-- WORK EXPERIENCE -->
       <section
         id="Work"
-        class="px-4 md:px-10 lg:px-28 border-t-2 dark:border-zinc-700"
+        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-600"
       >
         <h2
           class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
@@ -862,22 +870,22 @@
             class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
           >
             <p
-              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2024
             </p>
 
-            <div>
-              <div
-                class="p-6 shadow-lg md:mr-20 lg:mr-32 dark:border-zinc-700 dark:hover:border-purple-700 border-2"
-              >
-                <h3 class="mt-4 text-3xl font-bold text-white">Tzorg</h3>
-                <h4 class="text-xl text-purple-700">Housekeeping</h4>
-                <h5 class="text-gray-500">2024 - Today</h5>
-                <p class="font-[600] mt-2 text-white">
-                  Cleaning houses of elderly people
-                </p>
-              </div>
+            <div
+              class="p-6 md:mr-20 lg:mr-32 dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-2"
+            >
+              <h3 class="mt-4 text-3xl font-bold dark:text-white text-gray-900">
+                Tzorg
+              </h3>
+              <h4 class="text-xl text-purple-700">Housekeeping</h4>
+              <h5 class="text-gray-500">2024 - Today</h5>
+              <p class="font-[600] mt-2 dark:text-white text-gray-900">
+                Cleaning houses of elderly people
+              </p>
             </div>
           </div>
 
@@ -887,14 +895,14 @@
           >
             <div>
               <div
-                class="p-6 shadow-lg md:ml-20 lg:ml-32 dark:border-zinc-700 dark:hover:border-purple-700 border-2"
+                class="p-6 md:ml-20 lg:ml-32 dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-2"
               >
-                <h3 class="text-3xl font-bold text-white">
+                <h3 class="text-3xl font-bold dark:text-white text-gray-900">
                   S.P. Abbonneeservice
                 </h3>
                 <h4 class="text-xl text-purple-700">Internship</h4>
                 <h5 class="text-gray-500">Feb 2024 - Apr 2024</h5>
-                <p class="mt-2 text-white">
+                <p class="mt-2 dark:text-white text-gray-900">
                   I redesigned client forms for their website using an online
                   design environment, coding them with Bootstrap, and presented
                   the new designs to gather feedback
@@ -908,18 +916,24 @@
             class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
           >
             <p
-              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2023
             </p>
             <div>
               <div
-                class="p-6 shadow-lg md:mr-20 lg:mr-32 dark:border-zinc-700 dark:hover:border-purple-700 border-2"
+                class="p-6 md:mr-20 lg:mr-32 dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-2"
               >
-                <h3 class="mt-4 text-3xl font-bold text-white">Hulpstudent</h3>
+                <h3
+                  class="mt-4 text-3xl font-bold dark:text-white text-gray-900"
+                >
+                  Hulpstudent
+                </h3>
                 <h4 class="text-xl text-purple-700">Housekeeping</h4>
                 <h5 class="text-gray-500">2022 - 2023</h5>
-                <p class="mt-2 text-white">Cleaning houses of ederly people</p>
+                <p class="mt-2 dark:text-white text-gray-900">
+                  Cleaning houses of ederly people
+                </p>
               </div>
             </div>
           </div>
@@ -929,20 +943,24 @@
             class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
           >
             <p
-              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2022
             </p>
             <div>
               <div
-                class="p-6 shadow-lg md:ml-20 lg:ml-32 dark:border-zinc-700 dark:hover:border-purple-700 border-2"
+                class="p-6 md:ml-20 lg:ml-32 dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-2"
               >
-                <h3 class="mt-4 text-3xl font-bold text-white">
+                <h3
+                  class="mt-4 text-3xl font-bold dark:text-white text-gray-900"
+                >
                   Vivazorggroep
                 </h3>
                 <h4 class="text-xl text-purple-700">Housekeeping</h4>
                 <h5 class="text-gray-500">2020 - 2022</h5>
-                <p class="mt-2 text-white">Cleaning houses of ederly people</p>
+                <p class="mt-2 dark:text-white text-gray-900">
+                  Cleaning houses of ederly people
+                </p>
               </div>
             </div>
           </div>
@@ -952,18 +970,20 @@
             class="work-box experience-item relative mb-28 w-full lg:w-5/6 bg-transparent"
           >
             <p
-              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground border-zinc-950 border-8 rounded-full px-4 py-1"
+              class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 border-8 rounded-full px-4 py-1"
             >
               2019
             </p>
 
             <div
-              class="p-6 shadow-lg md:mr-20 lg:mr-32 dark:border-zinc-700 dark:hover:border-purple-700 border-2"
+              class="p-6 md:mr-20 lg:mr-32 dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-2"
             >
-              <h3 class="mt-4 text-3xl font-bold text-white">Pepperminds</h3>
+              <h3 class="mt-4 text-3xl font-bold dark:text-white text-gray-900">
+                Pepperminds
+              </h3>
               <h4 class="text-xl text-purple-700">Internship</h4>
               <h5 class="text-gray-500">Feb 2019 - July 2019</h5>
-              <p class="mt-2 text-white">
+              <p class="mt-2 dark:text-white text-gray-900">
                 I designed posters for the company and their locations in
                 Belgium and Germany, communicated via email for assignments, and
                 created Instagram and Snapchat stories
@@ -976,7 +996,7 @@
       <!-- Education -->
       <section
         id="Education"
-        class="px-4 md:px-10 lg:px-28 border-t-2 dark:border-zinc-700"
+        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-700"
       >
         <!-- Header Section -->
         <h2
@@ -990,7 +1010,7 @@
           <div class="space-y-6">
             <!-- Current Education -->
             <div
-              class="education-box overflow-hidden bg-transparent border-2 dark:border-zinc-700 dark:hover:border-purple-700"
+              class="education-box overflow-hidden bg-transparent border-2 dark:border-zinc-700 border-zinc-600 hover:border-purple-700"
             >
               <div
                 class="flex flex-col md:flex-row md:items-start md:justify-between gap-4"
@@ -1005,12 +1025,12 @@
                     Communication and Multimedia Design
                   </h4>
                   <h5 class="text-gray-500">2022-2024 | Persuing</h5>
-                  <p class="mt-2 text-white dark:text-gray-100">
+                  <p class="mt-2 dark:text-white text-gray-900">
                     Focusing on creating user-centered digital experiences
                     through multimedia design and strategic communication.
                   </p>
                 </div>
-                <div class="w-96 h-70 md:h-80 lg:h-52">
+                <div class="w-full md:w-80 lg:w-96 flex-shrink-0">
                   <img
                     class="w-full h-full object-cover"
                     src="./public/theo-thijssenhuis-hva-amsterdam.jpeg"
@@ -1023,7 +1043,7 @@
 
             <!-- Previous Education -->
             <div
-              class="education-box overflow-hidden bg-transparent border-2 dark:border-zinc-700 dark:hover:border-purple-700"
+              class="education-box overflow-hidden bg-transparent border-2 dark:border-zinc-700 border-zinc-600 hover:border-purple-700"
             >
               <div
                 class="flex flex-col md:flex-row md:items-start md:justify-between gap-4"
@@ -1036,12 +1056,12 @@
                   </h3>
                   <h4 class="text-xl text-purple-700">Graphic Design</h4>
                   <h5 class="text-gray-500">2016-2020 | Completed</h5>
-                  <p class="mt-2 text-white dark:text-gray-100">
+                  <p class="mt-2 dark:text-white text-gray-900">
                     Developed strong foundation in visual design principles,
                     typography, and digital media creation.
                   </p>
                 </div>
-                <div class="w-96 h-70 md:h-80 lg:h-52">
+                <div class="w-full md:w-80 lg:w-96 flex-shrink-0">
                   <img
                     class="w-full h-full object-cover"
                     src="./public/mediacollege-amsterdam.jpg"
@@ -1058,7 +1078,7 @@
       <!-- CONTACT -->
       <section
         id="Contact"
-        class="px-4 md:px-10 lg:px-28 border-t-2 dark:border-zinc-700"
+        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-700"
       >
         <h2
           class="mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
@@ -1069,7 +1089,7 @@
         <div id="block" class="mt-10 mb-28 grid relative">
           <form action="https://formspree.io/f/mvgrgldy" method="POST">
             <div
-              class="contact-box bg-transparent border-zinc-300 dark:border-zinc-700 dark:hover:border-purple-700 border-solid border-2 p-4 shadow-lg"
+              class="contact-box bg-transparent dark:border-zinc-700 border-zinc-600 hover:border-purple-700 border-solid border-2 p-4 shadow-lg"
             >
               <div class="flex flex-col md:flex-row">
                 <!-- FROM -->
@@ -1121,14 +1141,14 @@
                   <!-- <div class="h-captcha" data-captcha="true"></div>-->
                   <button
                     type="submit"
-                    class="form-submit bg-gray-900 dark:bg-gray-100 text-white dark:text-black font-medium px-6 py-2 rounded-md mt-4 dark:hover:bg-gray-300 hover:scale-110 transform transition-transform duration-300"
+                    class="form-submit bg-zinc-900 dark:bg-gray-100 text-white dark:text-black font-medium px-6 py-2 rounded-md mt-4 dark:hover:bg-gray-300 hover:scale-110 transform transition-transform duration-300"
                   >
-                    SEND MESSAGE
+                    Send Message
                   </button>
                 </div>
                 <!-- CONTACT INFORMATION -->
                 <div
-                  class="md:w-1/2 bg-zinc-200 dark:bg-zinc-800 text-gray-900 dark:text-gray-100 p-8"
+                  class="md:w-1/2 bg-white dark:bg-zinc-800 text-gray-900 dark:text-gray-100 p-8"
                 >
                   <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
                   <p class="mb-6">
@@ -1181,7 +1201,7 @@
                   </div>
                   <div class="flex items-center ml-4 my-4"></div>
                   <button
-                    class="cursor-pointer group relative flex gap-1.5 px-8 py-4 bg-black bg-opacity-80 text-[#f1f1f1] rounded-lg hover:bg-opacity-70 transition font-semibold shadow-md"
+                    class="cursor-pointer group relative flex gap-1.5 px-8 py-4 dark:text-gray-100 text-gray-700 border-zinc-900 dark:border-white border-2 rounded-lg hover:bg-opacity-70 transition font-semibold shadow-md"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1189,6 +1209,7 @@
                       viewBox="0 0 24 24"
                       height="24px"
                       width="24px"
+                      class="theme-icon"
                     >
                       <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
                       <g
@@ -1202,7 +1223,6 @@
                             stroke-linejoin="round"
                             stroke-linecap="round"
                             stroke-width="2"
-                            stroke="#f1f1f1"
                             d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
                             id="Vector"
                           ></path>

@@ -1,13 +1,3 @@
-//import Typed from 'typed.js';
-
-console.log('--- MAIN.JS VERSION JUNE 4 15:52 PM ---');
-// import Typed from 'typed.js'; // MAKE SURE THIS IS COMMENTED/DELETED
-
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Main.js loaded and DOMContentLoaded. Version: JUNE 4 15:52 PM');
-  // ... rest of your code
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   // Wrap in DOMContentLoaded
   var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
