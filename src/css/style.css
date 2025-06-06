@@ -45,13 +45,15 @@ html {
   margin-top: 1rem;
 }
 
-.project-buttons {
+.project-buttons,
+.skill {
   display: inline-flex;
   align-items: center;
   transition: transform 0.3s;
 }
 
-.project-buttons:hover {
+.project-buttons:hover,
+.skill:hover {
   transform: scale(1.1);
 }
 
@@ -65,6 +67,10 @@ html {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition-property: transform, border-color;
   transition-duration: 0.3s;
+}
+
+.work-box {
+  box-shadow: none;
 }
 
 .skill-box:hover,
@@ -124,8 +130,7 @@ html {
 .pyramid-loader .wrapper .side {
   width: 200px;
   height: 200px;
-  /* you can choose any gradient or color you want */
-  /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+
   top: 0;
   left: 0;
   right: 0;
@@ -239,4 +244,15 @@ html {
 .hover-text1,
 .hover-text2 {
   position: absolute;
+}
+
+/* SVG Icon Contact */
+.theme-icon path {
+  stroke: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-icon path {
+    stroke: #f1f1f1;
+  }
 }
