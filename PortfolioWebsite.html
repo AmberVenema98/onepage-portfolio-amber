@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <!-- Make sure vite.svg is in the root or adjust path -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 1. Main Stylesheet  -->
     <link rel="stylesheet" href="./src/css/style.css" />
 
     <!-- 2. Google Fonts -->
@@ -17,21 +16,29 @@
       rel="stylesheet"
     />
 
-    <title>Project: Portfolio Website</title>
+    <title>Amber's Portfolio</title>
 
     <!-- 4. Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 5. Tailwind CSS Configuration  -->
+    <!-- 5. Tailwind CSS Configuration -->
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
-          extend: {}, // Your Tailwind customizations
+          extend: {},
         },
       };
     </script>
 
-    <!-- 9. Ionicons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -65,7 +72,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script -->
+    <!-- 12. Inline Menu Toggle Script  -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -127,7 +134,7 @@
   >
     <div id="body" class="font-container bg-scroll">
       <header
-        class="border-b-2 dark:border-zinc-700 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-90 bg-opacity-90 w-full"
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
       >
         <nav
           class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
@@ -179,7 +186,7 @@
           <!-- MENU -->
           <div
             id="navbar-menu"
-            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 border-t border-gray-200 dark:border-zinc-700 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent border-b-2 border-t-2 border-zinc-600 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
               class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
@@ -187,35 +194,35 @@
               <li>
                 <a
                   href="./index.html#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
                   href="./index.html#Skills"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
                   href="./index.html#Work"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Work</a
                 >
               </li>
               <li>
                 <a
                   href="./index.html#Education"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Education</a
                 >
               </li>
               <li>
                 <a
                   href="./index.html#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 dark:text-gray-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 lg:hover:bg-transparent rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Contact</a
                 >
               </li>
@@ -228,7 +235,7 @@
               name="light-dark-mode-toggle"
               id="theme-toggle"
               type="button"
-              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-200 dark:bg-zinc-800 focus:outline-none dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
             >
               <svg
                 id="theme-toggle-dark-icon"
@@ -262,14 +269,14 @@
       <div class="flex min-h-screen">
         <!-- Fixed Sidebar -->
         <aside
-          class="fixed w-64 h-screen pt-24 border-r-2 dark:border-zinc-700 border-gray-200 p-8 overflow-y-auto"
+          class="fixed w-64 h-screen pt-24 border-r-2 border-zinc-600 p-8 overflow-y-auto"
         >
           <!-- Current Project Info -->
           <h1 class="text-2xl font-bold mb-6 dark:text-white">
             Portfolio Website
           </h1>
           <!-- Client -->
-          <div class="flex items-center text-gray-600 mb-4">
+          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
             <svg
               class="w-5 h-5 mr-2"
               fill="none"
@@ -292,7 +299,7 @@
             Amber Venema
           </div>
           <!-- Date -->
-          <div class="flex items-center text-gray-600 mb-4">
+          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
             <svg
               class="w-5 h-5 mr-2"
               fill="none"
@@ -309,7 +316,7 @@
             February 2025
           </div>
           <!-- Technologies -->
-          <div class="flex items-center text-gray-600 mb-8">
+          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-8">
             <svg
               class="w-5 h-5 mr-2"
               fill="none"
@@ -327,42 +334,44 @@
           </div>
           <!-- Navigation -->
           <nav class="mb-8 space-y-4">
-            <p class="block text-white font-medium">Overview</p>
+            <p class="block text-black dark:text-white font-bold">Overview</p>
             <a
               href="#progress"
-              class="block text-gray-600 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >Development Progress</a
             >
-            <a href="#results" class="block text-gray-600 hover:text-purple-700"
+            <a
+              href="#results"
+              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block text-gray-600 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >Reflections</a
             >
           </nav>
           <!-- Project Navigation -->
           <div>
-            <h2 class="font-medium text-white tracking-wide mb-4">
+            <h2 class="font-bold text-black dark:text-white tracking-wide mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
               <a
                 href="BandBuddy.html"
-                class="block text-gray-600 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >
                 BandBuddy
               </a>
               <a
                 href="ShortInternship.html"
-                class="block text-gray-600 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >
                 Short Internship
               </a>
               <a
                 href="ReplicatingWebsite.html"
-                class="block text-gray-600 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
               >
                 Replicating Website
               </a>
@@ -383,25 +392,25 @@
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
               <div class="flex gap-2 justify-center">
                 <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=html"
                   alt="HTML icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=css"
                   alt="CSS icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=tailwind"
                   alt="Tailwind icon"
                   loading="lazy"
                 />
                 <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 bg-zinc-900 rounded-full"
+                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=javascript"
                   alt="JavaScript icon"
                   loading="lazy"
@@ -412,7 +421,7 @@
 
           <!-- Content -->
           <div class="max-w-4xl mx-auto px-8 py-12">
-            <p class="dark:text-gray-100 text-gray-700 mb-16">
+            <p class="dark:text-gray-100 text-gray-900 mb-16">
               This project is a
               <strong class="text-purple-700">personal</strong> portfolio
               website, created to showcase my
@@ -441,7 +450,7 @@
               <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
                 Initial Design
               </h3>
-              <p class="dark:text-gray-100 text-gray-700">
+              <p class="dark:text-gray-100 text-gray-900">
                 I used a template from GitHub as a base
                 <a
                   href="https://github.com/Shivaraj-Kolekar/portfolio"
@@ -461,7 +470,7 @@
               <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
                 Development
               </h2>
-              <p class="dark:text-gray-100 text-gray-700">
+              <p class="dark:text-gray-100 text-gray-900">
                 During development, I reorganized the code structure into clear,
                 separate folders for components, assets, and pages. I also
                 rewrote the styling using Tailwind CSS, which I learned
@@ -472,7 +481,10 @@
             </section>
 
             <!-- Results -->
-            <section id="results" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+            <section
+              id="results"
+              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+            >
               <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
                 Results
               </h2>
@@ -484,7 +496,7 @@
                   loading="lazy"
                 />
               </div>
-              <p class="dark:text-gray-100 text-gray-700">
+              <p class="dark:text-gray-100 text-gray-900">
                 The final website is clean and structured. Its block-based
                 layout gives it an editorial and artistic feel that matches my
                 personal style. The design focuses on strong visual lines and
@@ -495,11 +507,14 @@
             </section>
 
             <!-- Reflections -->
-            <section id="reflections" class="mb-16 bg-zinc-900 p-8 rounded-lg">
+            <section
+              id="reflections"
+              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+            >
               <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
                 Reflections
               </h2>
-              <p class="dark:text-gray-100 text-gray-700">
+              <p class="dark:text-gray-100 text-gray-900">
                 This project helped me improve both my frontend development and
                 design thinking. I learned to work more efficiently with
                 Tailwind, organize a project properly and develop a consistent
