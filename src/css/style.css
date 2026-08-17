@@ -11,6 +11,11 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: linear-gradient(to right, #ffffff, #e4e4e7, #d4d4d8);
+}
+
+html.dark {
+  background-color: linear-gradient(to right, #18181b, #09090b, #000000);
 }
 
 :root {
