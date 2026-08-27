@@ -178,13 +178,12 @@ html.dark {
 #typed {
   font-size: 25px;
 }
-/* Cursor */
+/* --- Cursor --- */
 .typed-cursor {
   font-size: 30px;
   color: gray;
 }
 
-/* === removing default button style ===*/
 .button1,
 .button2 {
   margin: 0;
@@ -195,7 +194,7 @@ html.dark {
   cursor: pointer;
 }
 
-/* button styling */
+/* --- Button styling --- */
 .button1,
 .button2 {
   --border-right: 4px;
@@ -216,7 +215,7 @@ html.dark {
   --text-stroke-color: rgba(0, 0, 0, 0.6);
 }
 
-/* this is the text, when you hover on button */
+/* --- Text hover --- */
 .hover-text1,
 .hover-text2 {
   box-sizing: border-box;
@@ -229,14 +228,26 @@ html.dark {
   transition: 0.5s;
   -webkit-text-stroke: 1px var(--animation-color);
 }
-/* hover */
+
 .button1:hover .hover-text1,
 .button2:hover .hover-text2 {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
-/* positions */
+/* --- Intro text --- */
+p.intro {
+  background-color: var(--cv-pink-pale);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+html.dark p.intro {
+  background-color: var(--cv-navy-soft);
+}
+
+/* --- Positions --- */
 .button1,
 .button2,
 .pyramid-loader,
@@ -251,7 +262,7 @@ html.dark {
   position: absolute;
 }
 
-/* SVG Icon Contact */
+/* --- SVG Icon Contact --- */
 .theme-icon path {
   stroke: #333333;
 }
@@ -260,4 +271,265 @@ html.dark {
   .theme-icon path {
     stroke: #f1f1f1;
   }
+}
+
+:root {
+  --cv-navy: #1c2954;
+  --cv-navy-soft: #33437c;
+  --cv-pink: #f2aecb;
+  --cv-pink-deep: #df85ae;
+  --cv-pink-pale: #fbe6f0;
+  --cv-teal: #4a90ac;
+  --cv-cream: #faf6f1;
+  --cv-black: #0a0a0d;
+
+  --cv-border: 4px;
+  --cv-bar-h: 48px;
+
+  --primary-color: 223, 122, 168;
+}
+
+/* --- Grid paper effect --- */
+body.bg-gradient-to-r {
+  background-color: var(--cv-cream) !important;
+  background-image: radial-gradient(
+    var(--cv-navy) 1.5px,
+    transparent 1.5px
+  ) !important;
+  background-size: 26px 26px !important;
+  background-position: -13px -13px !important;
+}
+
+html.dark body.bg-gradient-to-r {
+  background-color: var(--cv-black) !important;
+  background-image: radial-gradient(
+    var(--cv-pink) 1.5px,
+    transparent 1.5px
+  ) !important;
+  background-size: 26px 26px !important;
+  background-position: -13px -13px !important;
+  opacity: 1 !important;
+}
+html.dark body.bg-gradient-to-r {
+  background-image: radial-gradient(
+    rgba(242, 174, 203, 0.35) 1.5px,
+    transparent 1.5px
+  ) !important;
+}
+
+/* --- Header --- */
+header {
+  border-bottom-color: var(--cv-navy) !important;
+  border-bottom-width: 3px !important;
+}
+html.dark header {
+  border-bottom-color: var(--cv-pink) !important;
+}
+
+#navbar-menu a {
+  color: var(--cv-navy) !important;
+}
+html.dark #navbar-menu a {
+  color: var(--cv-pink-pale) !important;
+}
+#navbar-menu a:hover {
+  background-color: var(--cv-pink) !important;
+  color: var(--cv-navy) !important;
+}
+
+#theme-toggle {
+  background-color: var(--cv-pink-pale) !important;
+  color: var(--cv-navy) !important;
+  border: 3px solid var(--cv-navy);
+}
+html.dark #theme-toggle {
+  background-color: var(--cv-navy-soft) !important;
+  color: var(--cv-pink) !important;
+  border-color: var(--cv-pink);
+}
+
+/* --- Logo --- */
+.button1 {
+  --animation-color: var(--cv-pink);
+  --text-stroke-color: rgba(242, 174, 203, 0.65);
+}
+.button2 {
+  --animation-color: var(--cv-navy);
+  --text-stroke-color: rgba(28, 41, 84, 0.65);
+}
+
+/* --- Sidebar --- */
+aside {
+  border-right: 4px solid var(--cv-navy) !important;
+  border-top: none !important;
+  background: #fff;
+  position: relative;
+  box-shadow: 8px 8px 0 0 var(--cv-pink);
+  overflow: hidden;
+}
+html.dark aside {
+  background: var(--cv-black);
+  border-color: var(--cv-pink) !important;
+  box-shadow: 8px 8px 0 0 var(--cv-navy-soft);
+}
+
+aside::before {
+  height: var(--cv-bar-h);
+  background: var(--cv-pink);
+  border-bottom: var(--cv-border) solid var(--cv-navy);
+}
+
+html.dark aside::before {
+  background: var(--cv-navy-soft);
+  border-bottom-color: var(--cv-pink);
+}
+
+aside::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  background: var(--cv-navy);
+  box-shadow: 20px 0 0 var(--cv-navy), 40px 0 0 var(--cv-navy);
+  z-index: 1;
+}
+html.dark aside::after {
+  background: var(--cv-pink);
+  box-shadow: 20px 0 0 var(--cv-pink), 40px 0 0 var(--cv-pink);
+}
+
+aside h1,
+aside h2 {
+  color: var(--cv-navy) !important;
+}
+html.dark aside h1,
+html.dark aside h2 {
+  color: var(--cv-pink) !important;
+}
+
+aside a:hover {
+  color: var(--cv-pink-deep) !important;
+}
+html.dark aside a:hover {
+  color: var(--cv-pink) !important;
+}
+
+/* --- Content --- */
+main section.rounded-2xl {
+  border: var(--cv-border) solid var(--cv-navy) !important;
+  background: #ffffff !important;
+  box-shadow: 10px 10px 0 0 var(--cv-navy) !important;
+  position: relative;
+  padding: calc(var(--cv-bar-h) + 1.5rem) 2rem 2rem !important;
+  overflow: hidden;
+  transform: rotate(-0.6deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+main section.rounded-2xl:hover {
+  transform: rotate(0deg);
+}
+main section.rounded-2xl:nth-of-type(2) {
+  transform: rotate(0.5deg);
+}
+main section.rounded-2xl:nth-of-type(2):hover {
+  transform: rotate(0deg);
+}
+main section.rounded-2xl:nth-of-type(3) {
+  transform: rotate(-0.4deg);
+}
+main section.rounded-2xl:nth-of-type(3):hover {
+  transform: rotate(0deg);
+}
+
+html.dark main section.rounded-2xl {
+  background: var(--cv-black) !important;
+  border-color: var(--cv-pink) !important;
+  box-shadow: 10px 10px 0 0 var(--cv-pink) !important;
+}
+
+/* --- Pink / navy / teal content --- */
+main section.rounded-2xl::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--cv-bar-h);
+  background: var(--cv-pink);
+  border-bottom: var(--cv-border) solid var(--cv-navy);
+}
+main section.rounded-2xl:nth-of-type(2)::before {
+  background: var(--cv-navy);
+}
+main section.rounded-2xl:nth-of-type(3)::before {
+  background: var(--cv-teal);
+}
+html.dark main section.rounded-2xl::before {
+  border-bottom-color: var(--cv-pink);
+}
+html.dark main section.rounded-2xl:nth-of-type(2)::before {
+  background: var(--cv-navy-soft);
+}
+
+/* --- Window button --- */
+main section.rounded-2xl::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 24px;
+  width: 12px;
+  height: 12px;
+  background: var(--cv-navy);
+  box-shadow: 20px 0 0 var(--cv-navy), 40px 0 0 var(--cv-navy);
+  z-index: 1;
+}
+main section.rounded-2xl:nth-of-type(2)::after {
+  background: var(--cv-pink);
+  box-shadow: 20px 0 0 var(--cv-pink), 40px 0 0 var(--cv-pink);
+}
+main section.rounded-2xl:nth-of-type(3)::after {
+  background: #fff;
+  box-shadow: 20px 0 0 #fff, 40px 0 0 #fff;
+}
+
+main section.rounded-2xl section {
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+main section.rounded-2xl section::before,
+main section.rounded-2xl section::after {
+  content: none;
+}
+
+main h2,
+main h3 {
+  color: var(--cv-navy) !important;
+}
+html.dark main h2,
+html.dark main h3 {
+  color: var(--cv-pink) !important;
+}
+
+/* --- Other projects --- */
+main a[href$='.html']:hover {
+  background-color: var(--cv-pink) !important;
+  color: var(--cv-navy) !important;
+  border-color: var(--cv-navy) !important;
+}
+html.dark main a[href$='.html']:hover {
+  background-color: var(--cv-navy-soft) !important;
+  color: var(--cv-pink-pale) !important;
+  border-color: var(--cv-pink) !important;
+}
+
+/* --- Project icons --- */
+main img[src*='skillicons'] {
+  border: 3px solid var(--cv-navy);
+}
+html.dark main img[src*='skillicons'] {
+  border-color: var(--cv-pink);
 }
