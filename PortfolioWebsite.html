@@ -116,14 +116,13 @@
               }
             }
           });
-          // Initial state for aria-expanded on hamburger
+
           if (menu.classList.contains('hidden')) {
             if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
           } else {
             if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
           }
         } else {
-          // console.error('Menu button or navbar menu not found on this page!');
         }
       });
     </script>
@@ -420,83 +419,93 @@
           </div>
 
           <!-- Content -->
-          <div class="max-w-4xl mx-auto px-8 py-12">
-            <p class="dark:text-gray-100 text-gray-900 mb-16">
+          <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
+            <p
+              class="intro dark:text-gray-100 text-gray-900 mb-16 leading-relaxed"
+            >
               This project is a
-              <strong class="text-purple-700">personal</strong> portfolio
-              website, created to showcase my
-              <strong class="text-purple-700">design and development</strong>
+              <strong class="text-blue-950 dark:text-pink-300">personal</strong>
+              portfolio website, created to showcase my
+              <strong class="text-blue-950 dark:text-pink-300"
+                >design and development</strong
+              >
               skills. I started by
-              <strong class="text-purple-700">forking</strong> an existing
-              open-source template and completely reshaped it into my own
-              minimal, editorial-style portfolio. The goal was to practice
-              <strong class="text-purple-700">Tailwind CSS</strong>, improve
-              code structure, and present my work in a professional way.
+              <strong class="text-blue-950 dark:text-pink-300">forking</strong>
+              an existing open-source template and completely reshaped it into
+              my own minimal, editorial-style portfolio. The goal was to
+              practice
+              <strong class="text-blue-950 dark:text-pink-300"
+                >Tailwind CSS</strong
+              >, improve code structure, and present my work in a professional
+              way.
             </p>
 
-            <!-- Development Progress -->
-            <section id="progress" class="mb-8">
-              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
-                Development Progress
-              </h2>
-              <div class="w-full h-96 bg-gray-200 mb-8">
+            <!-- DEVELOPMENT PROGRESS -->
+            <section
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+            >
+              <section id="progress" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                  Development Progress
+                </h2>
                 <img
-                  class="image1 w-full h-auto object-cover"
+                  class="w-full h-auto rounded-lg mb-8"
                   src="./public/Portfolio-InitialDesign.jpg"
                   alt="Template website with my own code"
                   loading="lazy"
                 />
-              </div>
-              <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
-                Initial Design
-              </h3>
-              <p class="dark:text-gray-100 text-gray-900">
-                I used a template from GitHub as a base
-                <a
-                  href="https://github.com/Shivaraj-Kolekar/portfolio"
-                  class="text-purple-700"
-                  >(GitHub project by Shivaraj-Kolekar)</a
-                >, but I wanted to make the website truly my own. The initial
-                idea was to create a portfolio that felt structured, clean and
-                visually balanced. I was especially drawn to layouts with clear
-                lines and a block-based structure. Something that feels both
-                sharp and artistic. I fell in love with the style so i wanted to
-                create my own.
-              </p>
+                <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+                  Initial Design
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  I used a template from GitHub as a base
+                  <a
+                    href="https://github.com/Shivaraj-Kolekar/portfolio"
+                    class="text-purple-700"
+                    >(GitHub project by Shivaraj-Kolekar)</a
+                  >, but I wanted to make the website truly my own. The initial
+                  idea was to create a portfolio that felt structured, clean and
+                  visually balanced. I was especially drawn to layouts with
+                  clear lines and a block-based structure. Something that feels
+                  both sharp and artistic. I fell in love with the style so i
+                  wanted to create my own.
+                </p>
+              </section>
+
+              <section class="mb-16">
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+                  Development
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  During development, I reorganized the code structure into
+                  clear, separate folders for components, assets, and pages. I
+                  also rewrote the styling using Tailwind CSS, which I learned
+                  specifically for this project. Thanks to my knowledge of HTML
+                  and CSS, I picked it up quickly and was able to build
+                  responsive layouts efficiently.
+                </p>
+              </section>
             </section>
 
-            <!-- Development -->
-            <section class="mb-16">
-              <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
-                Development
-              </h2>
-              <p class="dark:text-gray-100 text-gray-900">
-                During development, I reorganized the code structure into clear,
-                separate folders for components, assets, and pages. I also
-                rewrote the styling using Tailwind CSS, which I learned
-                specifically for this project. Thanks to my knowledge of HTML
-                and CSS, I picked it up quickly and was able to build responsive
-                layouts efficiently.
-              </p>
-            </section>
-
-            <!-- Results -->
+            <!-- RESULTS -->
             <section
               id="results"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Results
               </h2>
-              <div class="w-full h-80 bg-gray-200 mb-14">
+              <div
+                class="mb-8 rounded-xl overflow-hidden border border-zinc-600"
+              >
                 <img
-                  class="image1 w-full h-auto object-cover"
+                  class="w-full h-auto"
                   src="./public/Portfolio-Results.jpg"
                   alt="Result of my portfolio website"
                   loading="lazy"
                 />
               </div>
-              <p class="dark:text-gray-100 text-gray-900">
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 The final website is clean and structured. Its block-based
                 layout gives it an editorial and artistic feel that matches my
                 personal style. The design focuses on strong visual lines and
@@ -506,15 +515,15 @@
               </p>
             </section>
 
-            <!-- Reflections -->
+            <!-- REFLECTIONS -->
             <section
               id="reflections"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-6 dark:text-gray-100">
                 Reflections
               </h2>
-              <p class="dark:text-gray-100 text-gray-900">
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 This project helped me improve both my frontend development and
                 design thinking. I learned to work more efficiently with
                 Tailwind, organize a project properly and develop a consistent
@@ -523,6 +532,33 @@
                 even more engaging.
               </p>
             </section>
+
+            <!-- OTHER PROJECTS (MOBILE/TABLET) -->
+            <div class="lg:hidden mt-20 pt-10 border-t-2 border-zinc-600">
+              <h2 class="text-2xl font-bold dark:text-white mb-6">
+                Other Projects
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="BandBuddy.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  BandBuddy
+                </a>
+                <a
+                  href="ShortInternship.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Short Internship
+                </a>
+                <a
+                  href="ReplicatingWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Replicating Website
+                </a>
+              </div>
+            </div>
           </div>
         </main>
       </div>
