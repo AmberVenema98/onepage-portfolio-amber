@@ -331,8 +331,13 @@ html.dark header {
   color: var(--cv-navy) !important;
 }
 html.dark #navbar-menu a {
-  color: var(--cv-pink-pale) !important;
+  color: var(--cv-pink) !important;
 }
+
+html.dark #navbar-menu a:hover {
+  background-color: var(--cv-navy) !important;
+}
+
 #navbar-menu a:hover {
   background-color: var(--cv-pink) !important;
   color: var(--cv-navy) !important;
