@@ -350,23 +350,16 @@
           About Me
         </h2>
 
-        <div class="about-window mt-10">
-          <div class="window-titlebar">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="about-window-content">
-            <p
-              class="dark:text-gray-100 text-gray-900 text-xl md:text-2xl leading-relaxed"
-            >
-              When I'm not designing or coding, I spend my time editing videos,
-              playing guitar, gaming or wandering through museums for
-              inspiration. That mix of curiosity, creativity and hands-on
-              problem solving is what drives me, both in and outside of my work
-              as a web designer and developer.
-            </p>
-          </div>
+        <div class="about-window-content">
+          <p
+            class="dark:text-gray-100 text-gray-900 text-xl md:text-2xl leading-relaxed"
+          >
+            When I'm not designing or coding, I spend my time editing videos,
+            playing guitar, gaming or wandering through museums for inspiration.
+            That mix of curiosity, creativity and hands-on problem solving is
+            what drives me, both in and outside of my work as a web designer and
+            developer.
+          </p>
         </div>
 
         <!-- SKILLS -->
@@ -382,6 +375,11 @@
               id="block"
               class="skill-box grid col-span-1 w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
             >
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
               <h3
                 class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
               >
@@ -425,6 +423,11 @@
               id="block"
               class="skill-box grid col-span-1 w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
             >
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
               <h3
                 class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
               >
@@ -485,18 +488,11 @@
           Projects
         </h2>
         <div class="mt-8 md:mt-10 mb-16 md:mb-28">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Card 1 -->
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- WINDOW TITLEBAR -->
-              <div class="window-titlebar">
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-              </div>
-
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <!-- BACKGROUND IMAGE -->
@@ -506,7 +502,7 @@
                     alt="Portfolio website full of projects and information about me"
                     loading="lazy"
                   />
-                  <!-- SKILL ICONS -->
+                  <!-- ICONS -->
                   <div
                     class="absolute -bottom-6 left-0 right-0 flex justify-center"
                   >
@@ -549,7 +545,6 @@
                   A site showcasing my projects and skills to pursue internships
                   or jobs.
                 </p>
-
                 <div class="project-button-box mt-auto">
                   <a
                     href="PortfolioWebsite.html"
@@ -596,13 +591,6 @@
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- WINDOW TITLEBAR -->
-              <div class="window-titlebar">
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-              </div>
-
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -652,7 +640,6 @@
                 >
                   Built the front-end for "Band Buddy" in a team school project.
                 </p>
-
                 <div class="project-button-box mt-auto">
                   <a
                     href="BandBuddy.html"
@@ -700,13 +687,6 @@
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- WINDOW TITLEBAR -->
-              <div class="window-titlebar">
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-              </div>
-
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -756,7 +736,6 @@
                 >
                   Redesigned and built a subscription page for two magazines.
                 </p>
-
                 <div class="project-button-box mt-auto">
                   <a
                     href="ShortInternship.html"
@@ -786,13 +765,6 @@
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- WINDOW TITLEBAR -->
-              <div class="window-titlebar">
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-                <span class="window-dot"></span>
-              </div>
-
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -836,7 +808,6 @@
                 >
                   Recreated a website using grid, flexbox, and inclusive design.
                 </p>
-
                 <div class="project-button-box mt-auto">
                   <a
                     href="ReplicatingWebsite.html"
@@ -897,9 +868,14 @@
         <div id="block" class="mt-10 mb-28 grid relative">
           <form action="https://formspree.io/f/mvgrgldy" method="POST">
             <div
-              class="contact-box bg-transparent border-zinc-600 hover:border-purple-700 border-solid border-2 p-4"
+              class="contact-box bg-transparent border-zinc-600 hover:border-purple-700 border-solid border-2"
             >
-              <div class="flex flex-col md:flex-row">
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <div class="flex flex-col md:flex-row p-4">
                 <!-- FROM -->
                 <div class="md:w-1/2 mb-8 md:mb-0 p-4">
                   <h3

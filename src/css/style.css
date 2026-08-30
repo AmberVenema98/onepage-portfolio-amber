@@ -282,6 +282,7 @@ html.dark p.intro {
   --cv-teal: #4a90ac;
   --cv-cream: #faf6f1;
   --cv-black: #0a0a0d;
+  --cv-purple: #7e22ce;
 
   --cv-border: 4px;
   --cv-bar-h: 48px;
@@ -374,6 +375,11 @@ html.dark aside {
 }
 
 aside::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--cv-bar-h);
   background: var(--cv-pink);
   border-bottom: var(--cv-border) solid var(--cv-navy);
@@ -532,4 +538,157 @@ main img[src*='skillicons'] {
 }
 html.dark main img[src*='skillicons'] {
   border-color: var(--cv-pink);
+}
+
+/* =========================================================================
+   PROJECT CARDS (HOOFDPAGINA / index.html)
+   ========================================================================= */
+
+.project-box {
+  border: var(--cv-border) solid var(--cv-navy) !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 0 var(--cv-pink) !important;
+  transform: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+}
+html.dark .project-box {
+  background: var(--cv-black) !important;
+  border-color: var(--cv-pink) !important;
+  box-shadow: 8px 8px 0 0 var(--cv-navy-soft) !important;
+}
+
+/* bij hover: naar voren "loskomen" i.p.v. draaien */
+.project-box:hover {
+  transform: translate(-4px, -4px) !important;
+  box-shadow: 14px 14px 0 0 var(--cv-pink) !important;
+  border-color: var(--cv-navy) !important;
+}
+html.dark .project-box:hover {
+  box-shadow: 14px 14px 0 0 var(--cv-navy-soft) !important;
+  border-color: var(--cv-pink) !important;
+}
+
+/* echte titelbalk-elementen */
+.window-titlebar {
+  height: var(--cv-bar-h);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  background: var(--cv-pink);
+  border-bottom: var(--cv-border) solid var(--cv-navy);
+}
+html.dark .window-titlebar {
+  border-bottom-color: var(--cv-pink);
+}
+
+.window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--cv-navy);
+  display: inline-block;
+}
+html.dark .window-dot {
+  background: var(--cv-pink);
+}
+
+.grid > .project-box:nth-of-type(2) .window-titlebar {
+  background: var(--cv-navy);
+}
+.grid > .project-box:nth-of-type(3) .window-titlebar {
+  background: var(--cv-teal);
+}
+html.dark .grid > .project-box:nth-of-type(2) .window-titlebar {
+  background: var(--cv-navy-soft);
+}
+
+.grid > .project-box:nth-of-type(2) .window-dot {
+  background: var(--cv-pink);
+}
+.grid > .project-box:nth-of-type(3) .window-dot {
+  background: #ffffff;
+}
+html.dark .grid > .project-box:nth-of-type(2) .window-dot {
+  background: var(--cv-navy-soft);
+}
+
+.project-box .project-title {
+  color: var(--cv-navy) !important;
+}
+html.dark .project-box .project-title {
+  color: var(--cv-pink) !important;
+}
+
+.project-box .project-buttons:first-child {
+  background-color: var(--cv-navy) !important;
+  color: #ffffff !important;
+}
+html.dark .project-box .project-buttons:first-child {
+  background-color: var(--cv-pink) !important;
+  color: var(--cv-navy) !important;
+}
+
+/* =========================================================================
+   ABOUT-SECTIE (index.html)
+   Eén breed venster (titelbalk + knopjes) voor de bio/hobby's-paragraaf.
+   ========================================================================= */
+
+.contact-box {
+  position: relative;
+  overflow: hidden;
+  border: var(--cv-border) solid var(--cv-navy);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 10px 10px 0 0 var(--cv-pink);
+}
+html.dark .contact-box {
+  background: var(--cv-black);
+  border-color: var(--cv-pink);
+  box-shadow: 10px 10px 0 0 var(--cv-navy-soft);
+}
+html.dark .contact-box .window-titlebar {
+  border-bottom-color: var(--cv-pink);
+}
+
+/* =========================================================================
+   SKILLS on homepage
+   ========================================================================= */
+
+.skill-box,
+.contact-box {
+  border: var(--cv-border) solid var(--cv-navy) !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 10px 10px 0 0 var(--cv-pink) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+html.dark .skill-box,
+html.dark .contact-box {
+  background: var(--cv-black) !important;
+  border-color: var(--cv-pink) !important;
+  box-shadow: 10px 10px 0 0 var(--cv-navy-soft) !important;
+}
+.skill-box:hover,
+.contact-box:hover {
+  box-shadow: 14px 14px 0 0 var(--cv-pink) !important;
+}
+html.dark .skill-box:hover,
+html.dark .contact-box:hover {
+  box-shadow: 14px 14px 0 0 var(--cv-navy-soft) !important;
+}
+
+.grid > .skill-box:nth-of-type(2) .window-titlebar,
+.contact-box .window-titlebar {
+  background: var(--cv-teal);
+}
+
+.window-dot {
+  background: #ffffff !important;
 }
