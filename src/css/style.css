@@ -178,7 +178,7 @@ html.dark {
 #typed {
   font-size: 25px;
 }
-/* --- Cursor --- */
+/* --- CURSOR --- */
 .typed-cursor {
   font-size: 30px;
   color: gray;
@@ -194,7 +194,7 @@ html.dark {
   cursor: pointer;
 }
 
-/* --- Button styling --- */
+/* --- BUTTON STYLING --- */
 .button1,
 .button2 {
   --border-right: 4px;
@@ -215,7 +215,7 @@ html.dark {
   --text-stroke-color: rgba(0, 0, 0, 0.6);
 }
 
-/* --- Text hover --- */
+/* --- TEXT HOVER --- */
 .hover-text1,
 .hover-text2 {
   box-sizing: border-box;
@@ -235,7 +235,7 @@ html.dark {
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
-/* --- Intro text --- */
+/* --- INTRO TEXT --- */
 p.intro {
   background-color: var(--cv-pink-pale);
   padding: 1rem 1.25rem;
@@ -247,7 +247,7 @@ html.dark p.intro {
   background-color: var(--cv-navy-soft);
 }
 
-/* --- Positions --- */
+/* --- POSITIONS --- */
 .button1,
 .button2,
 .pyramid-loader,
@@ -262,7 +262,7 @@ html.dark p.intro {
   position: absolute;
 }
 
-/* --- SVG Icon Contact --- */
+/* --- SVG ICON --- */
 .theme-icon path {
   stroke: #333333;
 }
@@ -290,7 +290,7 @@ html.dark p.intro {
   --primary-color: 223, 122, 168;
 }
 
-/* --- Grid paper effect --- */
+/* --- GRID PAPER EFFECT --- */
 body.bg-gradient-to-r {
   background-color: var(--cv-cream) !important;
   background-image: radial-gradient(
@@ -318,7 +318,7 @@ html.dark body.bg-gradient-to-r {
   ) !important;
 }
 
-/* --- Header --- */
+/* --- HEADER --- */
 header {
   border-bottom-color: var(--cv-navy) !important;
   border-bottom-width: 3px !important;
@@ -354,7 +354,7 @@ html.dark #theme-toggle {
   border-color: var(--cv-pink);
 }
 
-/* --- Logo --- */
+/* --- LOGO --- */
 .button1 {
   --animation-color: var(--cv-pink);
   --text-stroke-color: rgba(242, 174, 203, 0.65);
@@ -364,7 +364,7 @@ html.dark #theme-toggle {
   --text-stroke-color: rgba(28, 41, 84, 0.65);
 }
 
-/* --- Sidebar --- */
+/* --- SIDEBAR PROJECTS --- */
 aside {
   border-right: 4px solid var(--cv-navy) !important;
   border-top: none !important;
@@ -373,6 +373,7 @@ aside {
   box-shadow: 8px 8px 0 0 var(--cv-pink);
   overflow: hidden;
 }
+
 html.dark aside {
   background: var(--cv-black);
   border-color: var(--cv-pink) !important;
@@ -391,33 +392,8 @@ aside::before {
 }
 
 html.dark aside::before {
-  background: var(--cv-navy-soft);
-  border-bottom-color: var(--cv-pink);
-}
-
-aside::after {
-  content: '';
-  position: absolute;
-  top: 19px;
-  left: 22px;
-  width: 12px;
-  height: 12px;
-  background: var(--cv-navy);
-  box-shadow: 20px 0 0 var(--cv-navy), 40px 0 0 var(--cv-navy);
-  z-index: 1;
-}
-html.dark aside::after {
-  background: var(--cv-pink);
-  box-shadow: 20px 0 0 var(--cv-pink), 40px 0 0 var(--cv-pink);
-}
-
-aside h1,
-aside h2 {
-  color: var(--cv-navy) !important;
-}
-html.dark aside h1,
-html.dark aside h2 {
-  color: var(--cv-pink) !important;
+  background: var(--cv-black);
+  border-bottom-color: var(--cv-black);
 }
 
 aside a:hover {
@@ -427,7 +403,12 @@ html.dark aside a:hover {
   color: var(--cv-pink) !important;
 }
 
-/* --- Content --- */
+aside h2,
+html.dark aside h2 {
+  color: var(--cv-cream) !important;
+}
+
+/* --- CONTENT --- */
 main section.rounded-2xl {
   border: var(--cv-border) solid var(--cv-navy) !important;
   background: #ffffff !important;
@@ -460,7 +441,7 @@ html.dark main section.rounded-2xl {
   box-shadow: 10px 10px 0 0 var(--cv-pink) !important;
 }
 
-/* --- Pink / navy / teal content --- */
+/* --- PINK / NAVY / TEAL CONTENT --- */
 main section.rounded-2xl::before {
   content: '';
   position: absolute;
@@ -484,7 +465,7 @@ html.dark main section.rounded-2xl:nth-of-type(2)::before {
   background: var(--cv-navy-soft);
 }
 
-/* --- Window button --- */
+/* --- WINDOW BUTTON --- */
 main section.rounded-2xl::after {
   content: '';
   position: absolute;
@@ -515,17 +496,22 @@ main section.rounded-2xl section::before,
 main section.rounded-2xl section::after {
   content: none;
 }
-
-main h2,
-main h3 {
+h1,
+h2 {
   color: var(--cv-navy) !important;
 }
-html.dark main h2,
-html.dark main h3 {
+
+html.dark h1,
+html.dark h2 {
   color: var(--cv-pink) !important;
 }
 
-/* --- Other projects --- */
+h3,
+html.dark h3 {
+  color: var(--cv-cream) !important;
+}
+
+/* --- OTHER PROJECTS --- */
 main a[href$='.html']:hover {
   background-color: var(--cv-pink) !important;
   color: var(--cv-navy) !important;
@@ -537,7 +523,7 @@ html.dark main a[href$='.html']:hover {
   border-color: var(--cv-pink) !important;
 }
 
-/* --- Project icons --- */
+/* --- PROJECT ICONS --- */
 main img[src*='skillicons'] {
   border: 3px solid var(--cv-navy);
 }
@@ -545,9 +531,7 @@ html.dark main img[src*='skillicons'] {
   border-color: var(--cv-pink);
 }
 
-/* =========================================================================
-   PROJECT CARDS (HOOFDPAGINA / index.html)
-   ========================================================================= */
+/* --- PROJECT CARDS (HOME) --- */
 
 .project-box {
   border: var(--cv-border) solid var(--cv-navy) !important;
@@ -577,7 +561,7 @@ html.dark .project-box:hover {
   border-color: var(--cv-pink) !important;
 }
 
-/* echte titelbalk-elementen */
+/* WINDOWS */
 .window-titlebar {
   height: var(--cv-bar-h);
   display: flex;
@@ -622,13 +606,6 @@ html.dark .grid > .project-box:nth-of-type(2) .window-dot {
   background: var(--cv-navy-soft);
 }
 
-.project-box .project-title {
-  color: var(--cv-navy) !important;
-}
-html.dark .project-box .project-title {
-  color: var(--cv-pink) !important;
-}
-
 .project-box .project-buttons:first-child {
   background-color: var(--cv-navy) !important;
   color: #ffffff !important;
@@ -638,10 +615,7 @@ html.dark .project-box .project-buttons:first-child {
   color: var(--cv-navy) !important;
 }
 
-/* =========================================================================
-   ABOUT-SECTIE (index.html)
-   Eén breed venster (titelbalk + knopjes) voor de bio/hobby's-paragraaf.
-   ========================================================================= */
+/* --- ABOUT-SECTION (HOME) --- */
 
 .contact-box {
   position: relative;
@@ -660,9 +634,7 @@ html.dark .contact-box .window-titlebar {
   border-bottom-color: var(--cv-pink);
 }
 
-/* =========================================================================
-   SKILLS on homepage
-   ========================================================================= */
+/* --- SKILLS (HOME) --- */
 
 .skill-box,
 .contact-box {
