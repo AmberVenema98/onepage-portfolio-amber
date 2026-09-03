@@ -3,16 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <!-- Make sure vite.svg is in the root or adjust path -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 1. Main Stylesheet (ensure path is correct for EACH page) -->
     <link rel="stylesheet" href="./src/css/style.css" />
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <link rel="stylesheet" href="../src/css/style.css" />
-  -->
 
-    <!-- 2. Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,19 +17,17 @@
 
     <title>Project: Replicating Website</title>
 
-    <!-- 4. Tailwind CSS (CDN) -->
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 5. Tailwind CSS Configuration (MUST be after loading Tailwind) -->
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
-          extend: {}, // Your Tailwind customizations
+          extend: {},
         },
       };
     </script>
 
-    <!-- 9. Ionicons (If your header with icons is on this page) -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -43,19 +36,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
-  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  -->
 
-    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
-    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
     <script type="module" src="./src/js/main.js" defer></script>
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <script type="module" src="../src/js/main.js" defer></script>
-  -->
 
-    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
+    <!-- Darkmode Prevention -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -68,7 +52,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
+    <!-- Inline Menu Toggle Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -77,49 +61,7 @@
         if (menuButton && menu) {
           menuButton.addEventListener('click', function () {
             menu.classList.toggle('hidden');
-            const isExpanded =
-              menuButton.getAttribute('aria-expanded') === 'true' || false;
-            menuButton.setAttribute('aria-expanded', !isExpanded);
           });
-
-          const menuLinks = document.querySelectorAll('#navbar-menu a');
-          menuLinks.forEach(link => {
-            link.addEventListener('click', function () {
-              if (window.innerWidth < 1024) {
-                menu.classList.add('hidden');
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              }
-            });
-          });
-
-          window.addEventListener('resize', function () {
-            if (window.innerWidth >= 1024) {
-              menu.classList.remove('hidden');
-              if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
-            } else {
-              // Only hide if it wasn't explicitly opened by the button or is currently visible
-              if (
-                !menu.classList.contains('hidden') &&
-                menuButton.getAttribute('aria-expanded') !== 'true'
-              ) {
-                menu.classList.add('hidden');
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              } else if (menu.classList.contains('hidden')) {
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              }
-            }
-          });
-          // Initial state for aria-expanded on hamburger
-          if (menu.classList.contains('hidden')) {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
-          } else {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
-          }
-        } else {
-          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
         }
       });
     </script>
@@ -128,9 +70,10 @@
   <body
     class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
-    <div id="body" class="font-container bg-scroll">
+    <div id="body" class="font-container">
+      <!-- HEADER -->
       <header
-        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-50 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
       >
         <nav
           class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
@@ -156,18 +99,9 @@
             <button
               id="toggle-menu-button"
               type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-menu"
-              aria-expanded="false"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
             >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
                 <path
                   stroke="currentColor"
                   stroke-linecap="round"
@@ -179,52 +113,50 @@
             </button>
           </div>
 
-          <!-- MENU -->
+          <!-- NAVIGATION MENU -->
           <div
             id="navbar-menu"
             class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent border-b-2 border-t-2 border-zinc-600 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
-              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
+              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center justify-center lg:space-x-8"
             >
               <li>
                 <a
                   href="#About"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
                   href="#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
                   >Contact</a
                 >
               </li>
             </ul>
           </div>
 
-          <!-- DARK MODE -->
+          <!-- DARK MODE TOGGLE -->
           <div class="flex items-center gap-6 lg:order-3">
             <button
-              name="light-dark-mode-toggle"
               id="theme-toggle"
               type="button"
-              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-200 dark:bg-zinc-800 focus:outline-none dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+              class="h-fit w-fit dark:text-white text-gray-500 hover:scale-110 transition-transform bg-zinc-200 dark:bg-zinc-800 rounded-full p-2.5"
             >
               <svg
                 id="theme-toggle-dark-icon"
                 class="hidden w-7 h-7"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
@@ -235,7 +167,6 @@
                 class="hidden w-7 h-7"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
@@ -248,309 +179,283 @@
         </nav>
       </header>
 
-      <div class="flex min-h-screen">
-        <!-- Fixed Sidebar -->
+      <!-- MAIN LAYOUT -->
+      <div class="flex flex-col lg:flex-row pt-20 lg:pt-0">
+        <!-- SIDEBAR -->
         <aside
-          class="fixed w-64 h-screen pt-24 border-r-2 border-zinc-600 p-8 overflow-y-auto"
+          class="w-full lg:w-64 lg:fixed lg:h-screen pt-10 lg:pt-28 border-zinc-600 lg:border-r-2 p-8 overflow-y-auto"
         >
-          <!-- Current Project Info -->
           <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
-            Replicating Website
+            Recreating Website
           </h1>
 
-          <!-- Client -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 2v6h6"
-              />
-            </svg>
-            Project Tech, HvA
+          <!-- INFO LIST -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 2v6h6"
+                />
+              </svg>
+              <p class="text-sm">Project Tech, HvA</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">October 2023</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">HTML, JavaScript</p>
+            </div>
           </div>
 
-          <!-- Date -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            October 2023
-          </div>
-
-          <!-- Technologies -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            HTML, JavaScript
-          </div>
-
-          <!-- View Live Link -->
-          <a
-            href="https://ambervenema98.github.io/WebsiteNa-apen/"
-            class="inline-flex items-center text-purple-600 hover:text-purple-800 mb-8"
-          >
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-            View Live
-          </a>
-
-          <!-- Navigation -->
+          <!-- NAVIGATION -->
           <nav class="mb-8 space-y-4">
             <h2 class="block text-black dark:text-white font-bold">Overview</h2>
             <a
               href="#progress"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Development Progress</a
             >
             <a
               href="#results"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Reflections</a
             >
           </nav>
 
-          <!-- Project Navigation -->
-          <div>
-            <h2 class="text-black dark:text-white font-bold tracking-wide mb-4">
+          <!-- PROJECT NAV -->
+          <div class="hidden lg:block">
+            <h2 class="font-bold text-black dark:text-white mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
               <a
                 href="PortfolioWebsite.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Portfolio Website</a
               >
-                Portfolio Website
-              </a>
-              <a
-                href="BandBuddy.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
-              >
-                BandBuddy
-              </a>
               <a
                 href="ShortInternship.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Short Internship</a
               >
-                Short Internship
-              </a>
+              <a
+                href="ReplicatingWebsite.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Replicating Website</a
+              >
             </div>
           </div>
         </aside>
 
-        <!-- Rest of the content remains the same -->
-        <main class="ml-64 flex-1">
-          <!-- Hero Image -->
-          <div class="relative w-full h-auto bg-gray-200">
+        <!-- CONTENT -->
+        <main class="flex-1 lg:ml-64">
+          <!-- HERO -->
+          <div class="relative w-full">
             <img
-              class="image1 w-full h-auto object-cover"
+              class="w-full h-auto object-cover"
               src="./public/Overlay_WOW.jpg"
-              alt="Overlay replica website Mock-up of World of Warcraft on computer and mobile"
+              alt="Hero Replica"
               loading="lazy"
             />
-            <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
-              <div class="flex gap-2 justify-center">
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=html"
-                  alt="HTML icon"
-                  loading="lazy"
-                />
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=css"
-                  alt="CSS icon"
-                  loading="lazy"
-                />
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=javascript"
-                  alt="JavaScript icon"
-                  loading="lazy"
-                />
-              </div>
+            <div
+              class="absolute -bottom-6 left-0 right-0 flex justify-center gap-2"
+            >
+              <img
+                class="w-10 h-10 lg:w-12 lg:h-12 p-2 dark:bg-zinc-900 bg-gray-100 rounded-full shadow-lg"
+                src="https://skillicons.dev/icons?i=html"
+                alt="HTML"
+              />
+              <img
+                class="w-10 h-10 lg:w-12 lg:h-12 p-2 dark:bg-zinc-900 bg-gray-100 rounded-full shadow-lg"
+                src="https://skillicons.dev/icons?i=css"
+                alt="CSS"
+              />
+              <img
+                class="w-10 h-10 lg:w-12 lg:h-12 p-2 dark:bg-zinc-900 bg-gray-100 rounded-full shadow-lg"
+                src="https://skillicons.dev/icons?i=javascript"
+                alt="JS"
+              />
             </div>
           </div>
 
-          <!-- Content -->
-          <div class="max-w-4xl mx-auto px-8 py-12">
-            <p class="dark:text-gray-100 text-gray-900 mb-16">
+          <!-- BODY TEXT -->
+          <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
+            <p
+              class="intro dark:text-gray-100 text-gray-900 mb-16 leading-relaxed text-lg"
+            >
               For a school assignment, I was challenged to recreate two pages in
-              <strong class="text-purple-700">10 weeks</strong> of an existing
-              website using only vanilla HTML, CSS, and JavaScript. I chose to
-              <strong class="text-purple-700">recreate</strong> the World of
-              Warcraft website, specifically the Dragonflight page and the
-              homepage, as they are visually appealing and offer a good mix of
-              content. The <strong class="text-purple-700">goal</strong> of this
-              project was to improve my skills in
-              <strong class="text-purple-700">responsive</strong> web design,
-              accessibility, and JavaScript.
+              <strong class="text-blue-950 dark:text-pink-300">10 weeks</strong>
+              of an existing website using only vanilla HTML, CSS, and
+              JavaScript. I chose to
+              <strong class="text-blue-950 dark:text-pink-300">recreate</strong>
+              the World of Warcraft website, specifically the Dragonflight page
+              and the homepage. The goal was to improve my skills in
+              <strong class="text-blue-950 dark:text-pink-300"
+                >responsive</strong
+              >
+              web design, accessibility, and JavaScript.
             </p>
 
-            <!-- Development Progress -->
-            <section id="progress" class="mb-16">
-              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
-                Development Progress
-              </h2>
-              <div class="w-full h-80 bg-gray-200 mb-8">
+            <!-- DEVELOPMENT PROGRESS -->
+            <section
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+            >
+              <section id="progress" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                  Development Progress
+                </h2>
                 <img
-                  class="image1 w-full h-auto object-cover"
+                  class="w-full h-auto rounded-lg mb-8"
                   src="./public/WoW-InitialDesign.jpg"
-                  alt="Analysis of the code of the replica website"
-                  loading="lazy"
+                  alt="Initial Design"
                 />
-              </div>
-              <h3 class="text-xl font-bold mt-16 dark:text-gray-100">
-                Initial Design
-              </h3>
-              <p class="dark:text-gray-100 text-gray-900">
-                I started by analyzing the original website to understand its
-                structure and visual style. Based on this, I created a
-                semantically correct HTML structure.
-                <br /><br />
-                For the visual styling, I used CSS and applied custom properties
-                to maintain consistent colors and styling throughout the
-                project. This approach ensured the website looked professional
-                and aligned with the original design.
-              </p>
+                <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+                  Initial Design
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  I started by analyzing the original website to understand its
+                  structure and visual style. Based on this, I created a
+                  semantically correct HTML structure. For the visual styling, I
+                  used CSS and applied custom properties to maintain consistent
+                  colors throughout the project.
+                </p>
+              </section>
+
+              <section>
+                <div
+                  class="mb-8 rounded-xl overflow-hidden border border-zinc-600 shadow-xl"
+                >
+                  <img
+                    class="w-full h-auto"
+                    src="./public/WoW-Development.jpg"
+                    alt="Development phase"
+                  />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+                  Development
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  The development phase focused heavily on responsiveness and
+                  accessibility. I used a mobile-first approach to ensure the
+                  website worked well on various devices. Additionally, I
+                  implemented a micro-interaction on the Dragonflight page using
+                  JavaScript.
+                </p>
+              </section>
             </section>
 
-            <!-- Development -->
-            <section class="mb-16">
-              <div class="w-full h-80 bg-gray-200 mb-14">
-                <img
-                  class="image1 w-full h-auto object-cover"
-                  src="./public/WoW-Development.jpg"
-                  alt="First design of the replica website with code"
-                  loading="lazy"
-                />
-              </div>
-              <h2 class="text-xl font-bold mb-4 dark:text-gray-100">
-                Development
-              </h2>
-              <p class="dark:text-gray-100 text-gray-900">
-                The development phase focused heavily on responsiveness and
-                accessibility. I used a mobile-first approach to ensure the
-                website worked well on various devices, from an iPhone SE to
-                larger desktop screens.
-                <br /><br />
-                For the structure of the pages, I used a combination of Flexbox
-                and Grid. These techniques allowed me to create a clear and
-                flexible layout. By adapting the rows in the code for smaller
-                screens, I ensured that the content was neatly rearranged on
-                smaller devices.
-                <br /><br />
-                Additionally, I implemented a micro-interaction on the
-                Dragonflight page using JavaScript. This gave me the opportunity
-                to practice working with interactive elements and further
-                improve my JavaScript skills.
-              </p>
-            </section>
-
-            <!-- Results -->
+            <!-- RESULTS -->
             <section
               id="results"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Results
               </h2>
-              <div class="w-full h-80 bg-gray-200 mb-8">
+              <div
+                class="mb-8 rounded-xl overflow-hidden border border-zinc-600"
+              >
                 <img
-                  class="image1 w-full h-auto object-cover"
+                  class="w-full h-auto"
                   src="./public/Wow-Results.jpg"
-                  alt="Results of homepage and dlc page of the replica website"
-                  loading="lazy"
+                  alt="Final Results"
                 />
               </div>
-              <p class="dark:text-gray-100 text-gray-900">
-                This contains the website:
-              </p>
-              <ul class="list-disc pl-5 dark:text-gray-100 text-gray-900">
-                <li>Responsive and accessible</li>
-                <li>
-                  Includes two pages:
-                  <ul class="list-disc pl-5">
-                    <li>Homepage</li>
-                    <li>DLC page (Dragonflight)</li>
-                  </ul>
-                </li>
-                <li>Visually appealing and user-friendly</li>
-                <li>Well-structured layout</li>
+              <ul
+                class="list-disc pl-6 space-y-3 dark:text-gray-100 text-gray-900"
+              >
+                <li>Responsive and accessible design</li>
+                <li>Fully functional Homepage and DLC page</li>
+                <li>Visually appealing and user-friendly interface</li>
+                <li>Well-structured, semantic HTML</li>
               </ul>
             </section>
 
-            <!-- Reflections -->
+            <!-- REFLECTIONS -->
             <section
               id="reflections"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-6 dark:text-gray-100">
                 Reflections
               </h2>
-              <p class="dark:text-gray-100 text-gray-900">
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 I am particularly proud of my improved understanding of
                 responsive design and my ability to implement JavaScript for
-                interactive elements. This project taught me a lot, including
-                the importance of semantic HTML, design consistency, and
-                focusing on accessibility.
-                <br /><br />
-                While I am happy with the result, I see areas for improvement,
-                such as refining my CSS layouts for larger screens and
-                experimenting with more complex JavaScript interactions.
-                Nevertheless, this project has laid a strong foundation for my
-                continued development in front-end web development.
+                interactive elements. This project taught me a lot about
+                semantic HTML and design consistency. In future projects, I aim
+                to refine my CSS layouts even further.
               </p>
             </section>
+
+            <!-- OTHER PROJECTS (MOBILE/TABLET) -->
+            <div class="lg:hidden mt-20 pt-10 border-t-2 border-zinc-600">
+              <h2 class="text-2xl font-bold dark:text-white mb-6">
+                Other Projects
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="PortfolioWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >Portfolio</a
+                >
+                <a
+                  href="BandBuddy.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >BandBuddy</a
+                >
+                <a
+                  href="ShortInternship.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >Internship</a
+                >
+              </div>
+            </div>
           </div>
         </main>
       </div>
