@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./src/css/style.css" />
@@ -30,15 +29,6 @@
       };
     </script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -47,19 +37,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
     <script type="module" src="./src/js/main.js" defer></script>
 
-    <!-- 11. Inline FOUC Prevention Script -->
+    <!-- Inline FOUC Prevention Script -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -72,7 +52,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script  -->
+    <!-- Inline Menu Toggle Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -81,48 +61,7 @@
         if (menuButton && menu) {
           menuButton.addEventListener('click', function () {
             menu.classList.toggle('hidden');
-            const isExpanded =
-              menuButton.getAttribute('aria-expanded') === 'true' || false;
-            menuButton.setAttribute('aria-expanded', !isExpanded);
           });
-
-          const menuLinks = document.querySelectorAll('#navbar-menu a');
-          menuLinks.forEach(link => {
-            link.addEventListener('click', function () {
-              if (window.innerWidth < 1024) {
-                menu.classList.add('hidden');
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              }
-            });
-          });
-
-          window.addEventListener('resize', function () {
-            if (window.innerWidth >= 1024) {
-              menu.classList.remove('hidden');
-              if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
-            } else {
-              // Only hide if it wasn't explicitly opened by the button or is currently visible
-              if (
-                !menu.classList.contains('hidden') &&
-                menuButton.getAttribute('aria-expanded') !== 'true'
-              ) {
-                menu.classList.add('hidden');
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              } else if (menu.classList.contains('hidden')) {
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
-              }
-            }
-          });
-
-          if (menu.classList.contains('hidden')) {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
-          } else {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
-          }
-        } else {
         }
       });
     </script>
@@ -131,9 +70,10 @@
   <body
     class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
-    <div id="body" class="font-container bg-scroll">
+    <div id="body" class="font-container">
+      <!-- HEADER -->
       <header
-        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-50 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
       >
         <nav
           class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
@@ -159,18 +99,9 @@
             <button
               id="toggle-menu-button"
               type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-menu"
-              aria-expanded="false"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
             >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
                 <path
                   stroke="currentColor"
                   stroke-linecap="round"
@@ -188,26 +119,26 @@
             class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent border-b-2 border-t-2 border-zinc-600 lg:border-0 z-20 transition-all duration-300 lg:items-center"
           >
             <ul
-              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
+              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center justify-center lg:space-x-8"
             >
               <li>
                 <a
                   href="#About"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >About</a
                 >
               </li>
               <li>
                 <a
                   href="#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
                   href="#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  class="block py-2 px-3 text-2xl font-sans font-bold text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Contact</a
                 >
               </li>
@@ -217,17 +148,15 @@
           <!-- DARK MODE -->
           <div class="flex items-center gap-6 lg:order-3">
             <button
-              name="light-dark-mode-toggle"
               id="theme-toggle"
               type="button"
-              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-200 dark:bg-zinc-800 focus:outline-none dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+              class="h-fit w-fit dark:text-white text-gray-500 hover:scale-110 transition-transform bg-zinc-200 dark:bg-zinc-800 rounded-full p-2.5"
             >
               <svg
                 id="theme-toggle-dark-icon"
                 class="hidden w-7 h-7"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
@@ -238,7 +167,6 @@
                 class="hidden w-7 h-7"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
@@ -251,127 +179,127 @@
         </nav>
       </header>
 
-      <div class="flex min-h-screen">
-        <!-- Fixed Sidebar -->
+      <!-- MAIN LAYOUT -->
+      <div class="flex flex-col lg:flex-row pt-20 lg:pt-0">
+        <!-- SIDEBAR -->
         <aside
-          class="fixed w-64 h-screen pt-24 border-r-2 border-zinc-600 p-8 overflow-y-auto"
+          class="w-full lg:w-64 lg:fixed lg:h-screen pt-10 lg:pt-28 border-zinc-600 lg:border-r-2 p-8 overflow-y-auto"
         >
-          <!-- Current Project Info -->
-          <h1 class="text-2xl font-bold mb-6 dark:text-white">
+          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
             Portfolio Website
           </h1>
-          <!-- Client -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 2v6h6"
-              />
-            </svg>
-            Amber Venema
+
+          <!-- INFO LIST -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 2v6h6"
+                />
+              </svg>
+              <p class="text-sm">Amber Venema</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">February 2025</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">Tailwind, JavaScript</p>
+            </div>
           </div>
-          <!-- Date -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            February 2025
-          </div>
-          <!-- Technologies -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-8">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            Tailwind, JavaScript
-          </div>
-          <!-- Navigation -->
+
+          <!-- NAVIGATION -->
           <nav class="mb-8 space-y-4">
             <h2 class="block text-black dark:text-white font-bold">Overview</h2>
             <a
               href="#progress"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Development Progress</a
             >
             <a
               href="#results"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Reflections</a
             >
           </nav>
-          <!-- Project Navigation -->
-          <div>
-            <h2 class="font-bold text-black dark:text-white tracking-wide mb-4">
+
+          <!-- PROJECT NAV -->
+          <div class="hidden lg:block">
+            <h2 class="font-bold text-black dark:text-white mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
               <a
-                href="BandBuddy.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                href="PortfolioWebsite.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Portfolio Website</a
               >
-                BandBuddy
-              </a>
               <a
                 href="ShortInternship.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Short Internship</a
               >
-                Short Internship
-              </a>
               <a
                 href="ReplicatingWebsite.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Replicating Website</a
               >
-                Replicating Website
-              </a>
             </div>
           </div>
         </aside>
 
-        <!-- Rest of the content remains the same -->
-        <main class="ml-64 flex-1">
+        <!-- CONTENT -->
+        <main class="flex-1 lg:ml-64">
           <!-- Hero Image -->
           <div class="relative w-full h-auto bg-gray-200">
             <img
               class="image1 w-full h-auto object-cover"
               src="./public/Overlay_Portfolio.jpg"
-              alt="Homescreen mockup of my portfolio website"
+              alt="Hero Portfolio"
               loading="lazy"
             />
             <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
@@ -379,32 +307,24 @@
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=html"
-                  alt="HTML icon"
-                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=css"
-                  alt="CSS icon"
-                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=tailwind"
-                  alt="Tailwind icon"
-                  loading="lazy"
                 />
                 <img
                   class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
                   src="https://skillicons.dev/icons?i=javascript"
-                  alt="JavaScript icon"
-                  loading="lazy"
                 />
               </div>
             </div>
           </div>
 
-          <!-- Content -->
+          <!-- Content Body -->
           <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
             <p
               class="intro dark:text-gray-100 text-gray-900 mb-16 leading-relaxed"
@@ -418,12 +338,7 @@
               skills. I started by
               <strong class="text-blue-950 dark:text-pink-300">forking</strong>
               an existing open-source template and completely reshaped it into
-              my own minimal, editorial-style portfolio. The goal was to
-              practice
-              <strong class="text-blue-950 dark:text-pink-300"
-                >Tailwind CSS</strong
-              >, improve code structure, and present my work in a professional
-              way.
+              my own minimal, editorial-style portfolio.
             </p>
 
             <!-- DEVELOPMENT PROGRESS -->
@@ -437,24 +352,16 @@
                 <img
                   class="w-full h-auto rounded-lg mb-8"
                   src="./public/Portfolio-InitialDesign.jpg"
-                  alt="Template website with my own code"
+                  alt="Initial Design"
                   loading="lazy"
                 />
                 <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
                   Initial Design
                 </h3>
                 <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
-                  I used a template from GitHub as a base
-                  <a
-                    href="https://github.com/Shivaraj-Kolekar/portfolio"
-                    class="text-purple-700"
-                    >(GitHub project by Shivaraj-Kolekar)</a
-                  >, but I wanted to make the website truly my own. The initial
-                  idea was to create a portfolio that felt structured, clean and
-                  visually balanced. I was especially drawn to layouts with
-                  clear lines and a block-based structure. Something that feels
-                  both sharp and artistic. I fell in love with the style so i
-                  wanted to create my own.
+                  I used a template from GitHub as a base, but I wanted to make
+                  the website truly my own. I was especially drawn to layouts
+                  with clear lines and a block-based structure.
                 </p>
               </section>
 
@@ -464,11 +371,8 @@
                 </h3>
                 <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                   During development, I reorganized the code structure into
-                  clear, separate folders for components, assets, and pages. I
-                  also rewrote the styling using Tailwind CSS, which I learned
-                  specifically for this project. Thanks to my knowledge of HTML
-                  and CSS, I picked it up quickly and was able to build
-                  responsive layouts efficiently.
+                  clear folders. I rewrote the styling using Tailwind CSS, which
+                  I learned specifically for this project.
                 </p>
               </section>
             </section>
@@ -487,17 +391,14 @@
                 <img
                   class="w-full h-auto"
                   src="./public/Portfolio-Results.jpg"
-                  alt="Result of my portfolio website"
+                  alt="Final Result"
                   loading="lazy"
                 />
               </div>
               <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 The final website is clean and structured. Its block-based
-                layout gives it an editorial and artistic feel that matches my
-                personal style. The design focuses on strong visual lines and
-                clear typography. This project not only showcases my technical
-                skills but also reflects my eye for design and ability to turn a
-                template into something personal and professional.
+                layout gives it an editorial feel that matches my personal
+                style.
               </p>
             </section>
 
@@ -512,14 +413,11 @@
               <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
                 This project helped me improve both my frontend development and
                 design thinking. I learned to work more efficiently with
-                Tailwind, organize a project properly and develop a consistent
-                visual style. In future updates I plan to make the website
-                responsive and add more interactive elements to make the site
-                even more engaging.
+                Tailwind and organize a project properly.
               </p>
             </section>
 
-            <!-- OTHER PROJECTS (MOBILE/TABLET) -->
+            <!-- OTHER PROJECTS (MOBILE/TABLET ONLY) -->
             <div class="lg:hidden mt-20 pt-10 border-t-2 border-zinc-600">
               <h2 class="text-2xl font-bold dark:text-white mb-6">
                 Other Projects
@@ -528,21 +426,18 @@
                 <a
                   href="BandBuddy.html"
                   class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >BandBuddy</a
                 >
-                  BandBuddy
-                </a>
                 <a
                   href="ShortInternship.html"
                   class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >Short Internship</a
                 >
-                  Short Internship
-                </a>
                 <a
                   href="ReplicatingWebsite.html"
                   class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >Replicating Website</a
                 >
-                  Replicating Website
-                </a>
               </div>
             </div>
           </div>
