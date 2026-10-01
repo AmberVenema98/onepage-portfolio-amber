@@ -52,7 +52,7 @@
   <script type="module" src="../src/js/main.js" defer></script>
   -->
 
-    <!-- 11. Inline FOUC Prevention Script (MUST be on ALL pages) -->
+    <!-- Inline FOUC Prevention Script -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -123,7 +123,7 @@
   </head>
 
   <body
-    class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
+    class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
     <div id="body" class="font-container bg-scroll">
       <header
@@ -186,36 +186,22 @@
             >
               <li>
                 <a
-                  href="./index.html#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  href="#About"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#Projects"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
-                  href="./index.html#Skills"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Skills</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./index.html#Work"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Work</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./index.html#Education"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Education</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./index.html#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  href="#Contact"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Contact</a
                 >
               </li>
@@ -351,7 +337,7 @@
 
           <!-- Navigation -->
           <nav class="mb-8 space-y-4">
-            <p class="block text-black dark:text-white font-bold">Overview</p>
+            <h2 class="block text-black dark:text-white font-bold">Overview</h2>
             <a
               href="#progress"
               class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"

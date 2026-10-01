@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="./src/css/style.css" />
 
-    <!-- 2. Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,9 +18,9 @@
 
     <title>Amber's Portfolio</title>
 
-    <!-- 4. Tailwind CSS (CDN) -->
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 5. Tailwind CSS Configuration -->
+    <!-- Tailwind CSS Configuration -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -57,9 +57,9 @@
       src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <script type="module" src="./src/js/main.js" defer></script>
+    <script type="module" src="./src/js/main.js"></script>
 
-    <!-- 11. Inline FOUC Prevention Script -->
+    <!-- Inline FOUC Prevention Script -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -72,7 +72,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script  -->
+    <!-- Inline Menu Toggle Script  -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -130,7 +130,7 @@
   </head>
 
   <body
-    class="bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:bg-gradient-to-r dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
+    class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
     <div id="body" class="font-container bg-scroll">
       <header
@@ -193,36 +193,22 @@
             >
               <li>
                 <a
+                  href="#About"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
                   href="#Projects"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
-                  href="#Skills"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Skills</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#Work"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Work</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#Education"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
-                  >Education</a
-                >
-              </li>
-              <li>
-                <a
                   href="#Contact"
-                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-sm"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
                   >Contact</a
                 >
               </li>
@@ -269,7 +255,6 @@
       <!-- INTRODUCTION -->
       <div id="hero" class="my-16 md:my-28 px-4 md:px-10 lg:px-20">
         <div>
-          <!-- commented text-center for having the text at left instead of center-->
           <h1
             class="text-gray-950 dark:text-gray-100 text-3xl md:text-5xl font-bold mb-2 tracking-tight"
           >
@@ -284,30 +269,27 @@
           </div>
           <span id="typed" class="dark:text-gray-400"></span>
           <div class="max-w-screen-md mt-2">
-            <!-- commented mx-auto for having the text at left instead of center-->
             <p
               class="text-gray-800 dark:text-gray-200 text-xl md:text-3xl tracking-tight"
             >
               I'm a Web Designer and Developer who loves figuring things out.
               Why does this work? Why doesn't that? What happens if I try this
-              instead? I like exploring ideas, experimenting with visuals and
+              instead?
+              <br /><br />
+              I like exploring ideas, experimenting with visuals and
               interactions, and finding the little details that make an
               experience feel just right. I enjoy combining design and
-              technology, but I'm just as interested in the process of figuring
-              out what works, testing it, and changing it when it doesn't. In my
-              free time I love video editting and gaming.
+              technology, testing it, and solving problems.
             </p>
           </div>
         </div>
         <div class="">
-          <!-- commented text-center for having the text at left instead of center-->
           <p
             class="text-gray-600 dark:text-gray-400 text-xl md:text-2xl mt-4 tracking-tight"
           >
             Connect with me here! ⬇️
           </p>
           <div class="mt-8 flex flex-wrap gap-5">
-            <!-- commented justify-center for having the text at left instead of center-->
             <!-- Github -->
             <a
               href="https://github.com/AmberVenema98"
@@ -350,6 +332,144 @@
         </div>
       </div>
 
+      <!-- ABOUT -->
+      <section
+        id="About"
+        class="mt-16 md:mt-28 px-4 md:px-10 lg:px-28 border-t-2 border-zinc-600"
+      >
+        <h2
+          class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
+        >
+          About Me
+        </h2>
+
+        <div class="about-window-content">
+          <p
+            class="dark:text-gray-100 text-gray-900 text-xl md:text-2xl leading-relaxed"
+          >
+            When I'm not designing or coding, I spend my time editing videos,
+            playing guitar, gaming or wandering through museums for inspiration.
+            That mix of curiosity, creativity and hands-on problem solving is
+            what drives me, both in and outside of my work as a web designer and
+            developer.
+          </p>
+        </div>
+
+        <!-- SKILLS -->
+        <div id="Skills" class="mt-16 mb-16 md:mb-28">
+          <h3
+            class="text-3xl font-bold text-gray-950 dark:text-gray-100 tracking-tight mb-8"
+          >
+            Skills
+          </h3>
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <!-- FIRST SKILL BLOCK -->
+            <div
+              id="block"
+              class="skill-box grid col-span-1 w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
+            >
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <h4
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
+              >
+                Languages and Frameworks
+              </h4>
+              <div class="flex flex-wrap gap-3 p-5">
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=html"
+                  alt="HTML icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=css"
+                  alt="CSS icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=tailwind"
+                  alt="Tailwind icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=javascript"
+                  alt="JavaScript icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=bootstrap"
+                  alt="Bootstrap icon"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <!-- SECOND SKILL BLOCK -->
+            <div
+              id="block"
+              class="skill-box grid col-span-1 w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
+            >
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <h4
+                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
+              >
+                Tools
+              </h4>
+
+              <div class="flex flex-wrap gap-3 p-5">
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=figma"
+                  alt="Figma icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skills.syvixor.com/api/icons?i=canva"
+                  alt="Canva icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=ps"
+                  alt="Photoshop icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=xd"
+                  alt="Adobe XD icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=github"
+                  alt="GitHub icon"
+                  loading="lazy"
+                />
+                <img
+                  class="skill w-12 h-12"
+                  src="https://skillicons.dev/icons?i=vscode"
+                  alt="VSCode icon"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- PROJECTS -->
       <section
         id="Projects"
@@ -361,22 +481,21 @@
           Projects
         </h2>
         <div class="mt-8 md:mt-10 mb-16 md:mb-28">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Card 1 -->
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- TOEGEVOEGD: flex flex-col h-full -->
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
-                  <!-- Achtergrond afbeelding -->
+                  <!-- BACKGROUND IMAGE -->
                   <img
                     class="image1 w-full h-56 object-cover"
                     src="./public/Overlay_Portfolio.jpg"
                     alt="Portfolio website full of projects and information about me"
                     loading="lazy"
                   />
-                  <!-- Container voor de kleinere afbeeldingen - nu gecentreerd -->
+                  <!-- ICONS -->
                   <div
                     class="absolute -bottom-6 left-0 right-0 flex justify-center"
                   >
@@ -384,25 +503,25 @@
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
-                        alt="HTML icon"
+                        alt="HTML skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
-                        alt="CSS icon"
+                        alt="CSS skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=tailwind"
-                        alt="Tailwind icon"
+                        alt="Tailwind skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript icon"
+                        alt="JavaScript skill icon"
                         loading="lazy"
                       />
                     </div>
@@ -419,7 +538,6 @@
                   A site showcasing my projects and skills to pursue internships
                   or jobs.
                 </p>
-                <!-- TOEGEVOEGD: mt-auto -->
                 <div class="project-button-box mt-auto">
                   <a
                     href="PortfolioWebsite.html"
@@ -466,7 +584,6 @@
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- TOEGEVOEGD: flex flex-col h-full -->
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -482,25 +599,25 @@
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
-                        alt="HTML icon"
+                        alt="HTML skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
-                        alt="CSS icon"
+                        alt="CSS skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript icon"
+                        alt="JavaScript skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=figma"
-                        alt="Figma icon"
+                        alt="Figma skill icon"
                         loading="lazy"
                       />
                     </div>
@@ -516,7 +633,6 @@
                 >
                   Built the front-end for "Band Buddy" in a team school project.
                 </p>
-                <!-- TOEGEVOEGD: mt-auto -->
                 <div class="project-button-box mt-auto">
                   <a
                     href="BandBuddy.html"
@@ -561,10 +677,9 @@
             </div>
 
             <!-- Card 3 -->
-            <div
+            <!-- div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- TOEGEVOEGD: flex flex-col h-full -->
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -580,25 +695,25 @@
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=bootstrap"
-                        alt="Bootstrap icon"
+                        alt="Bootstrap skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
-                        alt="HTML icon"
+                        alt="HTML skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
-                        alt="CSS icon"
+                        alt="CSS skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=photoshop"
-                        alt="Photoshop icon"
+                        alt="Photoshop skill icon"
                         loading="lazy"
                       />
                     </div>
@@ -607,17 +722,16 @@
                 <h3
                   class="project-title text-3xl font-semibold text-gray-950 dark:text-gray-100"
                 >
-                  Short Internship
+                  GreenPT
                 </h3>
                 <p
                   class="project-description mt-2 mb-2 font-semibold dark:text-gray-100 text-gray-900"
                 >
                   Redesigned and built a subscription page for two magazines.
                 </p>
-                <!-- TOEGEVOEGD: mt-auto -->
                 <div class="project-button-box mt-auto">
                   <a
-                    href="ShortInternship.html"
+                    href="GreenPT.html"
                     class="project-buttons dark:text-gray-900 dark:bg-zinc-100 bg-zinc-900 text-gray-100 font-semibold p-3 gap-1 rounded-md"
                   >
                     Read
@@ -638,13 +752,12 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div -->
 
             <!-- Card 4 -->
             <div
               class="project-box bg-transparent border-zinc-600 hover:border-purple-700 border-2 rounded-none"
             >
-              <!-- TOEGEVOEGD: flex flex-col h-full -->
               <div class="project-content p-5 flex flex-col h-full">
                 <div class="relative mb-8">
                   <img
@@ -660,19 +773,19 @@
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=html"
-                        alt="HTML icon"
+                        alt="HTML skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=css"
-                        alt="CSS icon"
+                        alt="CSS skill icon"
                         loading="lazy"
                       />
                       <img
                         class="w-11 h-11 p-2 bg-gray-200 dark:bg-zinc-900 rounded-full"
                         src="https://skillicons.dev/icons?i=javascript"
-                        alt="JavaScript icon"
+                        alt="JavaScript skill icon"
                         loading="lazy"
                       />
                     </div>
@@ -688,7 +801,6 @@
                 >
                   Recreated a website using grid, flexbox, and inclusive design.
                 </p>
-                <!-- TOEGEVOEGD: mt-auto -->
                 <div class="project-button-box mt-auto">
                   <a
                     href="ReplicatingWebsite.html"
@@ -735,383 +847,6 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section
-        id="Skills"
-        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-600"
-      >
-        <h2
-          class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
-        >
-          Skills
-        </h2>
-        <!-- commented text-center for having the text at left instead of center-->
-
-        <div>
-          <div class="mb-16 md:mb-28 grid grid-cols-1 xl:grid-cols-2 gap-6">
-            <!-- FIRST SKILL BLOCK -->
-            <div
-              id="block"
-              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
-            >
-              <h3
-                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
-              >
-                Languages and Frameworks
-              </h3>
-              <div class="flex flex-wrap gap-3 p-5">
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=html"
-                  alt="HTML icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=css"
-                  alt="CSS icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=tailwind"
-                  alt="Tailwind icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=javascript"
-                  alt="JavaScript icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=bootstrap"
-                  alt="Bootstrap icon"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <!-- SECOND SKILL BLOCK -->
-            <div
-              id="block"
-              class="skill-box mt-8 grid col-span-1 shadow-md w-full bg-transparent border-2 border-solid border-zinc-600 hover:border-purple-700"
-            >
-              <h3
-                class="text-3xl font-semibold text-gray-950 dark:text-gray-100 tracking-tight pl-6 pb-2 mt-4 border-b-2 border-zinc-600"
-              >
-                Tools
-              </h3>
-
-              <div class="flex flex-wrap gap-3 p-5">
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=figma"
-                  alt="Figma icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skills.syvixor.com/api/icons?i=canva"
-                  alt="Canva icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=ps"
-                  alt="Photoshop icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=xd"
-                  alt="Adobe XD icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=github"
-                  alt="GitHub icon"
-                  loading="lazy"
-                />
-                <img
-                  class="skill w-12 h-12"
-                  src="https://skillicons.dev/icons?i=vscode"
-                  alt="VSCode icon"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WORK EXPERIENCE -->
-      <section
-        id="Work"
-        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-600"
-      >
-        <h2
-          class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
-        >
-          Work Experience
-        </h2>
-        <h3
-          class="mt-5 md:mt-5 p-6 text-3xl font-bold dark:text-white text-gray-900"
-        >
-          Relevant work experience
-        </h3>
-        <!-- FIRST BOX -->
-        <div
-          class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
-        >
-          <p
-            class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 dark:text-white border-8 rounded-full px-4 py-1"
-          >
-            2026
-          </p>
-          <div>
-            <div
-              class="p-6 md:ml-20 lg:ml-32 border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <h3 class="text-3xl font-bold dark:text-white text-gray-900">
-                Digital Accessibility HvA
-              </h3>
-              <h4 class="text-xl text-purple-700">Internship</h4>
-              <h5 class="text-gray-500">Dec 2025 - Feb 2026</h5>
-              <p class="mt-2 dark:text-white text-gray-900">
-                Researched the accessibility of the HvA's Brightspace
-                environment through desk research. Based on these insights, I
-                created a practical manual with recommendations for improving
-                digital accessibility.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- FIRST BOX -->
-
-        <!-- SECOND BOX -->
-        <div
-          class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
-        >
-          <p
-            class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 dark:text-white border-8 rounded-full px-4 py-1"
-          >
-            2025
-          </p>
-          <div
-            class="p-6 md:mr-20 lg:mr-32 border-zinc-600 border-2 hover:border-purple-700"
-          >
-            <h3 class="mt-4 text-3xl font-bold dark:text-white text-gray-900">
-              Fit4Marketing
-            </h3>
-            <h4 class="text-xl text-purple-700">Internship</h4>
-            <h5 class="text-gray-500">Sep 2025 - Nov 2025</h5>
-            <p class="mt-2 dark:text-white text-gray-900">
-              Contributed to both improving the existing website and developing
-              new design concepts. Focusing on usability, SEO, visual design and
-              user experience.
-            </p>
-          </div>
-        </div>
-        <!-- SECOND BOX -->
-
-        <!-- THIRD BOX -->
-        <div
-          class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
-        >
-          <p
-            class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 dark:text-white border-8 rounded-full px-4 py-1"
-          >
-            2024
-          </p>
-          <div>
-            <div
-              class="p-6 md:ml-20 lg:ml-32 border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <h3 class="text-3xl font-bold dark:text-white text-gray-900">
-                S.P. Abbonneeservice
-              </h3>
-              <h4 class="text-xl text-purple-700">Internship</h4>
-              <h5 class="text-gray-500">Feb 2024 - Apr 2024</h5>
-              <p class="mt-2 dark:text-white text-gray-900">
-                I redesigned client forms for their website using an online
-                design environment, coding them with Bootstrap, and presented
-                the new designs to gather feedback
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- THIRD BOX -->
-
-        <!-- FOURTH BOX -->
-        <div
-          class="work-box experience-item relative mb-8 w-full lg:w-5/6 bg-transparent"
-        >
-          <p
-            class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 dark:text-white border-8 rounded-full px-4 py-1"
-          >
-            2019
-          </p>
-
-          <div
-            class="p-6 md:mr-20 lg:mr-32 border-zinc-600 border-2 hover:border-purple-700"
-          >
-            <h3 class="mt-4 text-3xl font-bold dark:text-white text-gray-900">
-              Pepperminds
-            </h3>
-            <h4 class="text-xl text-purple-700">Internship</h4>
-            <h5 class="text-gray-500">Feb 2019 - July 2019</h5>
-            <p class="mt-2 dark:text-white text-gray-900">
-              I designed posters for the company and their locations in Belgium
-              and Germany, communicated via email for assignments, and created
-              Instagram and Snapchat stories
-            </p>
-          </div>
-        </div>
-        <!-- FOURTH BOX -->
-
-        <h3 class="p-6 text-3xl font-bold dark:text-white text-gray-900">
-          Part-time jobs
-        </h3>
-
-        <!-- FIFTH BOX -->
-        <div
-          class="work-box experience-item relative mb-28 w-full lg:w-5/6 bg-transparent"
-        >
-          <p
-            class="font-bold absolute top-0 text-center transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-primary-foreground dark:border-zinc-950 dark:text-white border-8 rounded-full px-4 py-1"
-          >
-            2020
-          </p>
-          <div>
-            <div
-              class="p-6 md:ml-20 lg:ml-32 border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <h3 class="mt-4 text-3xl font-bold dark:text-white text-gray-900">
-                Tzorg, Vivazorggroep, Kennemerhart
-              </h3>
-              <h4 class="text-xl text-purple-700">Housekeeping</h4>
-              <h5 class="text-gray-500">2020 - 2026</h5>
-              <p class="mt-2 dark:text-white text-gray-900">
-                Alongside my studies, I have worked in housekeeping for elderly
-                clients through various organizations.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- FIFTH BOX -->
-      </section>
-
-      <!-- Education -->
-      <section
-        id="Education"
-        class="px-4 md:px-10 lg:px-28 border-t-2 border-zinc-700"
-      >
-        <!-- Header Section -->
-        <h2
-          class="mt-16 md:mt-28 text-gray-950 dark:text-gray-100 text-5xl font-bold tracking-tight"
-        >
-          Education
-        </h2>
-
-        <!-- Education Cards -->
-        <div class="mt-10 mb-28">
-          <div class="space-y-6">
-            <!-- Card 1: HvA -->
-            <!-- TOEVOEGING: md:h-64 zorgt voor een vaste hoogte op desktop -->
-            <div
-              class="education-box md:h-64 overflow-hidden bg-transparent border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <div class="flex flex-col md:flex-row md:items-stretch h-full">
-                <div class="p-6 flex-1 flex flex-col justify-center h-full">
-                  <h3
-                    class="text-2xl lg:text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
-                  >
-                    Hogeschool van Amsterdam
-                  </h3>
-                  <h4 class="text-xl text-purple-700">
-                    Communication and Multimedia Design
-                  </h4>
-                  <h5 class="text-gray-500">2022-2026 | Completed</h5>
-                  <p class="mt-2 dark:text-white text-gray-900 line-clamp-3">
-                    Focusing on creating user-centered digital experiences
-                    through multimedia design and strategic communication.
-                  </p>
-                </div>
-                <div class="w-full md:w-80 lg:w-96 flex-shrink-0">
-                  <img
-                    class="w-full h-48 md:h-full object-cover"
-                    src="./public/theo-thijssenhuis-hva-amsterdam.jpeg"
-                    alt="HvA"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Stuttgart -->
-            <div
-              class="education-box md:h-64 overflow-hidden bg-transparent border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <div class="flex flex-col md:flex-row md:items-stretch h-full">
-                <div class="p-6 flex-1 flex flex-col justify-center h-full">
-                  <h3
-                    class="text-2xl lg:text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
-                  >
-                    Hochschule der Medien Stuttgart
-                  </h3>
-                  <h4 class="text-xl text-purple-700">
-                    Experimental Film Minor
-                  </h4>
-                  <h5 class="text-gray-500">
-                    March 2025 - July 2025 | Completed
-                  </h5>
-                  <p class="mt-2 dark:text-white text-gray-900 line-clamp-3">
-                    Explored experimental storytelling and cinematography in an
-                    international environment.
-                  </p>
-                </div>
-                <div class="w-full md:w-80 lg:w-96 flex-shrink-0">
-                  <img
-                    class="w-full h-48 md:h-full object-cover"
-                    src="./public/HdM_Stuttgart.jpg"
-                    alt="Stuttgart"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Media College -->
-            <div
-              class="education-box md:h-64 overflow-hidden bg-transparent border-zinc-600 border-2 hover:border-purple-700"
-            >
-              <div class="flex flex-col md:flex-row md:items-stretch h-full">
-                <div class="p-6 flex-1 flex flex-col justify-center h-full">
-                  <h3
-                    class="text-2xl lg:text-3xl font-semibold mb-1 text-gray-950 dark:text-gray-100"
-                  >
-                    Media College
-                  </h3>
-                  <h4 class="text-xl text-purple-700">Graphic Design</h4>
-                  <h5 class="text-gray-500">2016-2020 | Completed</h5>
-                  <p class="mt-2 dark:text-white text-gray-900 line-clamp-3">
-                    Developed strong foundation in visual design principles,
-                    typography, and digital media creation.
-                  </p>
-                </div>
-                <div class="w-full md:w-80 lg:w-96 flex-shrink-0">
-                  <img
-                    class="w-full h-48 md:h-full object-cover"
-                    src="./public/mediacollege-amsterdam.jpg"
-                    alt="Media College"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- CONTACT -->
       <section
         id="Contact"
@@ -1122,13 +857,18 @@
         >
           Contact
         </h2>
-        <!-- commented text-center for having the text at left instead of center-->
+
         <div id="block" class="mt-10 mb-28 grid relative">
           <form action="https://formspree.io/f/mvgrgldy" method="POST">
             <div
-              class="contact-box bg-transparent border-zinc-600 hover:border-purple-700 border-solid border-2 p-4 shadow-lg"
+              class="contact-box bg-transparent border-zinc-600 hover:border-purple-700 border-solid border-2"
             >
-              <div class="flex flex-col md:flex-row">
+              <div class="window-titlebar">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <div class="flex flex-col md:flex-row p-4">
                 <!-- FROM -->
                 <div class="md:w-1/2 mb-8 md:mb-0 p-4">
                   <h3
@@ -1175,7 +915,6 @@
                     ></textarea>
                   </div>
 
-                  <!-- <div class="h-captcha" data-captcha="true"></div>-->
                   <button
                     type="submit"
                     class="form-submit bg-zinc-900 dark:bg-gray-100 text-white dark:text-black font-medium px-6 py-2 rounded-md mt-4 dark:hover:bg-gray-300 hover:scale-110 transform transition-transform duration-300"
@@ -1237,37 +976,6 @@
                     </a>
                   </div>
                   <div class="flex items-center ml-4 my-4"></div>
-                  <button
-                    class="cursor-pointer group relative flex gap-1.5 px-8 py-4 dark:text-gray-100 text-gray-700 border-zinc-900 dark:border-white border-2 rounded-lg hover:bg-opacity-70 transition font-semibold shadow-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      height="24px"
-                      width="24px"
-                      class="theme-icon"
-                    >
-                      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                      <g
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        id="SVGRepo_tracerCarrier"
-                      ></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <g id="Interface / Download">
-                          <path
-                            stroke-linejoin="round"
-                            stroke-linecap="round"
-                            stroke-width="2"
-                            d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
-                            id="Vector"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                    <a href="./public/CV.pdf"> Resume </a>
-                  </button>
                 </div>
               </div>
             </div>
