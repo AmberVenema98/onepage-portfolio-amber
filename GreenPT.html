@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 1. Main Stylesheet  -->
     <link rel="stylesheet" href="./src/css/style.css" />
 
-    <!-- 2. Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,11 +15,10 @@
       rel="stylesheet"
     />
 
-    <title>Project: Short Internship</title>
+    <title>Project: GreenPT</title>
 
-    <!-- 4. Tailwind CSS (CDN) -->
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 5. Tailwind CSS Configuration  -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -31,7 +28,6 @@
       };
     </script>
 
-    <!-- 9. Ionicons  -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -40,19 +36,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <!-- Alternative Ionicons from jsDelivr if unpkg gives CORS issues:
-  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  -->
 
-    <!-- 10. Your Main JavaScript (main.js) (MUST be on ALL pages with theme toggle/menu) -->
-    <!-- (Ensure path is correct for EACH page and 'import Typed' is removed from main.js) -->
     <script type="module" src="./src/js/main.js" defer></script>
-    <!-- Example: If an HTML file is in 'projects/' folder, this becomes:
-  <script type="module" src="../src/js/main.js" defer></script>
-  -->
 
-    <!-- Inline FOUC Prevention Script -->
+    <!-- Darkmode -->
     <script>
       if (
         localStorage.getItem('color-theme') === 'dark' ||
@@ -65,7 +52,7 @@
       }
     </script>
 
-    <!-- 12. Inline Menu Toggle Script (MUST be on ALL pages with the header/menu) -->
+    <!-- Inline Menu Toggle Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuButton = document.getElementById('toggle-menu-button');
@@ -95,7 +82,6 @@
               menu.classList.remove('hidden');
               if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
             } else {
-              // Only hide if it wasn't explicitly opened by the button or is currently visible
               if (
                 !menu.classList.contains('hidden') &&
                 menuButton.getAttribute('aria-expanded') !== 'true'
@@ -103,20 +89,9 @@
                 menu.classList.add('hidden');
                 if (menuButton)
                   menuButton.setAttribute('aria-expanded', 'false');
-              } else if (menu.classList.contains('hidden')) {
-                if (menuButton)
-                  menuButton.setAttribute('aria-expanded', 'false');
               }
             }
           });
-          // Initial state for aria-expanded on hamburger
-          if (menu.classList.contains('hidden')) {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'false');
-          } else {
-            if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
-          }
-        } else {
-          // console.error('Menu button or navbar menu not found on this page!'); // Can be noisy if header isn't on every page
         }
       });
     </script>
@@ -125,9 +100,10 @@
   <body
     class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
   >
-    <div id="body" class="font-container bg-scroll">
+    <div id="body" class="font-container">
+      <!-- HEADER -->
       <header
-        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-10 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-50 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
       >
         <nav
           class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
@@ -154,10 +130,7 @@
               id="toggle-menu-button"
               type="button"
               class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-menu"
-              aria-expanded="false"
             >
-              <span class="sr-only">Open main menu</span>
               <svg
                 class="w-5 h-5"
                 aria-hidden="true"
@@ -208,13 +181,12 @@
             </ul>
           </div>
 
-          <!-- DARK MODE -->
+          <!-- DARK MODE TOGGLE -->
           <div class="flex items-center gap-6 lg:order-3">
             <button
-              name="light-dark-mode-toggle"
               id="theme-toggle"
               type="button"
-              class="h-fit w-fit my-0 dark:text-white text-gray-500 hover:scale-110 transition-transform transform hover:bg-zinc-200 bg-zinc-200 dark:bg-zinc-800 focus:outline-none dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+              class="h-fit w-fit dark:text-white text-gray-500 hover:scale-110 transition-transform bg-zinc-200 dark:bg-zinc-800 rounded-full p-2.5"
             >
               <svg
                 id="theme-toggle-dark-icon"
@@ -244,313 +216,313 @@
           </div>
         </nav>
       </header>
-      <div class="flex min-h-screen">
-        <!-- Fixed Sidebar -->
+
+      <!-- MAIN LAYOUT -->
+      <div class="flex flex-col lg:flex-row pt-20 lg:pt-0">
+        <!-- SIDEBAR -->
         <aside
-          class="fixed w-64 h-screen pt-24 border-r-2 border-zinc-600 p-8 overflow-y-auto"
+          class="w-full lg:w-64 lg:fixed lg:h-screen pt-10 lg:pt-28 border-zinc-600 lg:border-r-2 p-8 overflow-y-auto"
         >
-          <!-- Current Project Info -->
-          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">
-            Short Internship
-          </h1>
+          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">GreenPT</h1>
 
-          <!-- Client -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 2v6h6"
-              />
-            </svg>
-            S.P. Abonneeservice
+          <!-- INFO LIST -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 2v6h6"
+                />
+              </svg>
+              <p class="text-sm">Exam, HvA</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">July 2026</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">Canva, Figma</p>
+            </div>
           </div>
 
-          <!-- Date -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            April 2024
-          </div>
-
-          <!-- Technologies -->
-          <div class="flex items-center dark:text-gray-500 text-gray-900 mb-4">
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            Bootstrap, Photoshop
-          </div>
-
-          <!-- View Live Link -->
-          <a
-            href="https://niw.nl/abonneren/"
-            class="inline-flex items-center text-purple-600 hover:text-purple-800 mb-8"
-          >
-            <svg
-              class="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-            View Live
-          </a>
-
-          <!-- Navigation -->
+          <!-- NAVIGATION -->
           <nav class="mb-8 space-y-4">
             <h2 class="block text-black dark:text-white font-bold">Overview</h2>
             <a
               href="#progress"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Development Progress</a
             >
             <a
               href="#results"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Results</a
             >
             <a
               href="#reflections"
-              class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
               >Reflections</a
             >
           </nav>
 
-          <!-- Project Navigation -->
-          <div>
-            <h2 class="text-black dark:text-white font-bold tracking-wide mb-4">
+          <!-- PROJECT NAV -->
+          <div class="hidden lg:block">
+            <h2 class="font-bold text-black dark:text-white mb-4">
               Other Projects
             </h2>
             <div class="space-y-3">
               <a
                 href="PortfolioWebsite.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Portfolio Website</a
               >
-                Portfolio Website
-              </a>
               <a
                 href="BandBuddy.html"
-                class="block dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >BandBuddy</a
               >
-                BandBuddy
-              </a>
               <a
                 href="ReplicatingWebsite.html"
-                class="block group dark:text-gray-500 text-gray-900 dark:hover:text-purple-700 hover:text-purple-700"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Replicating Website</a
               >
-                Replicating Website
-              </a>
             </div>
           </div>
         </aside>
 
-        <!-- Rest of the content remains the same -->
-        <main class="ml-64 flex-1">
-          <!-- Hero Image -->
-          <div class="relative w-full h-auto bg-gray-200">
+        <!-- CONTENT -->
+        <main class="flex-1 lg:ml-64">
+          <!-- HERO -->
+          <div class="relative w-full">
             <img
-              class="image1 w-full h-auto object-cover"
-              src="./public/Overlay_SP.jpg"
-              alt="Subscription and form page of the OOR website displayed on a computer, tablet and mobile"
+              class="w-full h-auto object-cover"
+              src="./public/Mock-upGreenPT-Hero.png"
+              alt="Overlay with a mockup of the app GreenPT"
               loading="lazy"
             />
-            <div class="absolute -bottom-6 left-0 right-0 flex justify-center">
-              <div class="flex gap-2 justify-center">
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=bootstrap"
-                  alt="Bootstrap icon"
-                  loading="lazy"
-                />
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=html"
-                  alt="HTML icon"
-                  loading="lazy"
-                />
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=css"
-                  alt="CSS icon"
-                  loading="lazy"
-                />
-                <img
-                  class="w-8 h-8 sm:w-12 sm:h-12 p-2 dark:bg-zinc-900 bg-gray-200 rounded-full"
-                  src="https://skillicons.dev/icons?i=photoshop"
-                  alt="Photoshop icon"
-                  loading="lazy"
-                />
-              </div>
+            <div
+              class="absolute -bottom-6 left-0 right-0 flex justify-center gap-2"
+            >
+              <img
+                class="w-10 h-10 lg:w-12 lg:h-12 p-2 dark:bg-zinc-900 bg-gray-100 rounded-full shadow-lg"
+                src="https://skills.syvixor.com/api/icons?i=canva"
+                alt="Canva skill icon"
+              />
+              <img
+                class="w-10 h-10 lg:w-12 lg:h-12 p-2 dark:bg-zinc-900 bg-gray-100 rounded-full shadow-lg"
+                src="https://skillicons.dev/icons?i=figma"
+                alt="Figma skill icon"
+              />
             </div>
           </div>
 
-          <!-- Content -->
-          <div class="max-w-4xl mx-auto px-8 py-12">
-            <p class="dark:text-gray-100 text-gray-900 mb-16">
-              During my short
-              <strong class="text-purple-700">10 week</strong> internship at
-              S.P. Abonneeservice, I had the opportunity to work on
-              <strong class="text-purple-700">improving</strong> the online
-              forms, the subscription overview page, and the contact page for
-              two publishers: OOR and NIW. <br /><br />
-              The
-              <strong class="text-purple-700">goal</strong> of the project was
-              to simplify and accelerate the subscription process for users
-              while creating a more user-friendly and intuitive experience. My
-              <strong class="text-purple-700">tasks</strong> included modifying
-              forms in Quartz, designing updated web pages in Photoshop, and
-              implementing responsive prototypes using Bootstrap.
+          <!-- BODY TEXT -->
+          <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
+            <p
+              class="intro dark:text-gray-100 text-gray-900 mb-16 leading-relaxed"
+            >
+              GreenPT was my graduation project, a
+              <strong class="text-blue-950 dark:text-pink-300">6 month</strong>
+              project in which I worked on making the environmental impact of AI
+              more understandable through data visualisation. The goal was to
+              <strong class="text-blue-950 dark:text-pink-300"
+                >visualise the data</strong
+              >
+              behind AI usage in a way that would help people understand its
+              impact and become more aware of how they use AI.
             </p>
 
-            <!-- Development Progress -->
-            <section id="progress" class="mb-16">
-              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
-                Development Progress
-              </h2>
-              <div class="w-full h-80 bg-gray-200 mb-8">
+            <!-- DEVELOPMENT PROGRESS -->
+            <section
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+            >
+              <section id="progress" class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                  Development Progress
+                </h2>
                 <img
-                  class="image1 w-full h-auto object-cover"
-                  src="./public/SP-InitialDesign.jpg"
-                  alt="First concept of OOR and NIW website"
-                  loading="lazy"
+                  class="w-full h-auto rounded-lg mb-8"
+                  src="./public/GreenPT-InitialDesign.png"
+                  alt="Styleboard and sketches of the loading, error and darkmode page of the app"
                 />
-              </div>
-              <h3 class="text-xl font-bold mt-16 dark:text-gray-100">
-                Initial Design
-              </h3>
-              <p class="dark:text-gray-100 text-gray-900">
-                The initial design phase focused on exploring ways to streamline
-                the user experience. For the forms, I analyzed the existing
-                structure to identify areas where steps could be reduced or
-                unnecessary fields removed.
-                <br /><br />
-                For the subscription overview page, I aimed to create a clear
-                and organized layout that simplified the process of selecting an
-                appropriate subscription. On the contact page, I added visual
-                elements like icons to improve readability and navigation.
-                <br /><br />
-                I created wireframes and design mockups in Photoshop during this
-                stage, drawing inspiration from successful elements in previous
-                S.P. Abonneeservice projects.
-              </p>
+                <h3 class="text-xl font-bold mb-4 dark:text-gray-100">
+                  Initial Design
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  At the start of the project, I was still exploring what form
+                  GreenPT should take. I considered different concepts,
+                  including a chatbot, a Prompt Assistant and a quest-based
+                  experience. I experimented with many different ideas by
+                  sketching, prototyping and discussing them with the target
+                  audience, coaches and other people involved in the project.
+                  <br /><br />This resulted in many iterations, as I wanted to
+                  understand what would actually be useful and engaging for the
+                  target audience. Rather than deciding on one concept straight
+                  away, I used the feedback and conversations to gradually
+                  narrow down the possibilities and find a direction that would
+                  encourage people to learn about more sustainable AI use.
+                </p>
+              </section>
+
+              <section class="mb-16">
+                <div
+                  class="mb-8 rounded-xl overflow-hidden border border-zinc-600 shadow-xl"
+                >
+                  <img
+                    class="w-full h-auto"
+                    src="./public/GreenPT-Development.png"
+                    alt="Sign up, account and setting page with a wireflow"
+                  />
+                </div>
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+                  Development
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  Through my research and conversations with the target
+                  audience, it became clear that a quest-based experience was
+                  more interesting than a Prompt Assistant. A Prompt Assistant
+                  could provide useful tips, but users could easily ignore them
+                  without really changing their behaviour. The quest, on the
+                  other hand, encouraged users to actively learn by doing. This
+                  became the foundation for the final concept. Users complete
+                  different challenges to learn how to write more efficient
+                  prompts, with a points and level system to make the experience
+                  more engaging.
+                  <br /><br />I also introduced the forest as an interactive
+                  visual element. The forest grows as users make progress, while
+                  less effective choices cause it to gradually decline. Users do
+                  not lose points when they make a less effective choice;
+                  instead, they receive feedback and tips to help them improve.
+                </p>
+              </section>
             </section>
 
-            <!-- Development -->
-            <section class="mb-16">
-              <div class="w-full h-80 bg-gray-200 mb-14">
-                <img
-                  class="image1 w-full h-auto object-cover"
-                  src="./public/SP-Development.jpg"
-                  alt="Bootstrap and css of the subscription page"
-                  loading="lazy"
-                />
-              </div>
-              <h2 class="text-xl font-bold dark:text-gray-100">Development</h2>
-              <p class="dark:text-gray-100 text-gray-900">
-                After finalizing the initial designs, I began the development
-                phase. Using Quartz, I modified the online forms to make them
-                more compact and efficient.
-                <br /><br />
-                For the subscription overview and contact pages, I used
-                Photoshop to refine the visual elements and Bootstrap to
-                implement responsive, functional prototypes. This allowed the
-                pages to be accessible on a variety of devices.
-                <br /><br />
-                Testing was a key part of this phase, as I created multiple
-                versions of the designs and adjusted them based on feedback from
-                my supervisor and the publishers. These prototypes were aimed at
-                reducing user friction while maintaining a clean and
-                professional appearance.
-              </p>
-            </section>
-
-            <!-- Results -->
+            <!-- RESULTS -->
             <section
               id="results"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
                 Results
               </h2>
-              <div class="w-full h-80 bg-gray-200 mb-8">
+              <div
+                class="mb-8 rounded-xl overflow-hidden border border-zinc-600"
+              >
                 <img
-                  class="image1 w-full h-auto object-cover"
-                  src="./public/SP-Results.jpg"
-                  alt="Results of OOR and NIW subscription page, contact page and form"
-                  loading="lazy"
+                  class="w-full h-auto"
+                  src="./public/GreenPT-Results.png"
+                  alt="Sing up and setting page online for web"
                 />
               </div>
-              <p class="dark:text-gray-100 text-gray-900 mb-4">
-                The final deliverables included:
+              <p class="dark:text-gray-100 text-gray-900 mb-6 leading-relaxed">
+                The final concept combines the quest system, points and levels,
+                and an interactive forest that reflects the user's progress.
+                Completing challenges helps users learn how to write more
+                efficient prompts, while the forest visually responds to their
+                performance. I also developed both dark and light modes and
+                created a mobile version of the experience. This allowed me to
+                explore how the visual style and interactions could adapt to
+                different screens and user contexts. The result is an
+                interactive experience that makes sustainable AI use more
+                engaging by encouraging users to learn through doing.
               </p>
-              <ul
-                class="list-disc pl-6 space-y-2 dark:text-gray-100 text-gray-900"
-              >
-                <li>Improved structure of the subscription overview page</li>
-                <li>Enhanced contact page with icons and better layout</li>
-                <li>
-                  Received positive feedback from supervisor and publishers
-                </li>
-              </ul>
             </section>
 
-            <!-- Reflections -->
+            <!-- REFLECTIONS -->
             <section
               id="reflections"
-              class="mb-16 dark:bg-zinc-900 bg-white p-8 rounded-lg"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
             >
-              <h2 class="text-3xl font-bold mb-4 dark:text-gray-100">
+              <h2 class="text-3xl font-bold mb-6 dark:text-gray-100">
                 Reflections
               </h2>
-              <p class="dark:text-gray-100 text-gray-900">
-                During this internship, I improved my communication and
-                collaboration skills by working closely with clients and
-                gathering feedback throughout the process. I also strengthened
-                my ability to explain and justify design decisions, especially
-                when presenting to publishers. Overall, it deepened my
-                understanding of user-centered design and boosted my technical
-                confidence.
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                This project taught me that visualising data is not only about
+                making information look appealing. The way information is
+                presented strongly influences how people understand and interact
+                with it. One of the biggest challenges was finding the right
+                balance between storytelling, visual design and factual
+                information. I initially wanted to include many different
+                elements, but through iteration and feedback I learned to focus
+                on the parts that contributed most to the user&apos;s
+                understanding of the concept. The project also strengthened my
+                skills in interaction design, prototyping and visualising
+                complex information.
+                <br /><br />
+                Looking back, I didn&apos;t have enough time to also code the
+                project into a working prototype. The research and interviews
+                took more time than I initially expected, leaving less time for
+                development. I would have loved to take the concept one step
+                further and actually build it, so that is definitely something I
+                would do if I had the opportunity to continue working on
+                GreenPT.
               </p>
             </section>
+
+            <!-- OTHER PROJECTS (MOBILE/TABLET) -->
+            <div class="lg:hidden mt-20 pt-10 border-t-2 border-zinc-600">
+              <h2 class="text-2xl font-bold dark:text-white mb-6">
+                Other Projects
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="PortfolioWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Portfolio Website
+                </a>
+                <a
+                  href="GreenPT.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  GreenPT
+                </a>
+                <a
+                  href="ReplicatingWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Replicating Website
+                </a>
+              </div>
+            </div>
           </div>
         </main>
       </div>

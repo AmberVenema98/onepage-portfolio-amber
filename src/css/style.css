@@ -34,7 +34,8 @@ html.dark {
 .project-box {
   transform: scale(0.95);
   transition: all 0.5s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition-property: transform, border-color;
   transition-duration: 0.3s;
@@ -68,7 +69,8 @@ html.dark {
 .contact-box {
   transform: scale(1);
   transition: all 0.5s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition-property: transform, border-color;
   transition-duration: 0.3s;
@@ -403,11 +405,6 @@ html.dark aside a:hover {
   color: var(--cv-pink) !important;
 }
 
-aside h2,
-html.dark aside h2 {
-  color: var(--cv-cream) !important;
-}
-
 /* --- CONTENT --- */
 main section.rounded-2xl {
   border: var(--cv-border) solid var(--cv-navy) !important;
@@ -417,7 +414,9 @@ main section.rounded-2xl {
   padding: calc(var(--cv-bar-h) + 1.5rem) 2rem 2rem !important;
   overflow: hidden;
   transform: rotate(-0.6deg);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 main section.rounded-2xl:hover {
   transform: rotate(0deg);
@@ -474,16 +473,22 @@ main section.rounded-2xl::after {
   width: 12px;
   height: 12px;
   background: var(--cv-navy);
-  box-shadow: 20px 0 0 var(--cv-navy), 40px 0 0 var(--cv-navy);
+  box-shadow:
+    20px 0 0 var(--cv-navy),
+    40px 0 0 var(--cv-navy);
   z-index: 1;
 }
 main section.rounded-2xl:nth-of-type(2)::after {
   background: var(--cv-pink);
-  box-shadow: 20px 0 0 var(--cv-pink), 40px 0 0 var(--cv-pink);
+  box-shadow:
+    20px 0 0 var(--cv-pink),
+    40px 0 0 var(--cv-pink);
 }
 main section.rounded-2xl:nth-of-type(3)::after {
   background: #fff;
-  box-shadow: 20px 0 0 #fff, 40px 0 0 #fff;
+  box-shadow:
+    20px 0 0 #fff,
+    40px 0 0 #fff;
 }
 
 main section.rounded-2xl section {
@@ -497,7 +502,9 @@ main section.rounded-2xl section::after {
   content: none;
 }
 h1,
-h2 {
+h2,
+aside h2,
+h3 {
   color: var(--cv-navy) !important;
 }
 
@@ -506,7 +513,7 @@ html.dark h2 {
   color: var(--cv-pink) !important;
 }
 
-h3,
+html.dark aside h2,
 html.dark h3 {
   color: var(--cv-cream) !important;
 }
@@ -524,10 +531,12 @@ html.dark main a[href$='.html']:hover {
 }
 
 /* --- PROJECT ICONS --- */
-main img[src*='skillicons'] {
+main img[src*='skillicons'],
+main img[src*='skills'] {
   border: 3px solid var(--cv-navy);
 }
-html.dark main img[src*='skillicons'] {
+html.dark main img[src*='skillicons'],
+html.dark main img[src*='skills'] {
   border-color: var(--cv-pink);
 }
 
@@ -541,7 +550,9 @@ html.dark main img[src*='skillicons'] {
   overflow: hidden;
   box-shadow: 8px 8px 0 0 var(--cv-pink) !important;
   transform: none !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease,
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
     border-color 0.25s ease !important;
 }
 html.dark .project-box {
@@ -644,7 +655,9 @@ html.dark .contact-box .window-titlebar {
   position: relative;
   overflow: hidden;
   box-shadow: 10px 10px 0 0 var(--cv-pink) !important;
-  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease !important;
 }
 html.dark .skill-box,
 html.dark .contact-box {
