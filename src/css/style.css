@@ -405,11 +405,6 @@ html.dark aside a:hover {
   color: var(--cv-pink) !important;
 }
 
-aside h2,
-html.dark aside h2 {
-  color: var(--cv-cream) !important;
-}
-
 /* --- CONTENT --- */
 main section.rounded-2xl {
   border: var(--cv-border) solid var(--cv-navy) !important;
@@ -507,7 +502,9 @@ main section.rounded-2xl section::after {
   content: none;
 }
 h1,
-h2 {
+h2,
+aside h2,
+h3 {
   color: var(--cv-navy) !important;
 }
 
@@ -516,7 +513,7 @@ html.dark h2 {
   color: var(--cv-pink) !important;
 }
 
-h3,
+html.dark aside h2,
 html.dark h3 {
   color: var(--cv-cream) !important;
 }
