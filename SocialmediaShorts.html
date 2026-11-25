@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Project: Graduation Internship</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script type="module" src="./src/js/main.js" defer></script>
+
+    <!-- Darkmode -->
+    <script>
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+
+    <!-- Inline Menu Toggle Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuButton = document.getElementById('toggle-menu-button');
+        const menu = document.getElementById('navbar-menu');
+
+        if (menuButton && menu) {
+          menuButton.addEventListener('click', function () {
+            menu.classList.toggle('hidden');
+            const isExpanded =
+              menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+          });
+
+          const menuLinks = document.querySelectorAll('#navbar-menu a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+              if (window.innerWidth < 1024) {
+                menu.classList.add('hidden');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
+              }
+            });
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth >= 1024) {
+              menu.classList.remove('hidden');
+              if (menuButton) menuButton.setAttribute('aria-expanded', 'true');
+            } else {
+              if (
+                !menu.classList.contains('hidden') &&
+                menuButton.getAttribute('aria-expanded') !== 'true'
+              ) {
+                menu.classList.add('hidden');
+                if (menuButton)
+                  menuButton.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+
+  <body
+    class="min-h-screen bg-fixed bg-cover bg-gradient-to-r from-white via-zinc-200 to-zinc-300 dark:from-zinc-900 dark:via-zinc-950 dark:to-black"
+  >
+    <div id="body" class="font-container">
+      <!-- HEADER -->
+      <header
+        class="border-b-2 border-zinc-600 fixed top-0 left-0 right-0 z-50 dark:bg-black bg-white backdrop-filter backdrop-blur-lg dark:bg-opacity-70 bg-opacity-70 w-full"
+      >
+        <nav
+          class="max-w-screen-xl mx-auto flex justify-between items-center px-4"
+        >
+          <!-- LOGO -->
+          <div class="flex gap-6 py-4">
+            <button data-text="Awesome" class="button1 dark:block hidden">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text1" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
+            <button data-text="Awesome" class="button2 dark:hidden block">
+              <span class="actual-text">&nbsp;Amber&nbsp;</span>
+              <span class="hover-text2" aria-hidden="true"
+                >&nbsp;Amber&nbsp;</span
+              >
+            </button>
+          </div>
+
+          <!-- HAMBURGER MENU BUTTON -->
+          <div class="flex items-center lg:hidden order-3">
+            <button
+              id="toggle-menu-button"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- MENU -->
+          <div
+            id="navbar-menu"
+            class="hidden w-full lg:flex lg:order-2 lg:w-auto lg:static fixed top-16 left-0 right-0 bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent border-b-2 border-t-2 border-zinc-600 lg:border-0 z-20 transition-all duration-300 lg:items-center"
+          >
+            <ul
+              class="font-medium flex flex-col lg:flex-row lg:gap-6 p-4 lg:p-0 font-mono text-3xl lg:items-center align-middle justify-center lg:bg-transparent rounded-lg lg:space-x-8 rtl:space-x-reverse"
+            >
+              <li>
+                <a
+                  href="index.html#About"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#Projects"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#Contact"
+                  class="block py-2 px-3 text-2xl font-sans font-bold leading-6 text-gray-800 hover:text-white dark:text-gray-200 hover:bg-purple-800 rounded-md"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- DARK MODE TOGGLE -->
+          <div class="flex items-center gap-6 lg:order-3">
+            <button
+              id="theme-toggle"
+              type="button"
+              class="h-fit w-fit dark:text-white text-gray-500 hover:scale-110 transition-transform bg-zinc-200 dark:bg-zinc-800 rounded-full p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-7 h-7"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- MAIN LAYOUT -->
+      <div class="flex flex-col lg:flex-row pt-20 lg:pt-0">
+        <!-- SIDEBAR -->
+        <aside
+          class="w-full lg:w-64 lg:fixed lg:h-screen pt-10 lg:pt-28 border-zinc-600 lg:border-r-2 p-8 overflow-y-auto"
+        >
+          <h1 class="text-2xl font-bold mb-6 dark:text-gray-100">GreenPT</h1>
+
+          <!-- INFO LIST -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H8z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 2v6h6"
+                />
+              </svg>
+              <p class="text-sm">Fit4Marketing</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">December 2025</p>
+            </div>
+            <div class="flex items-center dark:text-gray-500 text-gray-900">
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p class="text-sm">Capcut, Canva</p>
+            </div>
+          </div>
+
+          <!-- NAVIGATION -->
+          <nav class="mb-8 space-y-4">
+            <h2 class="block text-black dark:text-white font-bold">Overview</h2>
+            <a
+              href="#progress"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+              >Development Progress</a
+            >
+            <a
+              href="#results"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+              >Results</a
+            >
+            <a
+              href="#reflections"
+              class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+              >Reflections</a
+            >
+          </nav>
+
+          <!-- PROJECT NAV -->
+          <div class="hidden lg:block">
+            <h2 class="font-bold text-black dark:text-white mb-4">
+              Other Projects
+            </h2>
+            <div class="space-y-3">
+              <a
+                href="PortfolioWebsite.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Portfolio Website</a
+              >
+              <a
+                href="BandBuddy.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >BandBuddy</a
+              >
+              <a
+                href="ReplicatingWebsite.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Replicating Website</a
+              >
+              <a
+                href="ExperimentalFilm.html"
+                class="block dark:text-gray-500 text-gray-900 hover:text-purple-700 text-sm"
+                >Experimental Film</a
+              >
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="flex-1 lg:ml-64">
+          <!-- HERO -->
+          <div class="relative w-full">
+            <img
+              class="w-full h-auto object-cover"
+              src="./public/Socialmedia-Hero.jpg"
+              alt="Overlay with a mockup of the app GreenPT"
+              loading="lazy"
+            />
+            <div
+              class="absolute -bottom-6 left-0 right-0 flex justify-center gap-2"
+            >
+              <img
+                class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
+                src="https://skills.syvixor.com/api/icons?i=capcut&perline=12&radius=40"
+                alt="HTML skill icon"
+                loading="lazy"
+              />
+              <img
+                class="w-11 h-11 p-2 bg-gray-100 dark:bg-zinc-900 rounded-full"
+                src="https://skills.syvixor.com/api/icons?i=canva"
+                alt="Canva skill icon"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- BODY TEXT -->
+          <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
+            <p
+              class="intro dark:text-gray-100 text-gray-900 mb-16 leading-relaxed"
+            >
+              During my
+              <strong class="text-blue-950 dark:text-pink-300"
+                >four-month</strong
+              >
+              graduation internship at Fit4Marketing, I worked on creating
+              <strong class="text-blue-950 dark:text-pink-300"
+                >social media</strong
+              >
+              content by filming and editing
+              <strong class="text-blue-950 dark:text-pink-300"
+                >educational</strong
+              >
+              videos. I transformed longer recordings into shorter, engaging
+              videos.
+            </p>
+
+            <!-- DEVELOPMENT PROGRESS -->
+            <section
+              id="progress"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
+            >
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Development Progress
+              </h2>
+
+              <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                Click the image to zoom in.
+              </p>
+
+              <!-- INITIAL DESIGN -->
+              <div class="mb-12 pb-12 border-b border-zinc-600/60">
+                <figure class="results-figure mb-8">
+                  <button
+                    type="button"
+                    class="results-thumb group"
+                    data-lightbox
+                  >
+                    <img
+                      src="./public/Socialmedia-InitialDesign.jpg"
+                      alt="Written task lists outlining the number of videos to be edited and categorised by content series"
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
+                    <span class="results-zoom-hint" aria-hidden="true"
+                      >Zoom</span
+                    >
+                  </button>
+                  <figcaption class="results-caption">
+                    Written task lists of videos to be edited and categorised by
+                    content
+                  </figcaption>
+                </figure>
+
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+                  Initial Design
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  The goal was to create accessible and engaging social media
+                  content from the company's educational videos. Together with
+                  the team, I helped film these videos, which covered various
+                  topics related to the company's expertise and services. To
+                  keep the workflow organised, I maintained a daily task
+                  overview, tracking how many videos needed to be edited and
+                  which video belonged to each content series.
+                </p>
+              </div>
+
+              <!-- DEVELOPMENT -->
+              <div>
+                <p class="text-sm dark:text-gray-400 text-gray-600 mb-4">
+                  Click the image to zoom in.
+                </p>
+                <figure class="results-figure mb-8">
+                  <button
+                    type="button"
+                    class="results-thumb group"
+                    data-lightbox
+                  >
+                    <img
+                      src="./public/Socialmedia-Development.jpg"
+                      alt="The making of the short video's in Capcut"
+                      loading="lazy"
+                      class="w-full h-auto"
+                    />
+                    <span class="results-zoom-hint" aria-hidden="true"
+                      >Zoom</span
+                    >
+                  </button>
+                  <figcaption class="results-caption">
+                    The making of the short video's in Capcut
+                  </figcaption>
+                </figure>
+
+                <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+                  Development
+                </h3>
+                <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                  After filming, I reviewed the recordings and selected relevant
+                  sections that could stand on their own as shorter videos.
+                  Using CapCut, I edited the footage into multiple social media
+                  clips, focusing on pacing, clear storytelling and keeping the
+                  content engaging with zoom-ins, sound and icons. This also
+                  allowed me to become familiar with a new editing tool and
+                  develop my video editing skills further.
+                </p>
+              </div>
+            </section>
+
+            <!-- RESULTS -->
+            <section
+              id="results"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-6 sm:p-8 rounded-2xl border border-zinc-600"
+            >
+              <h2 class="text-3xl font-bold mb-8 dark:text-gray-100">
+                Results
+              </h2>
+
+              <!-- TWEE VIDEO'S NAAST ELKAAR -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mb-8">
+                <figure class="m-0">
+                  <div
+                    class="aspect-video w-full overflow-hidden rounded-xl border border-zinc-600 shadow-xl bg-black"
+                  >
+                    <iframe
+                      title="vimeo-player"
+                      src="https://player.vimeo.com/video/1250142454?h=62d0750250"
+                      class="w-full h-full"
+                      loading="lazy"
+                      frameborder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <figcaption class="results-caption">Short video</figcaption>
+                </figure>
+
+                <figure class="m-0">
+                  <div
+                    class="aspect-video w-full overflow-hidden rounded-xl border border-zinc-600 shadow-xl bg-black"
+                  >
+                    <iframe
+                      title="vimeo-player"
+                      src="https://player.vimeo.com/video/1250145748?h=243001d745"
+                      class="w-full h-full"
+                      loading="lazy"
+                      frameborder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <figcaption class="results-caption">Short video</figcaption>
+                </figure>
+              </div>
+
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                The final result was a collection of short-form social media
+                videos created from the original educational recordings. These
+                videos made it possible to share the same information in
+                smaller, more accessible formats across the company's social
+                media channels.
+              </p>
+            </section>
+            <!-- REFLECTIONS -->
+            <section
+              id="reflections"
+              class="mb-16 dark:bg-zinc-900/50 bg-white/50 p-8 rounded-2xl border border-zinc-600"
+            >
+              <h2 class="text-3xl font-bold mb-6 dark:text-gray-100">
+                Reflections
+              </h2>
+              <p class="dark:text-gray-100 text-gray-900 leading-relaxed">
+                During this internship, I gained practical experience in video
+                production and social media content creation. I learned to work
+                with CapCut, improved my editing skills and gained a better
+                understanding of how longer video content can be repurposed into
+                shorter formats. It also taught me how to approach video content
+                with a specific audience and platform in mind.
+              </p>
+            </section>
+
+            <!-- OTHER PROJECTS (MOBILE/TABLET) -->
+            <div class="lg:hidden mt-20 pt-10 border-t-2 border-zinc-600">
+              <h2 class="text-2xl font-bold dark:text-white mb-6">
+                Other Projects
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="PortfolioWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Portfolio Website
+                </a>
+                <a
+                  href="GreenPT.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  GreenPT
+                </a>
+                <a
+                  href="ReplicatingWebsite.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                >
+                  Replicating Website
+                </a>
+                <a
+                  href="ExperimentalFilm.html"
+                  class="block p-4 bg-white dark:bg-zinc-900 border border-zinc-600 rounded-xl text-center dark:text-gray-200 hover:bg-purple-800 hover:text-white transition-all shadow-md"
+                  >Experimental Film</a
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
